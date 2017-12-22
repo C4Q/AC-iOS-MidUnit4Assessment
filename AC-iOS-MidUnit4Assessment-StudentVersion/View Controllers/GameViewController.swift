@@ -74,7 +74,7 @@ class GameViewController: UIViewController {
 			message = "You were \(30 - self.playerScore) from 30"
 		}
 		let alertController = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
-		let okAlert = UIAlertAction(title: "Ok", style: .default, handler: nil)
+		let okAlert = UIAlertAction(title: "Restart Game", style: .default, handler: nil)
 		alertController.addAction(okAlert)
 		present(alertController, animated: true, completion: nil)
 		SaveGame()
