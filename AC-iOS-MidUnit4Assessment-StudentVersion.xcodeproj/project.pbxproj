@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB31FEC2752007EBECB /* AppDelegate.swift */; };
-		545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB51FEC2752007EBECB /* ViewController.swift */; };
 		545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2AB71FEC2752007EBECB /* Main.storyboard */; };
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
+		81ABBA1A1FED66090077B50E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA191FED66090077B50E /* AppError.swift */; };
+		81ABBA1C1FED66560077B50E /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA1B1FED66560077B50E /* NetworkHelper.swift */; };
+		81ABBA1E1FED66730077B50E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA1D1FED66730077B50E /* Card.swift */; };
+		81ABBA201FED67D70077B50E /* RndCardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA1F1FED67D70077B50E /* RndCardAPIClient.swift */; };
+		81ABBA221FED69180077B50E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA211FED69180077B50E /* GameViewController.swift */; };
+		81ABBA241FED6C7A0077B50E /* GameViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA231FED6C7A0077B50E /* GameViewController+Extension.swift */; };
+		81ABBA261FED6C950077B50E /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA251FED6C950077B50E /* GameCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		545F2AB01FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC-iOS-MidUnit4Assessment-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545F2AB31FEC2752007EBECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		545F2AB51FEC2752007EBECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		545F2AB81FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		545F2ABA1FEC2752007EBECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81ABBA191FED66090077B50E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		81ABBA1B1FED66560077B50E /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		81ABBA1D1FED66730077B50E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		81ABBA1F1FED67D70077B50E /* RndCardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RndCardAPIClient.swift; sourceTree = "<group>"; };
+		81ABBA211FED69180077B50E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		81ABBA231FED6C7A0077B50E /* GameViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Extension.swift"; sourceTree = "<group>"; };
+		81ABBA251FED6C950077B50E /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,44 @@
 		545F2AB21FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
-				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
-				545F2AB51FEC2752007EBECB /* ViewController.swift */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
-				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
-				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
+				81ABBA181FED5F510077B50E /* Models */,
+				81ABBA171FED5F470077B50E /* View Controllers */,
+				81ABBA161FED5F2D0077B50E /* Supporting Files */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
+			sourceTree = "<group>";
+		};
+		81ABBA161FED5F2D0077B50E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
+				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
+				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81ABBA171FED5F470077B50E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81ABBA211FED69180077B50E /* GameViewController.swift */,
+				81ABBA231FED6C7A0077B50E /* GameViewController+Extension.swift */,
+				81ABBA251FED6C950077B50E /* GameCollectionViewCell.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		81ABBA181FED5F510077B50E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81ABBA191FED66090077B50E /* AppError.swift */,
+				81ABBA1B1FED66560077B50E /* NetworkHelper.swift */,
+				81ABBA1D1FED66730077B50E /* Card.swift */,
+				81ABBA1F1FED67D70077B50E /* RndCardAPIClient.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +178,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */,
+				81ABBA261FED6C950077B50E /* GameCollectionViewCell.swift in Sources */,
+				81ABBA1A1FED66090077B50E /* AppError.swift in Sources */,
+				81ABBA1C1FED66560077B50E /* NetworkHelper.swift in Sources */,
+				81ABBA241FED6C7A0077B50E /* GameViewController+Extension.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
+				81ABBA201FED67D70077B50E /* RndCardAPIClient.swift in Sources */,
+				81ABBA221FED69180077B50E /* GameViewController.swift in Sources */,
+				81ABBA1E1FED66730077B50E /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
