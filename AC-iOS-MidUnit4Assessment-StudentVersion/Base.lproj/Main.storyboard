@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QsA-wE-JKK">
-                                <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="371"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomTableViewCell" rowHeight="150" id="Fcp-1a-RQN">
@@ -100,22 +100,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHN-Am-Fmt">
+                                <rect key="frame" x="5" y="396" width="310" height="30"/>
+                                <state key="normal" title="Reset Saved Games"/>
+                                <connections>
+                                    <action selector="resetSavedGamesButton:" destination="AqU-8R-vRL" eventType="touchUpInside" id="6yL-wT-QxW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dAI-fx-kBh" firstAttribute="width" secondItem="yce-Hz-08p" secondAttribute="width" id="G41-0W-Ncz"/>
                             <constraint firstItem="dAI-fx-kBh" firstAttribute="centerX" secondItem="P9g-sG-FtG" secondAttribute="centerX" id="I52-rL-1p9"/>
                             <constraint firstItem="QsA-wE-JKK" firstAttribute="leading" secondItem="P9g-sG-FtG" secondAttribute="leading" id="b0w-nu-ggh"/>
+                            <constraint firstItem="P9g-sG-FtG" firstAttribute="trailing" secondItem="MHN-Am-Fmt" secondAttribute="trailing" constant="5" id="feN-Cu-r4R"/>
                             <constraint firstItem="QsA-wE-JKK" firstAttribute="top" secondItem="P9g-sG-FtG" secondAttribute="top" id="hhj-gI-IcA"/>
                             <constraint firstItem="P9g-sG-FtG" firstAttribute="trailing" secondItem="QsA-wE-JKK" secondAttribute="trailing" id="noq-mo-d3x"/>
+                            <constraint firstItem="P9g-sG-FtG" firstAttribute="bottom" secondItem="MHN-Am-Fmt" secondAttribute="bottom" constant="5" id="r7q-zk-DbG"/>
+                            <constraint firstItem="MHN-Am-Fmt" firstAttribute="top" secondItem="QsA-wE-JKK" secondAttribute="bottom" constant="5" id="reA-ed-Saj"/>
+                            <constraint firstItem="MHN-Am-Fmt" firstAttribute="leading" secondItem="P9g-sG-FtG" secondAttribute="leading" constant="5" id="spe-Mm-xof"/>
                             <constraint firstItem="dAI-fx-kBh" firstAttribute="centerY" secondItem="P9g-sG-FtG" secondAttribute="centerY" id="tOI-0T-Y6c"/>
-                            <constraint firstItem="P9g-sG-FtG" firstAttribute="bottom" secondItem="QsA-wE-JKK" secondAttribute="bottom" id="wp1-sf-Pdr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P9g-sG-FtG"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="eVt-9a-JGe"/>
                     <connections>
                         <outlet property="noSavedHandsLabel" destination="dAI-fx-kBh" id="WXm-Fc-it6"/>
+                        <outlet property="resetHistoryButton" destination="MHN-Am-Fmt" id="mS2-Mg-wRg"/>
                         <outlet property="tableView" destination="QsA-wE-JKK" id="wHC-dv-l4A"/>
                     </connections>
                 </viewController>

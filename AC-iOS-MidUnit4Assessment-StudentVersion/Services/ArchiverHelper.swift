@@ -28,6 +28,9 @@ class SavedHandsArchiverClient {
     func getHands() -> [[[Card]]] {
         return savedHandsArr
     }
+    func eraseSaves(){
+        savedHandsArr = []
+    }
     
     func loadHands() {
         let path = dataFilePath(withPathName: SavedHandsArchiverClient.pathName)

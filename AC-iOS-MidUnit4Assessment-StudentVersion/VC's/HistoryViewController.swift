@@ -14,6 +14,10 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func resetSavedGamesButton(_ sender: UIButton) {
+        SavedHandsArchiverClient.manager.eraseSaves()
+    }
+    
 //    var savedHands = [Card]() {
 //        didSet {
 //            if savedHands.isEmpty {
