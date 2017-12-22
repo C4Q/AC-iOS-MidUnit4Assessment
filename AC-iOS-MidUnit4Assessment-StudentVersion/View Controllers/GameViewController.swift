@@ -15,12 +15,14 @@ class GameViewController: UIViewController {
 
 	//MARK: Actions
 	@IBAction func stop(_ sender: UIButton) {
+		updateDisplayScore()
 		showGameOverAlert()
 	}
 	@IBAction func drawCard(_ sender: UIButton) {
 		getCard(fromDeckID: deck.deckId)
 		playerCards.append(card) //add card to card array to be displayed by the collection view
 		playerScore += getPoints(cardValue: card.value)
+		updateDisplayScore()
 		if playerScore >= 30 { //end game
 			showGameOverAlert()
 		}
@@ -37,13 +39,17 @@ class GameViewController: UIViewController {
 
 	//MARK: Properties
 	let cellSpacing = UIScreen.main.bounds.size.width * 0.05
+
 	var deck: Deck {
 		didSet { getCard(fromDeckID: deck.deckId) }
 	}
+
 	var card: Card!
+
 	var playerCards = [Card]() {
 		didSet { gameCollectionView.reloadData()}
 	}
+	
 	var playerScore = 0
 	
 
@@ -99,6 +105,18 @@ class GameViewController: UIViewController {
 		default: return 0
 		}
 	}
+	func updateDisplayScore() {
+		if playerScore == 30 {
+			self.navigationItem.title = "Current Hand Value: \(playerScore). WIN!!"
+		} else if playerScore > 30 {
+			self.navigationItem.title = "Current Hand Value: \(playerScore). BUST!"
+		} else if playerScore < 30 && playerScore > 27 {
+				self.navigationItem.title = "Current Hand Value: \(playerScore). CLOSE"
+		} else {
+			self.navigationItem.title = "Current Hand Value: \(playerScore). Try Again"
+		}
+	}
+
 }
 
 
