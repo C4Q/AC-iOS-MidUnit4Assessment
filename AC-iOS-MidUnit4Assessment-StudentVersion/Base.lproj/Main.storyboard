@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0fm-er-7v4">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="564"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecentGameCell" rowHeight="223" id="erw-v4-Ex2" customClass="RecentGamesTableViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
@@ -101,12 +101,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSZ-TH-diL">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <state key="normal" title="Reset History"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sTb-R4-b5l" firstAttribute="bottom" secondItem="0fm-er-7v4" secondAttribute="bottom" id="8uS-N1-mfR"/>
                             <constraint firstItem="0fm-er-7v4" firstAttribute="top" secondItem="sTb-R4-b5l" secondAttribute="top" id="IsL-D1-lAZ"/>
+                            <constraint firstItem="wSZ-TH-diL" firstAttribute="leading" secondItem="sTb-R4-b5l" secondAttribute="leading" id="Nvf-6b-AQU"/>
+                            <constraint firstItem="sTb-R4-b5l" firstAttribute="trailing" secondItem="wSZ-TH-diL" secondAttribute="trailing" id="OsT-sK-o6E"/>
+                            <constraint firstItem="wSZ-TH-diL" firstAttribute="bottom" secondItem="sTb-R4-b5l" secondAttribute="bottom" id="Wui-OK-Q4S"/>
                             <constraint firstItem="sTb-R4-b5l" firstAttribute="trailing" secondItem="0fm-er-7v4" secondAttribute="trailing" id="di9-vZ-bAt"/>
+                            <constraint firstItem="wSZ-TH-diL" firstAttribute="top" secondItem="0fm-er-7v4" secondAttribute="bottom" constant="4" id="eD2-qJ-cQB"/>
                             <constraint firstItem="0fm-er-7v4" firstAttribute="leading" secondItem="sTb-R4-b5l" secondAttribute="leading" id="hyp-WG-mly"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sTb-R4-b5l"/>
