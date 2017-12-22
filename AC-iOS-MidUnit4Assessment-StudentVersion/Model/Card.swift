@@ -4,6 +4,7 @@
 //  Copyright © 2017 C4Q . All rights reserved.
 
 import Foundation
+import UIKit
 
 struct CardJSON: Codable {
 	let cards: [Card]
@@ -20,7 +21,7 @@ struct Card: Codable {
 	var cardImage: UIImage? {
 		set{}
 		get {
-			let imageURL = DataStorage.manager.dataFilePath(withPathName: image)
+			let imageURL = DataModel.manager.dataFilePath(withPathName: image)
 			let docImage = UIImage(contentsOfFile: imageURL.path)
 			return docImage
 		}

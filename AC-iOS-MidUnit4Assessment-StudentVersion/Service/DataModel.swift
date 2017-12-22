@@ -31,7 +31,7 @@ class DataModel {
 	}
 
 	//returns supplied path name in documents directory
-	private func dataFilePath(pathName: String)->URL {
+	func dataFilePath(pathName: String)->URL {
 		return DataModel.manager.documentDirectory().appendingPathComponent(pathName)
 	}
 
@@ -70,6 +70,9 @@ class DataModel {
 
 	func deleteHistory() {
 		history = [SavedGame]()
+		for index in 0..<history.count {
+			history.remove(at: index)
+		}
 	}
 }
 

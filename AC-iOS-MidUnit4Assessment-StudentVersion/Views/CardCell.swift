@@ -13,8 +13,12 @@ class CardCell: UICollectionViewCell {
 	//MARK: Methods
 	func configureCell(with card: Card) {
 		self.valueLabel.text = card.value
-		ImageHelper.manager.getImage(from: card.image, completionHandler: {self.card.Image.image = $0; self.cardImage.setNeedsLayout()},
-		errorHandler: {print($0)})
+		let imageURL = card.image //image url source
+		let setImage: (UIImage)-> Void = {(onlineImage: UIImage) in
+			self.cardImage.image = onlineImage
+			self.cardImage.setNeedsLayout()
+		}
+		ImageHelper.manager.getImage(from: imageURL, completionHandler: setImage, errorHandler: {print($0)})
 	}
 }
 

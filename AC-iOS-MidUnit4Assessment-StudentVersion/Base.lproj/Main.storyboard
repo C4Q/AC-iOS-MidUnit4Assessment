@@ -118,6 +118,7 @@
                                         <connections>
                                             <outlet property="cardImage" destination="eY1-Km-0NG" id="NdN-Zs-LLc"/>
                                             <outlet property="cardLabel" destination="pOx-NF-Pyi" id="dGH-fj-ZBY"/>
+                                            <outlet property="valueLabel" destination="pOx-NF-Pyi" id="Vew-OT-nhL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
