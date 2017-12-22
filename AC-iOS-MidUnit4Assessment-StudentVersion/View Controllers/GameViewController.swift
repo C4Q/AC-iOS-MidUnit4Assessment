@@ -9,14 +9,19 @@ class GameViewController: UIViewController {
 
 	//MARK: Outlets
 	@IBOutlet weak var gameCollectionView: UICollectionView!
-	
+	@IBOutlet weak var instructionsLabel: UILabel!
+	@IBOutlet weak var stopButton: UIButton!
+	@IBOutlet weak var drawCardButton: UIButton!
+
+	//MARK: Actions
 	@IBAction func stop(_ sender: UIButton) {
-		//TO DO
-		//add playerCards & score to Storage History
+		let game: SavedGame = SavedGame.init(cards: playerCards, score: playerScore)
+		DataModel.manager.addGameToHistory(game: game)
 		showGameOverAlert()
 	}
 	@IBAction func drawCard(_ sender: UIButton) {
 		getCard(fromDeckID: deck.deckId)
+		playerCards.append(card) //add card to card array to be displayed by the collection view
 
 		//TO DO
 		if playerScore >= 30 { //end game
@@ -37,25 +42,14 @@ class GameViewController: UIViewController {
 	//MARK: Properties
 	let cellSpacing = UIScreen.main.bounds.size.width * 0.05
 	var deck: Deck {
-		didSet {
-			getCard(fromDeckID: deck.deckId)
-		}
+		didSet { getCard(fromDeckID: deck.deckId) }
 	}
-	var card: Card {
-		didSet {
-			playerCards.append(card) //add card to card array to be displayed by the collection view
-		}
-	}
+	var card: Card!
 	var playerCards = [Card]() {
-		didSet {
-			gameCollectionView.reloadData()
-		}
+		didSet { gameCollectionView.reloadData()}
 	}
-	var playerScore = 0 {
-		didSet {
-
-		}
-	}
+	var playerScore = 0
+	
 
 	//MARK: Methods
 	func getDeck(){
@@ -85,6 +79,7 @@ class GameViewController: UIViewController {
 	}
 
 	func resetGame(){
+		
 		//TO DO - save playerCards array to dataStore
 		playerScore = 0
 		playerCards = [Card]()

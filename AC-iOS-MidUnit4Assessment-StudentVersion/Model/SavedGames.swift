@@ -6,27 +6,15 @@
 import Foundation
 import UIKit
 
-struct History: Codable {
-	let savedGames: [SavedGame]
-}
 struct SavedGame: Codable {
-	let cards: [SavedCard]
+	let cards: [Card]
 	let score: Int
-}
-struct SavedCard: Codable {
-	let code: String
-	let image: String
-	let value: String
-	let suit: String
-	var cardImage: UIImage? {
-		set{}
-		get {
-			let imageURL = DataStorage.manager.dataFilePath(withPathName: image)
-			let docImage = UIImage(contentsOfFile: imageURL.path)
-			return docImage
-		}
+	init(cards: [Card], score: Int){
+		self.cards = cards
+		self.score = score
 	}
 }
+
 
 
 

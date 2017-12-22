@@ -187,7 +187,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="icons8-cards_filled" id="Pz1-Xp-hCF"/>
                     <connections>
+                        <outlet property="drawCardButton" destination="sE1-T0-tLQ" id="9vC-Pe-cje"/>
                         <outlet property="gameCollectionView" destination="wTY-VW-APK" id="EZJ-LF-Z8B"/>
+                        <outlet property="instructionsLabel" destination="mC2-cI-lWJ" id="DvG-iC-kJ3"/>
+                        <outlet property="stopButton" destination="Edx-NW-rg1" id="v1q-r8-9Qy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDx-Ed-TAq" userLabel="First Responder" sceneMemberID="firstResponder"/>

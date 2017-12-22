@@ -17,6 +17,14 @@ struct Card: Codable {
 	let image: String // "https://deckofcardsapi.com/static/img/KH.png",
 	let value: String // "5"
 	let suit: String // "HEARTS"
+	var cardImage: UIImage? {
+		set{}
+		get {
+			let imageURL = DataStorage.manager.dataFilePath(withPathName: image)
+			let docImage = UIImage(contentsOfFile: imageURL.path)
+			return docImage
+		}
+	}
 }
 
 struct CardAPIClient {

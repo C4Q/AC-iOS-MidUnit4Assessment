@@ -13,15 +13,15 @@ class TableViewCell: UITableViewCell {
 extension TableViewCell {
 	func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
 
+		//set Delegate and Datasource
 		collectionView.delegate = dataSourceDelegate
 		collectionView.dataSource = dataSourceDelegate
+
+		//tag = row
 		collectionView.tag = row
-		collectionView.setContentOffset(collectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
+
+		//reload data
 		collectionView.reloadData()
 	}
 
-	var collectionViewOffset: CGFloat {
-		set { collectionView.contentOffset.x = newValue }
-		get { return collectionView.contentOffset.x }
-	}
 }
