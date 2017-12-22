@@ -9,12 +9,11 @@
 import Foundation
 
 
-/// TO CREATE A NEW PLAY OF 6 DECKS: https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6
 /// TO DRAW A SINGLE CARD FROM THE PLAY DECK, DECK ID CALLED IN ABOVE ENDPOINT: https://deckofcardsapi.com/api/deck/6bvrbab3jkzl/draw/?count=1
 
 
 struct PlayDeck: Codable {
-    let cards: [Card]
+    let cards: [Card] /// using this endpoint with count = 1, cards is only really ONE card in the array
     let deckID: String  /// use this in 2nd endpoint
     let remaining: Int /// number of cards left in the deck; decrements at each call
     

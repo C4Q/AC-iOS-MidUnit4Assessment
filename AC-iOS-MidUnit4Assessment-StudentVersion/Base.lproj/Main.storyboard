@@ -41,7 +41,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card Cell" id="SEl-ro-FUf">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card Cell" id="SEl-ro-FUf" customClass="CustomCardCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
                                         <rect key="frame" x="52" y="0.0" width="271" height="245"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -61,6 +61,9 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="pPH-fV-mfd" secondAttribute="bottom" id="UUx-fr-RZF"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="pPH-fV-mfd" secondAttribute="trailing" id="zce-gr-AJF"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cardView" destination="pPH-fV-mfd" id="54Y-6b-ive"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
