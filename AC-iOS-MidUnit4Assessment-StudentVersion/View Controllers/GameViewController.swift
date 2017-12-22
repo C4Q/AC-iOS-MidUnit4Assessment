@@ -22,7 +22,6 @@ class GameViewController: UIViewController {
         didSet {
             print("deck id: \(currentDeckOfSix?.deckID.description)")
             print("currentDeckOfSix populated")
-            
         }
     }
     
@@ -67,14 +66,20 @@ class GameViewController: UIViewController {
     func loadNewDeckOfSix() {
         let completion: (NewCardDeck) -> Void = {(onlineCardDeck: (NewCardDeck)) in
             self.currentDeckOfSix = onlineCardDeck
+            print("this is set")
         }
         let errorHandler: (Error) -> Void = {(error: Error) in
         }
         DeckAPIClient.manager.getNewDeck(completionHandler: completion, errorHandler: errorHandler)
-        print("step 1 finished")
+        print("\(currentDeckOfSix?.deckID)")
+        print("step 1 finished. or IS IT. Nope, doesn't seem like it. fml bye")
     }
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
+        
+        // alert for game over
+        // save game array to the history array using NSKeyedArchiver
+        // start new game
     }
     
     /// 3) Click Draw
@@ -82,7 +87,7 @@ class GameViewController: UIViewController {
     /// 3B) Loads details for one card in var currentCard
     // When Draw button pressed, take one card from the currentDeckOfCards array and load it to currentGameHand array to be shown in CollectionView
     @IBAction func drawButtonPressed(_ sender: UIButton) {
-        drawACard(from: <#T##Card#>, cell: <#T##CardCollectionViewCell#>)
+       
         // call function to load a Card, load image
         // get the value of the Card
         
@@ -91,7 +96,7 @@ class GameViewController: UIViewController {
         // show the value of the Card in currentGameCollectionView
         // add the value of the Card to the var currentHandScore
       
-      
+//      drawACard(from: <#T##Card#>, cell: <#T##CardCollectionViewCell#>)
         
     }
     
@@ -109,7 +114,8 @@ extension GameViewController: UICollectionViewDataSource {
     // shows the array of Card objects loaded into currentGameHand
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cardCell = currentGameCollectionView.dequeueReusableCell(withReuseIdentifier: "Card Cell", for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
-        let card = currentGameHand[indexPath.row] /// this auto loads on start, but the array is empty! how do i load an empty collection view?
+        let card = currentGameHand[indexPath.row]
+        drawACard(from: card, cell: cardCell)
         return cardCell
     }
     
@@ -165,5 +171,6 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
+
 
 

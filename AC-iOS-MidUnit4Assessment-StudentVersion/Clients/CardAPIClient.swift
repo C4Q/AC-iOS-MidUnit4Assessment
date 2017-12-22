@@ -16,7 +16,7 @@ struct CardAPIClient{
                   completionHandler: @escaping ([Card]) -> Void,
                   errorHandler: @escaping (AppError) -> Void) {
         
-        let urlStr = "https://deckofcardsapi.com/api/deck/6bvrbab3jkzl/draw/?count=1"
+        let urlStr = "https://deckofcardsapi.com/api/deck/\(deckID)/draw/?count=1"
         guard let url = URL(string: urlStr) else{
             errorHandler(.badURL)
             return

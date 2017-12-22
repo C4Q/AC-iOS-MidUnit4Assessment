@@ -25,8 +25,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49F-RH-qhP">
-                                <rect key="frame" x="166" y="449" width="42" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get up to 30 without going over!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49F-RH-qhP">
+                                <rect key="frame" x="64" y="449" width="247.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="275" id="1Yv-PU-8YS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="History Game Cell" rowHeight="275" id="1Yv-PU-8YS" customClass="HistoryTableViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="275"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Yv-PU-8YS" id="Vti-Fp-Beo">
@@ -137,7 +137,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XwI-gE-yZf">
-                                                    <rect key="frame" x="15" y="11" width="345" height="253"/>
+                                                    <rect key="frame" x="15" y="32" width="345" height="232"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Cx-cH-2YE">
                                                         <size key="itemSize" width="175" height="154"/>
@@ -146,7 +146,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="H9v-UY-vQq" customClass="CardCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="History Card Collection View Cell" id="H9v-UY-vQq" customClass="CardCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
                                                             <rect key="frame" x="85" y="0.0" width="175" height="154"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -168,20 +168,35 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1R-Q7-l8J">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XwI-gE-yZf" firstAttribute="leading" secondItem="Vti-Fp-Beo" secondAttribute="leadingMargin" id="3kU-tU-GOU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="XwI-gE-yZf" secondAttribute="bottom" id="Qzv-go-gef"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="XwI-gE-yZf" secondAttribute="trailing" id="bNa-vX-OKb"/>
-                                                <constraint firstItem="XwI-gE-yZf" firstAttribute="top" secondItem="Vti-Fp-Beo" secondAttribute="topMargin" id="tOV-Lg-X7X"/>
+                                                <constraint firstItem="XwI-gE-yZf" firstAttribute="trailing" secondItem="Vti-Fp-Beo" secondAttribute="trailingMargin" id="AVV-0g-zdB"/>
+                                                <constraint firstItem="XwI-gE-yZf" firstAttribute="bottom" secondItem="Vti-Fp-Beo" secondAttribute="bottomMargin" id="NK8-nx-GBr"/>
+                                                <constraint firstItem="C1R-Q7-l8J" firstAttribute="top" secondItem="Vti-Fp-Beo" secondAttribute="topMargin" id="QXf-nD-1gc"/>
+                                                <constraint firstItem="XwI-gE-yZf" firstAttribute="top" secondItem="C1R-Q7-l8J" secondAttribute="bottom" id="a0i-lu-0Iq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="C1R-Q7-l8J" secondAttribute="trailing" id="kng-Yf-Bs7"/>
+                                                <constraint firstItem="C1R-Q7-l8J" firstAttribute="leading" secondItem="Vti-Fp-Beo" secondAttribute="leadingMargin" id="tBF-S6-yLl"/>
+                                                <constraint firstItem="XwI-gE-yZf" firstAttribute="leading" secondItem="Vti-Fp-Beo" secondAttribute="leadingMargin" id="xZK-TM-xPe"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="historyCollectionView" destination="XwI-gE-yZf" id="ktd-JT-00s"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zud-4M-6Pe">
                                 <rect key="frame" x="0.0" y="588" width="375" height="30"/>
                                 <state key="normal" title="Clear History"/>
+                                <connections>
+                                    <action selector="clearHistoryButtonPressed:" destination="5aq-Gj-1MA" eventType="touchUpInside" id="Iaa-h2-dLu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -198,6 +213,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="TBA-6K-fJy"/>
                     <connections>
+                        <outlet property="clearHistoryButton" destination="zud-4M-6Pe" id="Q5w-Hw-Var"/>
                         <outlet property="tableView" destination="kUk-n4-Mrp" id="Q5h-v1-Ftv"/>
                     </connections>
                 </viewController>
