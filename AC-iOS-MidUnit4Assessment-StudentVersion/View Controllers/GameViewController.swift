@@ -35,6 +35,8 @@ class GameViewController: UIViewController {
 		gameCollectionView.dataSource = self
 		getDeck()
 		gameCollectionView.reloadData()
+		playerScore = 0
+		playerCards = [Card]()
 	}
 
 	//MARK: Properties
@@ -157,15 +159,19 @@ extension GameViewController: UICollectionViewDataSource {
 //MARK: CollectionView - Flow Layout
 extension GameViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let numCells: CGFloat = 3
+		let numCells: CGFloat = 2.0
 		let numSpaces: CGFloat = numCells + 1
 		let screenWidth = UIScreen.main.bounds.width
 		let screenHeight = UIScreen.main.bounds.height
-		return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.25)
+		//return item size
+		return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height:
+			collectionView.bounds.height - (cellSpacing * 2))
 	}
+	//// padding around our collection view
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: 0, right: cellSpacing)
 	}
+	//// padding between cells / items
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		return cellSpacing
 	}
@@ -173,30 +179,6 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
 		return cellSpacing
 	}
 }
-
-
-
-///extension AnimalPickerController: UICollectionViewDelegateFlowLayout {
-//func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//	let numCells: CGFloat = 2.0 // cells visible in row
-//	let numSpaces: CGFloat = numCells + 1
-//	let screenWidth = UIScreen.main.bounds.width // screen width of device
-//
-//	// retrun item size
-//	return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: collectionView.bounds.height - (cellSpacing * 2))
-//}
-//
-//// padding around our collection view
-//func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//	return UIEdgeInsets(top: cellSpacing, left: 0, bottom: cellSpacing, right: 0)
-//}
-//
-//// padding between cells / items
-//func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//	return cellSpacing
-//}
-//}
-
 
 
 
