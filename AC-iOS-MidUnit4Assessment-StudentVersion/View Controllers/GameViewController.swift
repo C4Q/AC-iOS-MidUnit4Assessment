@@ -23,6 +23,9 @@ class GameViewController: UIViewController {
         didSet {
             //reload collection view
             gameCollectionView.reloadData()
+            if cards.count > 0 {
+                gameCollectionView.scrollToItem(at: IndexPath.init(row: cards.count - 1, section: 0), at: UICollectionViewScrollPosition.right, animated: true)
+            }
             checkGameStatus()
         }
     }

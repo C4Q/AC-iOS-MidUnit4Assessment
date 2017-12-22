@@ -27,7 +27,7 @@ class CardGame {
     
     weak static var delegate: CardGameDelegate?
     
-    private static var cardValueDict: [String : Int] = [
+    static var cardValueDict: [String : Int] = [
         "2": 2,
         "3": 3,
         "4": 4,

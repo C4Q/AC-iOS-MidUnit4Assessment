@@ -64,8 +64,8 @@ class PersistentData {
         }
     }
     
-    func saveImage(_ image: UIImage, withURL urlString: String) {
-        let filePath = dataFilePath(of: urlString)
+    func saveImage(_ image: UIImage, withURL url: URL) {
+        let filePath = dataFilePath(of: url.lastPathComponent)
         
         guard let imageData = UIImagePNGRepresentation(image) else {
             print("Could not turn image into data")
@@ -126,14 +126,20 @@ class PersistentData {
         return scores
     }
     
-    func getImage(withURL urlString: String) -> UIImage? {
-        let filePath = dataFilePath(of: urlString).path
+    func getImage(withURL url: URL) -> UIImage? {
+        let filePath = dataFilePath(of: url.lastPathComponent)
         
-        guard let image = UIImage(contentsOfFile: filePath) else {
-            return nil
+        do {
+            let imageData = try Data.init(contentsOf: filePath)
+            
+            if let image = UIImage(data: imageData) {
+                return image
+            }
+        } catch let error {
+            print(error)
         }
         
-        return image
+         return nil
     }
     
     //remove

@@ -18,8 +18,32 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(withCard card: Card) {
+        guard let cardValue = CardGame.cardValueDict[card.value] else {
+            return
+        }
         
-        //to do
+        cardValueLabel.text = cardValue.description
+        
+        cardImageView.image = nil
+        
+        guard let url = URL(string: card.imageURL) else {
+            print("Error setting up card image")
+            return
+        }
+        
+        if let image = PersistentData.manager.getImage(withURL: url) {
+            cardImageView.image = image
+            self.setNeedsLayout()
+        } else {
+            ImageAPIClient.manager.getImage(
+                with: card.imageURL,
+                completionHandler: { (cardImage) in
+                    self.cardImageView.image = cardImage
+                    self.setNeedsLayout()
+                    PersistentData.manager.saveImage(cardImage, withURL: url)
+            },
+                errorHandler: {print($0)})
+        }
     }
 
 }
