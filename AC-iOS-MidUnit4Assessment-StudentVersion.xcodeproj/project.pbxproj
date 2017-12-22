@@ -82,7 +82,7 @@
 		545F2AB21FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
-				81C609241FED621300AD802A /* Unused Stuff */,
+				81C609241FED621300AD802A /* Supporting Files */,
 				81C609251FED622B00AD802A /* Models */,
 				81C609231FED61F300AD802A /* Views */,
 				812F0A2A1FED5EBE003AF18E /* View Controllers */,
@@ -130,14 +130,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		81C609241FED621300AD802A /* Unused Stuff */ = {
+		81C609241FED621300AD802A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
 				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
 				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
 			);
-			path = "Unused Stuff";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		81C609251FED622B00AD802A /* Models */ = {

@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L0u-cs-1Qn">
-                                <rect key="frame" x="0.0" y="81" width="375" height="432"/>
+                                <rect key="frame" x="0.0" y="101" width="375" height="359"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qUJ-EZ-TPG">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qUJ-EZ-TPG">
                                     <size key="itemSize" width="325" height="300"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="6mK-Xs-uxO">
-                                        <rect key="frame" x="25" y="0.0" width="325" height="300"/>
+                                        <rect key="frame" x="0.0" y="29.5" width="325" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="325" height="300"/>
@@ -38,19 +38,19 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try to reach 30 without going over!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXT-jV-zxg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Try to reach 30 without going over!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXT-jV-zxg">
                                 <rect key="frame" x="20" y="40" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currentScoreLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9e-D9-nLo">
-                                <rect key="frame" x="20" y="533" width="335" height="21"/>
+                                <rect key="frame" x="20" y="480" width="335" height="74"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmh-c5-mbw">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="zmh-c5-mbw">
                                 <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Stop" id="JqW-sa-axM">
@@ -75,7 +75,8 @@
                             <constraint firstItem="d9e-D9-nLo" firstAttribute="top" secondItem="L0u-cs-1Qn" secondAttribute="bottom" constant="20" id="AAF-Jt-FC7"/>
                             <constraint firstItem="zmh-c5-mbw" firstAttribute="top" secondItem="d9e-D9-nLo" secondAttribute="bottom" constant="20" id="DeU-ue-Pis"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d9e-D9-nLo" secondAttribute="trailing" constant="20" id="OIP-Nw-erQ"/>
-                            <constraint firstItem="L0u-cs-1Qn" firstAttribute="top" secondItem="bXT-jV-zxg" secondAttribute="bottom" constant="20" id="aAJ-eT-GBx"/>
+                            <constraint firstItem="L0u-cs-1Qn" firstAttribute="top" secondItem="bXT-jV-zxg" secondAttribute="bottom" constant="40" id="aAJ-eT-GBx"/>
+                            <constraint firstItem="L0u-cs-1Qn" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.6" id="agD-Ql-pN4"/>
                             <constraint firstItem="zmh-c5-mbw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="blJ-5S-UcE"/>
                             <constraint firstItem="L0u-cs-1Qn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c7l-qC-8aH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bXT-jV-zxg" secondAttribute="trailing" constant="20" id="djr-re-UHv"/>

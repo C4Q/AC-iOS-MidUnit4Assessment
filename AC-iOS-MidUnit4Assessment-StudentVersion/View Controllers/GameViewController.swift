@@ -14,6 +14,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var gameCollectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    let cellSpacing = UIScreen.main.bounds.width * 0.05
+    
     //maybe use a card game model?
     var deck: Deck?
     
@@ -30,6 +32,12 @@ class GameViewController: UIViewController {
         //the instructions label should change based on what the user sets the score to
         CardGame.delegate = self
         newGame()
+        
+        let nib = UINib(nibName: "CardCollectionViewCell", bundle: nil)
+        gameCollectionView.register(nib, forCellWithReuseIdentifier: "cardCell")
+        
+        gameCollectionView.delegate = self
+        gameCollectionView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,10 +72,10 @@ class GameViewController: UIViewController {
         
         instructionsLabel.text = "Try to reach \(targetNumber) without going over!"
         
-        scoreLabel.text = "Current Score: \(0)"
-        
-        loadNewDeck()
         CardGame.resetGame()
+        loadNewDeck()
+        scoreLabel.text = "Current Score: \(0)"
+        cards = []
         
         //should reset current collectionview data source variable and reload data
         //should load new Deck
@@ -103,6 +111,7 @@ class GameViewController: UIViewController {
     }
     
     func checkGameStatus() {
+        
         self.scoreLabel.text = "Current Score: \(CardGame.getScore())"
         
         switch CardGame.checkForWin() {
@@ -115,6 +124,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    //I should create an alert model to clean up the view controllers
     func presentErrorAlert(withError error: Error) {
         let message: String
         
@@ -176,6 +186,53 @@ extension GameViewController: CardGameDelegate {
     
     func saveGame(withCards cards: [Card], score: Int, andTargetScore targetScore: Int) {
         //to do - should save in persistentdata model
+        
+        //save the cards
+        
+        //save the score
+        
+        //this way they both always have the same index number
+    }
+    
+}
+
+extension GameViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfCells: CGFloat = 1.5
+        let numberOfSpaces: CGFloat = numberOfCells + 1
+        let width = (collectionView.bounds.width - (numberOfSpaces * cellSpacing)) / numberOfCells
+        let height = collectionView.bounds.height - (cellSpacing * 2)
+        
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return cellSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: cellSpacing, right: cellSpacing)
+    }
+}
+
+extension GameViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cards.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath)
+        
+        guard let cardCell = cell as? CardCollectionViewCell else {
+            return cell
+        }
+        
+        let currentCard = cards[indexPath.row]
+        
+        cardCell.configureCell(withCard: currentCard)
+        
+        return cardCell
     }
     
 }
