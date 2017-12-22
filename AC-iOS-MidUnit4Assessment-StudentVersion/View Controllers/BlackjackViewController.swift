@@ -28,6 +28,7 @@ class BlackjackViewController: UIViewController {
     var playerCards = [Card]() {
         didSet {
             collectionView.reloadData()
+            
         }
     }
     
@@ -49,6 +50,7 @@ class BlackjackViewController: UIViewController {
         // Use nib for collection view cell
         let nib = UINib(nibName: "CardCollectionViewCell", bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "CardCell")
+        
        
     }
     
@@ -101,13 +103,8 @@ class BlackjackViewController: UIViewController {
             
         }
         
-        
-        
     }
     
-    
-
-
 }
 
 
@@ -176,7 +173,9 @@ extension BlackjackViewController: UICollectionViewDataSource {
             }      
             
         }
-
+        
+        // Scrolls to last index
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         return cell
     }
     
