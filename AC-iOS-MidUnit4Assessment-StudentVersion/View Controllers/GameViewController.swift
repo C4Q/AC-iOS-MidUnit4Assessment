@@ -14,6 +14,15 @@ class GameViewController: UIViewController {
     @IBOutlet weak var gameCollectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    //maybe use a card game model?
+    var deck: Deck?
+    var cards: [Card] = [] {
+        didSet {
+            //reload collection view
+            gameCollectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //the instructions label should change based on what the user sets the score to
@@ -31,6 +40,7 @@ class GameViewController: UIViewController {
     @IBAction func drawACardButtonPressed(_ sender: UIBarButtonItem) {
         //to do
         //should add card to collection view, then reload
+        getCard()
         //also check if score is over 30? - maybe do in game model
         //maybe game model should return "victory, ongoing, defeat" or something, so we can present different things
         //alert should allow for new game
@@ -53,7 +63,17 @@ class GameViewController: UIViewController {
         instructionsLabel.text = "Try to reach \(targetNumber) without going over!"
     
         //should reset current collectionview data source variable and reload data
-        
+        //should load new Deck
+        loadNewDeck()
+    }
+    
+    func loadNewDeck() {
+        //should set something to deck variable in game model
+    }
+    
+    func getCard() {
+        //should get a card using current deck
+        //append to current card - using card game model
     }
     
 }
