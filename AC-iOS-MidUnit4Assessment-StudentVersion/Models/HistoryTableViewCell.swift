@@ -10,11 +10,8 @@ import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var handTotalLabel: UILabel!
-    
     @IBOutlet weak var targetLabel: UILabel!
     
     override func awakeFromNib() {
@@ -24,11 +21,8 @@ class HistoryTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-        
-
     
 }
 

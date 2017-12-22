@@ -23,9 +23,12 @@ class HistoryViewController: UIViewController {
         }
     }
     
+    var brain: BlackjackGameBrain?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        brain = BlackjackGameBrain(target: 0)
         
         tableView.dataSource = self; tableView.delegate = self
     }
@@ -33,6 +36,7 @@ class HistoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // Alert if no data yet
         if hands.isEmpty {
             alertController(title: "No Saved Data", message: "Play some Blackjack!")
         }
@@ -86,15 +90,18 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let cell = cell as? HistoryTableViewCell {
             
+            // Set text labels appropriately
             cell.handTotalLabel.text = "Hand Total: " + hands[indexPath.row].handTotal.description
             cell.targetLabel.text = "Target: " + hands[indexPath.row].target.description
             
-            
+            // Set collection view cell to nib
             let nib = UINib(nibName: "CardCollectionViewCell", bundle: nil)
             cell.collectionView.register(nib, forCellWithReuseIdentifier: "CardCell")
             
+            // Set tag for collectionview equal to tableview row
             cell.collectionView.tag = indexPath.row
             
+            // See custom table view cell for explanation
             cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
             
         }
@@ -114,7 +121,9 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-extension HistoryViewController: UICollectionViewDataSource {
+// MARK: - CollectionView
+
+extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -127,58 +136,25 @@ extension HistoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath)
         
+        // Try to get cell as custom nib
         if let cell = cell as? CardCollectionViewCell {
             
             let card = hands[collectionView.tag].cards[indexPath.item]
             
-            cell.cardLabel.text = card.value.description.lowercased().capitalized
-
             cell.cardImageView.image = #imageLiteral(resourceName: "card back black")
             
             let cardImgUrl = card.image
             
             ImageHelper.manager.getImage(from: cardImgUrl, completionHandler: { cell.cardImageView.image = $0 }, errorHandler: { print($0) } )
             
-//            if let brain = brain, let value = brain.cardValues[card.value] {
-//                cell.cardLabel.text = value.description
-//            }
+            
+            if let brain = brain, let value = brain.cardValues[card.value] {
+                cell.cardLabel.text = value.description
+            }
 
-            
-            
             cell.setNeedsLayout()
         }
-        
         return cell
     }
     
-
-    
-    
 }
-
-extension HistoryViewController: UICollectionViewDelegate {
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        // Define amount of cells I want per row
-//        let numCells: CGFloat = 3
-//        // Calculate the number of spaces I need to account for
-//        let numSpaces: CGFloat = numCells + 1
-//        // Return a CGSize to allow for a 4 by 1 view of cells
-//        return CGSize(width: ((collectionView.bounds.width - (spacing * numSpaces))/numCells), height: ((collectionView.bounds.height - (spacing * 2))))
-//    }
-//
-//    // Set spacings to defined spacing
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return spacing
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return spacing
-//    }
-//
-}
-

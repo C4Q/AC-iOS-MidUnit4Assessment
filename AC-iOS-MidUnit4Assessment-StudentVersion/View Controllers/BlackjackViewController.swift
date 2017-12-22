@@ -28,6 +28,15 @@ class BlackjackViewController: UIViewController {
     var playerCards = [Card]() {
         didSet {
             collectionView.reloadData()
+            
+            // Check if player tries to use more than a deck of cards
+            if playerCards.count == 52 {
+                guard let brain = brain else { return }
+                alertController(title: "The End", message: "You went through the whole deck!")
+                DataPersistenceHelper.manager.addHand(playedCards: playerCards, target: brain.target, handTotal: brain.cardTotal)
+                gameSetup()
+            }
+            
         }
     }
     
@@ -54,16 +63,9 @@ class BlackjackViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         gameSetup()
-        
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
- 
-    }
 
     // Stop button tapped
     @IBAction func stopButtonTapped(_ sender: UIButton) {
@@ -122,6 +124,7 @@ class BlackjackViewController: UIViewController {
 
 extension BlackjackViewController {
     
+    // Alert controller
     func alertController(title: String, message: String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -130,6 +133,7 @@ extension BlackjackViewController {
         
     }
     
+    // Setup for game
     func gameSetup() {
         
         // When the view is about to appear, reset game data and get a new deck of cards
@@ -146,10 +150,6 @@ extension BlackjackViewController {
         } else {
             targetAmount = 30
         }
-        
-        
-        
-        
         
     }
     

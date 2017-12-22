@@ -10,26 +10,33 @@ import Foundation
 
 class BlackjackGameBrain {
     
+    // Init class with target
     var target: Int
     
+    // Array to hold player cards
     private var cardArray = [Int]()
     
+    // Total value of player cards
     var cardTotal: Int {
         return cardArray.reduce(0, +)
     }
     
+    // See if total is over target
     var totalIsOverTarget: Bool {
         return cardTotal > target
     }
     
+    // Check if winner
     var winner: Bool {
         return cardTotal == target
     }
     
+    // Add card to array
     func addCard(cardValue: Int) {
         cardArray.append(cardValue)
     }
     
+    // Dict to convert strings to ints
     let cardValues: [String : Int] = ["1" : 1,
                                       "2" : 2,
                                       "3" : 3,

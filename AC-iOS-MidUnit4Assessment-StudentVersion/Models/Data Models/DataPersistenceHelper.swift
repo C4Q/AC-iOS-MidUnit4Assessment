@@ -10,6 +10,7 @@ import UIKit
 
 class DataPersistenceHelper {
     
+    // Singleton
     private init() {}
     static let manager = DataPersistenceHelper()
     
@@ -21,7 +22,7 @@ class DataPersistenceHelper {
         let cards: [Card]
     }
     
-    // Save favorites everytime it changes
+    // Save hands everytime it changes
     private var playedHands = [Hand]() {
         didSet {
             saveHands()
@@ -39,7 +40,7 @@ class DataPersistenceHelper {
         return DataPersistenceHelper.manager.documentsDirectory().appendingPathComponent(path)
     }
     
-    // Loads the favorites into this object
+    // Loads the hands into this object
     func loadHands() {
         var data = Data()
         do {
@@ -56,12 +57,12 @@ class DataPersistenceHelper {
         }
     }
     
-    // Returns this object's array of favorites
+    // Returns this object's array of hands
     func getHands() -> [Hand] {
         return playedHands
     }
     
-    // Saves current array of favorites into a plist into the doc dir
+    // Saves current array of hands into a plist into the doc dir
     private func saveHands() {
         var data = Data()
         
@@ -81,25 +82,14 @@ class DataPersistenceHelper {
         
     }
     
-    // Appends an object to favorite books array
+    // Appends an object to hands array
     // Also saves the image in the doc dir
     func addHand(playedCards: [Card], target: Int, handTotal: Int) {
-//        let imgPng = UIImagePNGRepresentation(image)!
-//        let imgPath = DataPersistenceHelper.manager.dataFilePath(withPathName: "")
-//
-//        do {
-//            try imgPng.write(to: imgPath, options: .atomic)
-//        } catch {
-//            print("Error saving image. \(error.localizedDescription)")
-//            return
-//        }
-        
         let hand = Hand(target: target, handTotal: handTotal, cards: playedCards)
-        
         playedHands.append(hand)
-        
     }
     
+    // Deletes saved hands
     func deleteHands() {
         playedHands.removeAll()
     }

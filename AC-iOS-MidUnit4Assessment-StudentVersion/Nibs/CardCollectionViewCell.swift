@@ -13,5 +13,4 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var cardLabel: UILabel!
     
-    
 }

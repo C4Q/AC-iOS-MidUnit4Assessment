@@ -25,6 +25,11 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         textField.delegate = self
+        
+        if let defaults = UserDefaultsHelper.manager.getValue() {
+            textField.text = defaults.targetAmount.description
+        }
+        
     }
     
 }
