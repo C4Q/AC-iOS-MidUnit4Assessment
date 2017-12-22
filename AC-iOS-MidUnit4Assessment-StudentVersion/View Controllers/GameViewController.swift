@@ -26,6 +26,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //the instructions label should change based on what the user sets the score to
+        CardGame.delegate = self
         newGame()
     }
     
@@ -74,6 +75,14 @@ class GameViewController: UIViewController {
     func getCard() {
         //should get a card using current deck
         //append to current card - using card game model
+    }
+    
+}
+
+extension GameViewController: CardGameDelegate {
+    
+    func saveGame(withCards cards: [Card], score: Int, andTargetScore targetScore: Int) {
+        <#code#>
     }
     
 }
