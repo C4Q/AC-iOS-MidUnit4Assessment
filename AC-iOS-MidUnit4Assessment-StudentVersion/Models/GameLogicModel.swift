@@ -9,7 +9,7 @@
 import Foundation
 
 class GameLogic {
-    let cardValues: [String:Int] = ["KING":13,
+    static let cardValues: [String:Int] = ["KING":13,
                                     "QUEEN":12,
                                     "JACK": 11,
                                     "10":10,
@@ -23,10 +23,10 @@ class GameLogic {
                                     "2":2,
                                     "ACE":1]
     
-    var pointsToWin = 30
-    var deckID = "" //Set by the deck_ID property of the CardsAPI
-    var gameOver: Bool = false
-    var sum = 0 {
+    static var pointsToWin = 30
+    static var deckID = "" //Set by the deck_ID property of the CardsAPI
+    static var gameOver: Bool = false
+    static var sum = 0 {
         didSet {
             if sum >= pointsToWin {
                 gameOver = true

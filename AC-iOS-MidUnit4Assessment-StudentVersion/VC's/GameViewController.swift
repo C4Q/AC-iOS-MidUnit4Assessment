@@ -9,35 +9,27 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
-    let cardValues: [String:Int] = ["KING":13,
-                                    "QUEEN":12,
-                                    "JACK": 11,
-                                    "10":10,
-                                    "9":9,
-                                    "8":8,
-                                    "7":7,
-                                    "6":6,
-                                    "5":5,
-                                    "4":4,
-                                    "3":3,
-                                    "2":2,
-                                    "ACE":1]
-    
-    var deckID = "" //Set by the deck_ID property of the CardsAPI
     
     @IBOutlet weak var currentHandValueLabel: UILabel!
     
     @IBAction func stopButton(_ sender: UIButton) {
-        
+        //Save Hand
+        //Show alert that displays "You are \(PointsToWin - currentsum) away from \(pointstowin)"
+        //Once alert is clicked run resetfunction
+        resetGame()
     }
     @IBAction func drawACard(_ sender: UIButton) {
         //Call CardAPI to draw one card
+        
+        //Add that cards value to the sum
         //Add that card to the collection view and refresh it
-        //Check if sum of card values is over 30
-        //IF it is, end the game, save the hand, and show alert
-        //Once alert is clicked run resetfunction
-        //IF it isn't, do nothing.
+        //Check if sum of card values is over PointsToWin
+        if GameLogic.gameOver {
+            //Show alert
+            //Save hand
+            resetGame()
+        }
+        
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -57,8 +49,12 @@ class GameViewController: UIViewController {
     }
     func resetGame() {
         //Empty collection view array
+        
+        //reset sum tracker and gameState
+        GameLogic.sum = 0
+        GameLogic.gameOver = false
         //reset labels
-        //reset sum tracker
+        currentHandValueLabel.text = "Current Hand Value: \(GameLogic.sum)"
     }
 
     

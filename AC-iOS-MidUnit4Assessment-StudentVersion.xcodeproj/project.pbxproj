@@ -11,6 +11,7 @@
 		545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2AB71FEC2752007EBECB /* Main.storyboard */; };
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
+		DB7C8CD61FED8E23002F2225 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7C8CD51FED8E23002F2225 /* UserDefaultHelper.swift */; };
 		DBF738211FED704B00D59437 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF738201FED704B00D59437 /* GameViewController.swift */; };
 		DBF738231FED706100D59437 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF738221FED706100D59437 /* HistoryViewController.swift */; };
 		DBF738251FED707600D59437 /* HandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF738241FED707600D59437 /* HandCollectionViewCell.swift */; };
@@ -31,6 +32,7 @@
 		545F2ABA1FEC2752007EBECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB7C8CD51FED8E23002F2225 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		DBF738201FED704B00D59437 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DBF738221FED706100D59437 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		DBF738241FED707600D59437 /* HandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				DBF7382F1FED741400D59437 /* ArchiverHelper.swift */,
 				DBF738311FED74EC00D59437 /* NetworkHelper.swift */,
 				DBF738351FED758F00D59437 /* ImageAPIClient.swift */,
+				DB7C8CD51FED8E23002F2225 /* UserDefaultHelper.swift */,
 				DBF738331FED757400D59437 /* PicturesNSCache.swift */,
 			);
 			path = Services;
@@ -101,8 +104,8 @@
 		DBF738281FED70D700D59437 /* VC's */ = {
 			isa = PBXGroup;
 			children = (
-				DBF738221FED706100D59437 /* HistoryViewController.swift */,
 				DBF738201FED704B00D59437 /* GameViewController.swift */,
+				DBF738221FED706100D59437 /* HistoryViewController.swift */,
 				DBF7383A1FED7A2400D59437 /* XibTestViewController.swift */,
 			);
 			path = "VC's";
@@ -209,6 +212,7 @@
 				DBF738361FED758F00D59437 /* ImageAPIClient.swift in Sources */,
 				DBF7383B1FED7A2400D59437 /* XibTestViewController.swift in Sources */,
 				DBF738301FED741400D59437 /* ArchiverHelper.swift in Sources */,
+				DB7C8CD61FED8E23002F2225 /* UserDefaultHelper.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
