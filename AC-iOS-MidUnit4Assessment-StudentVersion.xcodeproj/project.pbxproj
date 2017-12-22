@@ -8,20 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB31FEC2752007EBECB /* AppDelegate.swift */; };
-		545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB51FEC2752007EBECB /* ViewController.swift */; };
 		545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2AB71FEC2752007EBECB /* Main.storyboard */; };
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
+		810A38CA1FED58A4003A7454 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810A38C91FED58A4003A7454 /* CardCollectionViewCell.xib */; };
+		810A38CC1FED58D7003A7454 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38CB1FED58D7003A7454 /* CardCollectionViewCell.swift */; };
+		810A38CF1FED5BE9003A7454 /* BlackjackGameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38CE1FED5BE9003A7454 /* BlackjackGameBrain.swift */; };
+		810A38D11FED5DD8003A7454 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38D01FED5DD8003A7454 /* NetworkHelper.swift */; };
+		810A38D31FED5DE1003A7454 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38D21FED5DE1003A7454 /* ImageHelper.swift */; };
+		810A38D51FED5DF4003A7454 /* DeckOfCardsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38D41FED5DF4003A7454 /* DeckOfCardsAPIClient.swift */; };
+		810A38D71FED5EC4003A7454 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38D61FED5EC4003A7454 /* Card.swift */; };
+		810A38D91FED624B003A7454 /* BlackjackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38D81FED624B003A7454 /* BlackjackViewController.swift */; };
+		810A38DB1FED6258003A7454 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38DA1FED6258003A7454 /* HistoryViewController.swift */; };
+		810A38DD1FED6713003A7454 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38DC1FED6713003A7454 /* HistoryTableViewCell.swift */; };
+		810A38DF1FED74B8003A7454 /* DataPersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38DE1FED74B8003A7454 /* DataPersistenceHelper.swift */; };
+		810A38E11FED7B35003A7454 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38E01FED7B35003A7454 /* UserDefaultsHelper.swift */; };
+		810A38E31FED7C59003A7454 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810A38E21FED7C59003A7454 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		545F2AB01FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC-iOS-MidUnit4Assessment-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545F2AB31FEC2752007EBECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		545F2AB51FEC2752007EBECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		545F2AB81FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		545F2ABA1FEC2752007EBECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		810A38C91FED58A4003A7454 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		810A38CB1FED58D7003A7454 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		810A38CE1FED5BE9003A7454 /* BlackjackGameBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackGameBrain.swift; sourceTree = "<group>"; };
+		810A38D01FED5DD8003A7454 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		810A38D21FED5DE1003A7454 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		810A38D41FED5DF4003A7454 /* DeckOfCardsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsAPIClient.swift; sourceTree = "<group>"; };
+		810A38D61FED5EC4003A7454 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		810A38D81FED624B003A7454 /* BlackjackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackViewController.swift; sourceTree = "<group>"; };
+		810A38DA1FED6258003A7454 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		810A38DC1FED6713003A7454 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		810A38DE1FED74B8003A7454 /* DataPersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceHelper.swift; sourceTree = "<group>"; };
+		810A38E01FED7B35003A7454 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		810A38E21FED7C59003A7454 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +79,33 @@
 			isa = PBXGroup;
 			children = (
 				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
-				545F2AB51FEC2752007EBECB /* ViewController.swift */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
+				810A38D81FED624B003A7454 /* BlackjackViewController.swift */,
+				810A38E01FED7B35003A7454 /* UserDefaultsHelper.swift */,
+				810A38E21FED7C59003A7454 /* SettingsViewController.swift */,
+				810A38DA1FED6258003A7454 /* HistoryViewController.swift */,
+				810A38CE1FED5BE9003A7454 /* BlackjackGameBrain.swift */,
+				810A38D61FED5EC4003A7454 /* Card.swift */,
+				810A38D01FED5DD8003A7454 /* NetworkHelper.swift */,
+				810A38D21FED5DE1003A7454 /* ImageHelper.swift */,
+				810A38D41FED5DF4003A7454 /* DeckOfCardsAPIClient.swift */,
+				810A38DC1FED6713003A7454 /* HistoryTableViewCell.swift */,
+				810A38DE1FED74B8003A7454 /* DataPersistenceHelper.swift */,
 				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
 				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
+				810A38CD1FED5BA4003A7454 /* Nibs */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
+			sourceTree = "<group>";
+		};
+		810A38CD1FED5BA4003A7454 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				810A38C91FED58A4003A7454 /* CardCollectionViewCell.xib */,
+				810A38CB1FED58D7003A7454 /* CardCollectionViewCell.swift */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				810A38CA1FED58A4003A7454 /* CardCollectionViewCell.xib in Resources */,
 				545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */,
 				545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */,
 				545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */,
@@ -136,8 +181,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */,
+				810A38D11FED5DD8003A7454 /* NetworkHelper.swift in Sources */,
+				810A38D51FED5DF4003A7454 /* DeckOfCardsAPIClient.swift in Sources */,
+				810A38D71FED5EC4003A7454 /* Card.swift in Sources */,
+				810A38DF1FED74B8003A7454 /* DataPersistenceHelper.swift in Sources */,
+				810A38D31FED5DE1003A7454 /* ImageHelper.swift in Sources */,
+				810A38DD1FED6713003A7454 /* HistoryTableViewCell.swift in Sources */,
+				810A38E11FED7B35003A7454 /* UserDefaultsHelper.swift in Sources */,
+				810A38CC1FED58D7003A7454 /* CardCollectionViewCell.swift in Sources */,
+				810A38D91FED624B003A7454 /* BlackjackViewController.swift in Sources */,
+				810A38DB1FED6258003A7454 /* HistoryViewController.swift in Sources */,
+				810A38E31FED7C59003A7454 /* SettingsViewController.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
+				810A38CF1FED5BE9003A7454 /* BlackjackGameBrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
