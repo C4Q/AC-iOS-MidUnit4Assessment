@@ -65,20 +65,45 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
 		tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
 	}
 	func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		guard let tableViewCell = cell as? TableViewCell else { return }
+		guard cell is TableViewCell else { return }
 	}
 }
 
 //Collection View
 extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return history.count
+	}
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return history[collectionView.tag].cards.count
 	}
+
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-		cell = history[collectionView.tag][indexPath.item]
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
+		let game = history[collectionView.tag]
+		let gameCard = game.cards[indexPath.row]
+		configureCard(card: gameCard, forCell: cell)
 		return cell
 	}
+	func configureCard(card: Card, forCell cell: CardCell) {
+		DispatchQueue.global().async {
+			do {
+				let imageData = try Data.init(contentsOf: URL(string: card.image)!)
+				DispatchQueue.main.async {
+					cell.cardImage.image = UIImage.init(data: imageData)
+				}
+			} catch {print("image processing error: \(error.localizedDescription)")}
+		}
+		//		//Image processing for cell
+		//		let imageURL = card.image //image url source
+		//		let setImage: (UIImage)-> Void = {(onlineImage: UIImage) in
+		//			cell.cardImage?.image = onlineImage
+		//			cell.setNeedsLayout()
+		//		}
+		//		ImageHelper.manager.getImage(from: imageURL, completionHandler: setImage, errorHandler: {print($0)})
+	}
+
+
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
 	}
