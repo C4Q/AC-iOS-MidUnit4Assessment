@@ -33,7 +33,9 @@ class GameViewController: UIViewController {
             //                //MARK: - BUST alert
             //                gameOverAlert(titleText: "BUST", message: "You went over 30")
             //            }
+            cardValueLabel.text = "Current Hand Value: \(cards[0].value   )"
             self.gameCollectionView.reloadData()
+            
         }
     }
     
