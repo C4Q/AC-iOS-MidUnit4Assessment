@@ -10,10 +10,6 @@ import Foundation
 
 //model for card game
 
-protocol CardGameDelegate: class {
-    func saveGame(withCards cards: [Card], score: Int, andTargetScore targetScore: Int)
-}
-
 class CardGame {
     enum GameStatus {
         case ongoing
@@ -24,8 +20,6 @@ class CardGame {
     private static var cards: [Card] = []
 
     private static var score: Int = 0
-    
-    weak static var delegate: CardGameDelegate?
     
     static var cardValueDict: [String : Int] = [
         "2": 2,
@@ -66,7 +60,9 @@ class CardGame {
     static func stopGame() -> (score: Int, targetScore: Int) {
         let currentTargetScore = Settings.manager.getTargetNumber() ?? 30
         
-        delegate?.saveGame(withCards: cards, score: score, andTargetScore: currentTargetScore)
+        PersistentData.manager.addCardGame(cards)
+        PersistentData.manager.addScore(score)
+        PersistentData.manager.addTargetScore(currentTargetScore)
         
         return (score, currentTargetScore)
     }
@@ -77,8 +73,17 @@ class CardGame {
         if score < currentTargetScore {
             return .ongoing
         } else {
-            //use delegate to save scores and cards!!
-            delegate?.saveGame(withCards: cards, score: score, andTargetScore: currentTargetScore)
+            //save the cards
+            PersistentData.manager.addCardGame(cards)
+            
+            //save the score
+            PersistentData.manager.addScore(score)
+                
+            //save the target score
+            PersistentData.manager.addTargetScore(currentTargetScore)
+            
+            //this way they both always have the same index number
+            
             if score == currentTargetScore {
                 return .victory
             } else {

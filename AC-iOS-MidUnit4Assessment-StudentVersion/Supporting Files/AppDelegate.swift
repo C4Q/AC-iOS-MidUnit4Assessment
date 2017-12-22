@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         PersistentData.manager.loadCardGames()
         PersistentData.manager.loadScores()
+        PersistentData.manager.loadTargetScores()
         
         return true
     }

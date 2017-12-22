@@ -16,12 +16,10 @@ class GameViewController: UIViewController {
     
     let cellSpacing = UIScreen.main.bounds.width * 0.05
     
-    //maybe use a card game model?
     var deck: Deck?
     
     var cards: [Card] = [] {
         didSet {
-            //reload collection view
             gameCollectionView.reloadData()
             if cards.count > 0 {
                 gameCollectionView.scrollToItem(at: IndexPath.init(row: cards.count - 1, section: 0), at: UICollectionViewScrollPosition.right, animated: true)
@@ -32,8 +30,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //the instructions label should change based on what the user sets the score to
-        CardGame.delegate = self
         newGame()
         
         let nib = UINib(nibName: "CardCollectionViewCell", bundle: nil)
@@ -48,29 +44,20 @@ class GameViewController: UIViewController {
         let targetNumber = Settings.manager.getTargetNumber() ?? 30
         
         instructionsLabel.text = "Try to reach \(targetNumber) without going over!"
-        //user should be able to change target number any time
     }
     
     @IBAction func drawACardButtonPressed(_ sender: UIBarButtonItem) {
-        //to do
-        //should add card to collection view, then reload
         getCard()
-        //also check if score is over 30? - maybe do in game model
-        //maybe game model should return "victory, ongoing, defeat" or something, so we can present different things
-        //alert should allow for new game
-        //should also add card to persistent data
-            
     }
     
     @IBAction func stopButtonPressed(_ sender: UIBarButtonItem) {
         //should stop game, and present (30 - current score) "you were __ away from 30!"
         //alert should allow for new game
+        stopGame()
         
     }
     
     func newGame() {
-        //to do - should reset collection view
-        //should reset labels
         let targetNumber = Settings.manager.getTargetNumber() ?? 30
         
         instructionsLabel.text = "Try to reach \(targetNumber) without going over!"
@@ -79,9 +66,16 @@ class GameViewController: UIViewController {
         loadNewDeck()
         scoreLabel.text = "Current Score: \(0)"
         cards = []
+    }
+    
+    func stopGame() {
+        let gameInfo = CardGame.stopGame()
         
-        //should reset current collectionview data source variable and reload data
-        //should load new Deck
+        let alertController = Alert.createStoppedGameAlert(withScore: gameInfo.score, andTargetScore: gameInfo.targetScore, completionHandler: {
+            self.newGame()
+        })
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func loadNewDeck() {
@@ -89,14 +83,12 @@ class GameViewController: UIViewController {
             self.deck = deck
             
         }, errorHandler: { (appError) in
-            self.presentErrorAlert(withError: appError)
+            let alertController = Alert.createErrorAlert(withError: appError)
+            self.present(alertController, animated: true, completion: nil)
         })
     }
     
-    func getCard() {
-        //should get a card using current deck
-        //append to current card - using card game model
-        
+    func getCard() {        
         guard let deck = deck else {
             print("No Deck Yet")
             return
@@ -109,7 +101,9 @@ class GameViewController: UIViewController {
                 self.cards = CardGame.getCards()
         },
             errorHandler: { (appError) in
-            self.presentErrorAlert(withError: appError)
+            let alertController = Alert.createErrorAlert(withError: appError)
+                
+            self.present(alertController, animated: true, completion: nil)
         })
     }
     
@@ -121,82 +115,19 @@ class GameViewController: UIViewController {
         case .ongoing:
             break
         case .defeat:
-            presentGameOverAlert(withGameStatus: .defeat)
+            let alertController = Alert.createGameOverAlert(withGameStatus: .defeat, completionHandler: {
+                self.newGame()
+            })
+            
+            self.present(alertController!, animated: true, completion: nil)
         case .victory:
-            presentGameOverAlert(withGameStatus: .victory)
+            let alertController = Alert.createGameOverAlert(withGameStatus: .victory, completionHandler: {
+                self.newGame()
+            })
+            
+            self.present(alertController!, animated: true, completion: nil)
         }
     }
-    
-    //I should create an alert model to clean up the view controllers
-    func presentErrorAlert(withError error: Error) {
-        let message: String
-        
-        switch error {
-        case AppError.badURL(let url):
-            message = "Bad URL:\n\(url)"
-        case AppError.badImageURL(let url):
-            message = "Bad Image URL:\n\(url)"
-        case AppError.badData:
-            message = "Bad Data"
-        case AppError.badImageData:
-            message = "Bad Image Data"
-        case AppError.badResponseCode(let code):
-            message = "Bad Response Code:\n\(code)"
-        case AppError.cannotParseJSON(let rawError):
-            message = "Cannot Parse JSON:\n\(rawError)"
-        case AppError.noInternet:
-            message = "No Internet Connection."
-        case AppError.other(let rawError):
-            message = "\(rawError)"
-        default:
-            message = "\(error)"
-        }
-        
-        let alertController = UIAlertController(title: "ERROR", message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(alertAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func presentGameOverAlert(withGameStatus gameStatus: CardGame.GameStatus) {
-        let title: String
-        let message: String
-        
-        switch gameStatus {
-        case .ongoing:
-            return
-        case .defeat:
-            title = "LOOOOLLLLLLLL"
-            message = "😂😂😂\nYOU LOST!!!!!\nGET CGRECT YA LOSER\n😂😂😂"
-        case .victory:
-            title = "Wooooooowww... 😒"
-            message = "😒 So I guess you won >_> 😒"
-        }
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "New Game", style: .default) { _ in
-            self.newGame()
-        }
-        
-        alertController.addAction(alertAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-}
-
-extension GameViewController: CardGameDelegate {
-    
-    func saveGame(withCards cards: [Card], score: Int, andTargetScore targetScore: Int) {
-        //to do - should save in persistentdata model
-        
-        //save the cards
-        
-        //save the score
-        
-        //this way they both always have the same index number
-    }
-    
 }
 
 extension GameViewController: UICollectionViewDelegateFlowLayout {

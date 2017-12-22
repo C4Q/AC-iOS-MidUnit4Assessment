@@ -14,15 +14,22 @@ class PersistentData {
     
     private let cardsPListName = "CardGames.plist"
     private let scoresPListName = "Scores.plist"
+    private let targetScoresPListName = "TargetScores.plist"
     
     private var cardGames: [[Card]] = [] {
         didSet {
             saveCardGames()
         }
     }
-    private var scores: [(score: Int, targetScore: Int)] = [] {
+    private var scores: [Int] = [] {
         didSet {
             saveScores()
+        }
+    }
+    
+    private var targetScores: [Int] = [] {
+        didSet {
+            saveTargetScores()
         }
     }
     
@@ -57,6 +64,19 @@ class PersistentData {
         
         do {
             let data = try encoder.encode(scores)
+            
+            try data.write(to: filePath)
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func saveTargetScores() {
+        let filePath = dataFilePath(of: targetScoresPListName)
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(targetScores)
             
             try data.write(to: filePath)
         } catch let error {
@@ -100,9 +120,23 @@ class PersistentData {
         
         do {
             let data = try Data.init(contentsOf: filePath)
-            let scores = try decoder.decode([(Int, Int)].self, from: data)
+            let scores = try decoder.decode([Int].self, from: data)
             
             self.scores = scores
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func loadTargetScores() {
+        let filePath = dataFilePath(of: targetScoresPListName)
+        let decoder = PropertyListDecoder()
+        
+        do {
+            let data = try Data.init(contentsOf: filePath)
+            let targetScores = try decoder.decode([Int].self, from: data)
+            
+            self.targetScores = targetScores
         } catch let error {
             print(error)
         }
@@ -113,8 +147,12 @@ class PersistentData {
         cardGames.append(newGame)
     }
     
-    func addScore(_ newScore: (score: Int, targetScore: Int)) {
+    func addScore(_ newScore: Int) {
         scores.append(newScore)
+    }
+    
+    func addTargetScore(_ newScore: Int) {
+        targetScores.append(newScore)
     }
     
     //get
@@ -123,7 +161,13 @@ class PersistentData {
     }
     
     func getSavedScores() -> [(score: Int, targetScore: Int)] {
-        return scores
+        var savedScores: [(score: Int, targetScore: Int)] = []
+        
+        for index in 0..<scores.count {
+            savedScores.append((score: scores[index], targetScore: targetScores[index]))
+        }
+        
+        return savedScores
     }
     
     func getImage(withURL url: URL) -> UIImage? {
@@ -149,6 +193,10 @@ class PersistentData {
     
     func removeScores() {
         scores = []
+    }
+    
+    func removeTargetScores() {
+        targetScores = []
     }
     
 }

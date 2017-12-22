@@ -14,6 +14,7 @@
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
 		8109B8261FED875E00D85A5B /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109B8251FED875E00D85A5B /* PersistentData.swift */; };
 		8109B8281FED95C400D85A5B /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109B8271FED95C400D85A5B /* ImageAPIClient.swift */; };
+		8109B82A1FEDB43600D85A5B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109B8291FEDB43600D85A5B /* Alert.swift */; };
 		812D0FE21FED7BA600352EAA /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D0FE11FED7BA600352EAA /* NetworkHelper.swift */; };
 		812D0FE51FED7D0C00352EAA /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D0FE41FED7D0C00352EAA /* Deck.swift */; };
 		812D0FE81FED7D4800352EAA /* DeckAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D0FE71FED7D4800352EAA /* DeckAPIClient.swift */; };
@@ -38,6 +39,7 @@
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8109B8251FED875E00D85A5B /* PersistentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
 		8109B8271FED95C400D85A5B /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
+		8109B8291FEDB43600D85A5B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		812D0FE11FED7BA600352EAA /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		812D0FE41FED7D0C00352EAA /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		812D0FE71FED7D4800352EAA /* DeckAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckAPIClient.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				81C609281FED65C400AD802A /* Settings.swift */,
 				812D0FE11FED7BA600352EAA /* NetworkHelper.swift */,
+				8109B8291FEDB43600D85A5B /* Alert.swift */,
 				812D0FEB1FED81A400352EAA /* CardGame.swift */,
 				8109B8251FED875E00D85A5B /* PersistentData.swift */,
 				8109B8271FED95C400D85A5B /* ImageAPIClient.swift */,
@@ -241,6 +244,7 @@
 				81C609271FED658500AD802A /* SettingsViewController.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
 				8109B8261FED875E00D85A5B /* PersistentData.swift in Sources */,
+				8109B82A1FEDB43600D85A5B /* Alert.swift in Sources */,
 				81C6092F1FED76DC00AD802A /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
