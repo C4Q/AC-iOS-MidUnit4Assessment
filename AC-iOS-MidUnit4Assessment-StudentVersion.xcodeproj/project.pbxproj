@@ -8,20 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB31FEC2752007EBECB /* AppDelegate.swift */; };
-		545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB51FEC2752007EBECB /* ViewController.swift */; };
+		545F2AB61FEC2752007EBECB /* BlackJackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB51FEC2752007EBECB /* BlackJackViewController.swift */; };
 		545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2AB71FEC2752007EBECB /* Main.storyboard */; };
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
+		817A38F91FED5E6D0001BB61 /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A38F81FED5E6D0001BB61 /* RecentsViewController.swift */; };
+		817A38FB1FED5EDC0001BB61 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 817A38FA1FED5EDC0001BB61 /* CollectionViewCell.xib */; };
+		817A38FF1FED6AFC0001BB61 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A38FE1FED6AFC0001BB61 /* NetworkHelper.swift */; };
+		817A39011FED6B140001BB61 /* CardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A39001FED6B140001BB61 /* CardAPIClient.swift */; };
+		817A39031FED6B230001BB61 /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A39021FED6B230001BB61 /* ImageAPIClient.swift */; };
+		817A39051FED6B810001BB61 /* DeckIdentityAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A39041FED6B810001BB61 /* DeckIdentityAPIClient.swift */; };
+		817A39071FED6CC00001BB61 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A39061FED6CC00001BB61 /* AppError.swift */; };
+		817A390B1FED778B0001BB61 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A390A1FED778B0001BB61 /* CardCollectionViewCell.swift */; };
+		817A390D1FED7A970001BB61 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A390C1FED7A970001BB61 /* CardsCollectionViewCell.swift */; };
+		81C6ACA11FED896D009FD496 /* RecentGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6ACA01FED896D009FD496 /* RecentGamesTableViewCell.swift */; };
+		81C6ACA31FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6ACA21FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		545F2AB01FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC-iOS-MidUnit4Assessment-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545F2AB31FEC2752007EBECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		545F2AB51FEC2752007EBECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		545F2AB51FEC2752007EBECB /* BlackJackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackViewController.swift; sourceTree = "<group>"; };
 		545F2AB81FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		545F2ABA1FEC2752007EBECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		817A38F81FED5E6D0001BB61 /* RecentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
+		817A38FA1FED5EDC0001BB61 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		817A38FE1FED6AFC0001BB61 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		817A39001FED6B140001BB61 /* CardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPIClient.swift; sourceTree = "<group>"; };
+		817A39021FED6B230001BB61 /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
+		817A39041FED6B810001BB61 /* DeckIdentityAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckIdentityAPIClient.swift; sourceTree = "<group>"; };
+		817A39061FED6CC00001BB61 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		817A390A1FED778B0001BB61 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		817A390C1FED7A970001BB61 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
+		81C6ACA01FED896D009FD496 /* RecentGamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentGamesTableViewCell.swift; sourceTree = "<group>"; };
+		81C6ACA21FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsCardCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +76,57 @@
 		545F2AB21FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
-				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
-				545F2AB51FEC2752007EBECB /* ViewController.swift */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
-				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
-				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
+				817A38F31FED5E0D0001BB61 /* View Controllers */,
+				817A38F51FED5E320001BB61 /* Network Models */,
+				817A38F41FED5E1E0001BB61 /* Views */,
+				817A38F21FED5D520001BB61 /* Supporting Files */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
+			sourceTree = "<group>";
+		};
+		817A38F21FED5D520001BB61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
+				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
+				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		817A38F31FED5E0D0001BB61 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				545F2AB51FEC2752007EBECB /* BlackJackViewController.swift */,
+				817A38F81FED5E6D0001BB61 /* RecentsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		817A38F41FED5E1E0001BB61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				817A38FA1FED5EDC0001BB61 /* CollectionViewCell.xib */,
+				817A390A1FED778B0001BB61 /* CardCollectionViewCell.swift */,
+				817A390C1FED7A970001BB61 /* CardsCollectionViewCell.swift */,
+				81C6ACA01FED896D009FD496 /* RecentGamesTableViewCell.swift */,
+				81C6ACA21FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		817A38F51FED5E320001BB61 /* Network Models */ = {
+			isa = PBXGroup;
+			children = (
+				817A38FE1FED6AFC0001BB61 /* NetworkHelper.swift */,
+				817A39041FED6B810001BB61 /* DeckIdentityAPIClient.swift */,
+				817A39001FED6B140001BB61 /* CardAPIClient.swift */,
+				817A39021FED6B230001BB61 /* ImageAPIClient.swift */,
+				817A39061FED6CC00001BB61 /* AppError.swift */,
+			);
+			path = "Network Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +190,7 @@
 			files = (
 				545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */,
 				545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */,
+				817A38FB1FED5EDC0001BB61 /* CollectionViewCell.xib in Resources */,
 				545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +202,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */,
+				817A390D1FED7A970001BB61 /* CardsCollectionViewCell.swift in Sources */,
+				817A38F91FED5E6D0001BB61 /* RecentsViewController.swift in Sources */,
+				545F2AB61FEC2752007EBECB /* BlackJackViewController.swift in Sources */,
+				817A39071FED6CC00001BB61 /* AppError.swift in Sources */,
+				817A38FF1FED6AFC0001BB61 /* NetworkHelper.swift in Sources */,
+				81C6ACA11FED896D009FD496 /* RecentGamesTableViewCell.swift in Sources */,
+				817A39051FED6B810001BB61 /* DeckIdentityAPIClient.swift in Sources */,
+				81C6ACA31FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift in Sources */,
+				817A39031FED6B230001BB61 /* ImageAPIClient.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
+				817A390B1FED778B0001BB61 /* CardCollectionViewCell.swift in Sources */,
+				817A39011FED6B140001BB61 /* CardAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
