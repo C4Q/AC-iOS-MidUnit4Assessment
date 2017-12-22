@@ -21,6 +21,7 @@
 		81F6275F1FED6F9A00A86E37 /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6275E1FED6F9A00A86E37 /* ImageAPIClient.swift */; };
 		81F627611FED726100A86E37 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F627601FED726100A86E37 /* Card.swift */; };
 		81F627631FED794300A86E37 /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F627621FED794300A86E37 /* GameBrain.swift */; };
+		81F627681FEDAFE500A86E37 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F627671FEDAFE500A86E37 /* PersistenceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		81F6275E1FED6F9A00A86E37 /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
 		81F627601FED726100A86E37 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		81F627621FED794300A86E37 /* GameBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBrain.swift; sourceTree = "<group>"; };
+		81F627671FEDAFE500A86E37 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,18 +75,11 @@
 			isa = PBXGroup;
 			children = (
 				81F627511FED600900A86E37 /* supporting */,
-				545F2AB51FEC2752007EBECB /* GameViewController.swift */,
-				81F627621FED794300A86E37 /* GameBrain.swift */,
-				545F2AB71FEC2752007EBECB /* Main.storyboard */,
-				81F627561FED6B0000A86E37 /* HistoryViewController.swift */,
-				81F627581FED6BED00A86E37 /* HistoryTableViewCell.swift */,
-				81F6275A1FED6C9A00A86E37 /* NetworkHelper.swift */,
-				81F6275C1FED6E5300A86E37 /* Deck.swift */,
-				81F627601FED726100A86E37 /* Card.swift */,
-				81F6275E1FED6F9A00A86E37 /* ImageAPIClient.swift */,
-				81F627521FED60E400A86E37 /* cardCell.xib */,
-				81F627541FED629500A86E37 /* cardCell.swift */,
+				81F627651FEDAF0400A86E37 /* view controllers */,
+				81F627641FEDAEEF00A86E37 /* models */,
+				81F627661FEDAF1500A86E37 /* views */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
+				545F2AB71FEC2752007EBECB /* Main.storyboard */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
 			sourceTree = "<group>";
@@ -97,6 +92,38 @@
 				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
 			);
 			path = supporting;
+			sourceTree = "<group>";
+		};
+		81F627641FEDAEEF00A86E37 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				81F627671FEDAFE500A86E37 /* PersistenceHelper.swift */,
+				81F627621FED794300A86E37 /* GameBrain.swift */,
+				81F6275A1FED6C9A00A86E37 /* NetworkHelper.swift */,
+				81F6275C1FED6E5300A86E37 /* Deck.swift */,
+				81F627601FED726100A86E37 /* Card.swift */,
+				81F6275E1FED6F9A00A86E37 /* ImageAPIClient.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		81F627651FEDAF0400A86E37 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				545F2AB51FEC2752007EBECB /* GameViewController.swift */,
+				81F627561FED6B0000A86E37 /* HistoryViewController.swift */,
+			);
+			path = "view controllers";
+			sourceTree = "<group>";
+		};
+		81F627661FEDAF1500A86E37 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				81F627581FED6BED00A86E37 /* HistoryTableViewCell.swift */,
+				81F627521FED60E400A86E37 /* cardCell.xib */,
+				81F627541FED629500A86E37 /* cardCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +206,7 @@
 				81F6275F1FED6F9A00A86E37 /* ImageAPIClient.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
 				81F627631FED794300A86E37 /* GameBrain.swift in Sources */,
+				81F627681FEDAFE500A86E37 /* PersistenceHelper.swift in Sources */,
 				81F627571FED6B0000A86E37 /* HistoryViewController.swift in Sources */,
 				81F6275B1FED6C9A00A86E37 /* NetworkHelper.swift in Sources */,
 				81F627591FED6BED00A86E37 /* HistoryTableViewCell.swift in Sources */,

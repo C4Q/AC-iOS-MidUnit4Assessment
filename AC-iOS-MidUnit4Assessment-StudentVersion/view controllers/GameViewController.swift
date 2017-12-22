@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         GameBrain.manager.setUpDeck()
         self.deck = GameBrain.manager.deck
         self.hand = GameBrain.manager.getCurrentHand()
-        currentHandValueLabel.text = "Current Hand Total: 0"
+        currentHandValueLabel.text = "Current Hand Total: \(GameBrain.manager.currentTotal)"
         
     }
     
@@ -47,6 +47,7 @@ class GameViewController: UIViewController {
         let okAction = UIAlertAction(title: "New Game", style: .default, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
+       
     }
     private func showDefeatAlert() {
         let alertController = UIAlertController(title: "Defeat!", message: "You went over 30!", preferredStyle: .alert)
@@ -68,16 +69,26 @@ class GameViewController: UIViewController {
         switch GameBrain.manager.victoryCheck(currentTotal: GameBrain.manager.currentTotal) {
         case .lose :
             showDefeatAlert()
+            resetGame()
         case .win :
             showVictoryAlert()
+            resetGame()
         case.playing :
             print("")
 
         }
-    
-        
+
     }
     
+    func resetGame() {
+        currentHandValueLabel.text = "Current Hand Total: \(GameBrain.manager.currentTotal)"
+        GameBrain.manager.clearCurrentGame()
+        Persistence.manager.addHand(cards: self.hand, total:GameBrain.manager.currentTotal)
+        self.hand = GameBrain.manager.hand
+        
+        handCollectionView.reloadData()
+        
+    }
     
 }
 

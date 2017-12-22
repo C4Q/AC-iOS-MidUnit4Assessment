@@ -62,4 +62,11 @@ class GameBrain {
         
     }
     
+    func clearCurrentGame() {
+        currentTotal = 0
+        hand = []
+        setUpDeck()
+        
+    }
+    
 }
