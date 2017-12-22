@@ -9,9 +9,9 @@
 import Foundation
 
 class GameLogic {
-    static let cardValues: [String:Int] = ["KING":13,
-                                    "QUEEN":12,
-                                    "JACK": 11,
+    static let cardValues: [String:Int] = ["KING":10,
+                                    "QUEEN":10,
+                                    "JACK": 10,
                                     "10":10,
                                     "9":9,
                                     "8":8,
@@ -21,7 +21,7 @@ class GameLogic {
                                     "4":4,
                                     "3":3,
                                     "2":2,
-                                    "ACE":1]
+                                    "ACE":11]
     
     static var pointsToWin = 30
     static var deckID = "" //Set by the deck_ID property of the CardsAPI

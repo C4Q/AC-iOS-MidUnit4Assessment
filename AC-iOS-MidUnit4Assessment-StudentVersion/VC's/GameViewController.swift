@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         SavedHandsArchiverClient.manager.add(hand: self.currentHand)
         
         //TODO Show alert that displays "You are \(PointsToWin - currentsum) away from \(pointstowin)"
-        let alertVC = UIAlertController(title: "You Win!", message: "You are \(GameLogic.pointsToWin - GameLogic.sum) points from \(GameLogic.pointsToWin)", preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "You Stopped", message: "You are \(GameLogic.pointsToWin - GameLogic.sum) points from \(GameLogic.pointsToWin)!", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "New Game", style: .cancel, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
         
@@ -68,7 +68,7 @@ class GameViewController: UIViewController {
                     self.resetGame()
                 } else {
                     //TODO Show alert
-                    let alertVC = UIAlertController(title: "GameOver", message: "You Lose!", preferredStyle: .alert)
+                    let alertVC = UIAlertController(title: "Game Over", message: "You Lose!", preferredStyle: .alert)
                     alertVC.addAction(UIAlertAction(title: "New Game", style: .cancel, handler: nil))
                     self.present(alertVC, animated: true, completion: nil)
                     //TODO Save hand
