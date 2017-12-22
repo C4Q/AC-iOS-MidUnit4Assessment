@@ -21,7 +21,6 @@
 		DBF738341FED757400D59437 /* PicturesNSCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF738331FED757400D59437 /* PicturesNSCache.swift */; };
 		DBF738361FED758F00D59437 /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF738351FED758F00D59437 /* ImageAPIClient.swift */; };
 		DBF738381FED764000D59437 /* HandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF738371FED764000D59437 /* HandTableViewCell.swift */; };
-		DBF7383B1FED7A2400D59437 /* XibTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF7383A1FED7A2400D59437 /* XibTestViewController.swift */; };
 		DBF7383D1FED813E00D59437 /* CardAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF7383C1FED813E00D59437 /* CardAPIModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		DBF738331FED757400D59437 /* PicturesNSCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesNSCache.swift; sourceTree = "<group>"; };
 		DBF738351FED758F00D59437 /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
 		DBF738371FED764000D59437 /* HandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandTableViewCell.swift; sourceTree = "<group>"; };
-		DBF7383A1FED7A2400D59437 /* XibTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibTestViewController.swift; sourceTree = "<group>"; };
 		DBF7383C1FED813E00D59437 /* CardAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +104,6 @@
 			children = (
 				DBF738201FED704B00D59437 /* GameViewController.swift */,
 				DBF738221FED706100D59437 /* HistoryViewController.swift */,
-				DBF7383A1FED7A2400D59437 /* XibTestViewController.swift */,
 			);
 			path = "VC's";
 			sourceTree = "<group>";
@@ -210,7 +207,6 @@
 				DBF738341FED757400D59437 /* PicturesNSCache.swift in Sources */,
 				DBF738321FED74EC00D59437 /* NetworkHelper.swift in Sources */,
 				DBF738361FED758F00D59437 /* ImageAPIClient.swift in Sources */,
-				DBF7383B1FED7A2400D59437 /* XibTestViewController.swift in Sources */,
 				DBF738301FED741400D59437 /* ArchiverHelper.swift in Sources */,
 				DB7C8CD61FED8E23002F2225 /* UserDefaultHelper.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,

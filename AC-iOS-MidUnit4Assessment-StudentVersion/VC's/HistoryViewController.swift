@@ -14,11 +14,7 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
-    
-    
-//    var savedHands = [Cards]() {
+//    var savedHands = [Card]() {
 //        didSet {
 //            if savedHands.isEmpty {
 //                noSavedHandsLabel.isHidden = true
@@ -26,8 +22,6 @@ class HistoryViewController: UIViewController {
 //        }
 //    }
    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

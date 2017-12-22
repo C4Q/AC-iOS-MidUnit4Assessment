@@ -10,4 +10,10 @@ import UIKit
 
 class HandCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var cardImage: UIImageView!
+    
+    @IBOutlet weak var cardLabel: UILabel!
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
 }

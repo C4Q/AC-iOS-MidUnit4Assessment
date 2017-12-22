@@ -8,46 +8,44 @@
 
 import Foundation
 
-/*
-class FavoritesArchiverClient {
+
+class SavedHandsArchiverClient {
     private init() {}
-    static let manager = FavoritesArchiverClient()
+    static let manager = SavedHandsArchiverClient()
     
-    static let pathName = "FavoriteBooks.plist"
+    static let pathName = "SavedHands.plist"
     
-    private var favoritesArr = [[BookWrapper]]() {
+    private var savedHandsArr = [[[Card]]]() {
         didSet {
-            
-            saveFavorites()
-            
+            saveHands()
         }
     }
     
-    func add(favorite: [BookWrapper]) {
-        favoritesArr.append(favorite)
+    func add(hand: [[Card]]) {
+        savedHandsArr.append(hand)
     }
     
-    func getFavorites() -> [[BookWrapper]] {
-        return favoritesArr
+    func getHands() -> [[[Card]]] {
+        return savedHandsArr
     }
     
-    func loadFavorites() {
-        let path = dataFilePath(withPathName: FavoritesArchiverClient.pathName)
+    func loadHands() {
+        let path = dataFilePath(withPathName: SavedHandsArchiverClient.pathName)
         do {
             let data = try Data(contentsOf: path)
-            let favorites = try PropertyListDecoder().decode([[BookWrapper]].self, from: data)
-            self.favoritesArr = favorites
+            let hands = try PropertyListDecoder().decode([[[Card]]].self, from: data)
+            self.savedHandsArr = hands
         }
         catch {
             print("error decoding items: \(error.localizedDescription)")
         }
     }
     
-    func saveFavorites() {
-        //encode the categories into data so they can be saved with propertyListEncoder
-        let path = dataFilePath(withPathName: FavoritesArchiverClient.pathName)
+    func saveHands() {
+        //encode into data so they can be saved with propertyListEncoder
+        let path = dataFilePath(withPathName: SavedHandsArchiverClient.pathName)
         do {
-            let data = try PropertyListEncoder().encode(favoritesArr)
+            let data = try PropertyListEncoder().encode(savedHandsArr)
             //write this data to a plist
             try data.write(to: path, options: .atomic)
             
@@ -68,10 +66,10 @@ class FavoritesArchiverClient {
     // returns the path for supplied name from the dcouments directory
     private func dataFilePath(withPathName path: String) -> URL {
         //now you can write to the file/pathName you pass in! (If the file name doesn't exsist, it will create it)
-        return FavoritesArchiverClient.manager.documentsDirectory().appendingPathComponent(path)
+        return SavedHandsArchiverClient.manager.documentsDirectory().appendingPathComponent(path)
     }
     
 }
- */
+
 
 
