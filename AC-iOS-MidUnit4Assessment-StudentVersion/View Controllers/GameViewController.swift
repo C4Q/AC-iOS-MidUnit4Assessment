@@ -16,10 +16,12 @@ class GameViewController: UIViewController {
     
     //maybe use a card game model?
     var deck: Deck?
+    
     var cards: [Card] = [] {
         didSet {
             //reload collection view
             gameCollectionView.reloadData()
+            checkGameStatus()
         }
     }
     
@@ -58,31 +60,122 @@ class GameViewController: UIViewController {
     func newGame() {
         //to do - should reset collection view
         //should reset labels
-        
         let targetNumber = Settings.manager.getTargetNumber() ?? 30
         
         instructionsLabel.text = "Try to reach \(targetNumber) without going over!"
-    
+        
+        scoreLabel.text = "Current Score: \(0)"
+        
+        loadNewDeck()
+        CardGame.resetGame()
+        
         //should reset current collectionview data source variable and reload data
         //should load new Deck
-        loadNewDeck()
     }
     
     func loadNewDeck() {
-        //should set something to deck variable in game model
+        DeckAPIClient.manager.getDeckID(completionHandler: { (deck) in
+            self.deck = deck
+            
+        }, errorHandler: { (appError) in
+            self.presentErrorAlert(withError: appError)
+        })
     }
     
     func getCard() {
         //should get a card using current deck
         //append to current card - using card game model
+        
+        guard let deck = deck else {
+            print("No Deck Yet")
+            return
+        }
+        
+        CardAPIClient.manager.getCard(
+            fromDeck: deck,
+            completionHandler: { (card) in
+                CardGame.addCard(card)
+                self.cards = CardGame.getCards()
+        },
+            errorHandler: { (appError) in
+            self.presentErrorAlert(withError: appError)
+        })
     }
     
+    func checkGameStatus() {
+        self.scoreLabel.text = "Current Score: \(CardGame.getScore())"
+        
+        switch CardGame.checkForWin() {
+        case .ongoing:
+            break
+        case .defeat:
+            presentGameOverAlert(withGameStatus: .defeat)
+        case .victory:
+            presentGameOverAlert(withGameStatus: .victory)
+        }
+    }
+    
+    func presentErrorAlert(withError error: Error) {
+        let message: String
+        
+        switch error {
+        case AppError.badURL(let url):
+            message = "Bad URL:\n\(url)"
+        case AppError.badImageURL(let url):
+            message = "Bad Image URL:\n\(url)"
+        case AppError.badData:
+            message = "Bad Data"
+        case AppError.badImageData:
+            message = "Bad Image Data"
+        case AppError.badResponseCode(let code):
+            message = "Bad Response Code:\n\(code)"
+        case AppError.cannotParseJSON(let rawError):
+            message = "Cannot Parse JSON:\n\(rawError)"
+        case AppError.noInternet:
+            message = "No Internet Connection."
+        case AppError.other(let rawError):
+            message = "\(rawError)"
+        default:
+            message = "\(error)"
+        }
+        
+        let alertController = UIAlertController(title: "ERROR", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentGameOverAlert(withGameStatus gameStatus: CardGame.GameStatus) {
+        let title: String
+        let message: String
+        
+        switch gameStatus {
+        case .ongoing:
+            return
+        case .defeat:
+            title = "LOOOOLLLLLLLL"
+            message = "😂😂😂\nYOU LOST!!!!!\nGET CGRECT YA LOSER\n😂😂😂"
+        case .victory:
+            title = "Wooooooowww... 😒"
+            message = "😒 So I guess you won >_> 😒"
+        }
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "New Game", style: .default) { _ in
+            self.newGame()
+        }
+        
+        alertController.addAction(alertAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension GameViewController: CardGameDelegate {
     
     func saveGame(withCards cards: [Card], score: Int, andTargetScore targetScore: Int) {
-        <#code#>
+        //to do - should save in persistentdata model
     }
     
 }

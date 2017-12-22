@@ -21,7 +21,7 @@ class CardGame {
         case defeat
     }
     
-    private static var deck: Deck?
+//    private static var deck: Deck?
     
     private static var cards: [Card] = []
 
@@ -29,11 +29,13 @@ class CardGame {
     
     weak static var delegate: CardGameDelegate?
     
-    static func setDeck(_ deck: Deck) {
-        self.deck = deck
-    }
+//    static func setDeck(_ deck: Deck) {
+//        self.deck = deck
+//    }
     
-    static func addCards(_ card: Card) {
+    private var cardValueDictionary: [String : Int] = [:]
+    
+    static func addCard(_ card: Card) {
         
         guard let cardValue = Int(card.value) else {
             print("Could not get card value")
@@ -44,9 +46,9 @@ class CardGame {
         score += cardValue
     }
     
-    static func getDeck() -> Deck {
-        return deck!
-    }
+//    static func getDeck() -> Deck {
+//        return deck!
+//    }
     
     static func getCards() -> [Card] {
         return cards
@@ -82,7 +84,7 @@ class CardGame {
     }
     
     static func resetGame() {
-        deck = nil
+//        deck = nil
         cards = []
         score = 0
     }
