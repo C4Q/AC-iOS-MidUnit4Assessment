@@ -21,7 +21,7 @@ struct Card: Codable {
 	var cardImage: UIImage? {
 		set{}
 		get {
-			let imageURL = DataModel.manager.dataFilePath(withPathName: image)
+			let imageURL = DataModel.manager.dataFilePath(pathName: image)
 			let docImage = UIImage(contentsOfFile: imageURL.path)
 			return docImage
 		}

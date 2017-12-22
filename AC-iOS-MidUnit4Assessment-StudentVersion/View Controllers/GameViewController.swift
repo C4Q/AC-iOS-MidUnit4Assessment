@@ -40,7 +40,7 @@ class GameViewController: UIViewController {
 	//MARK: Properties
 	let cellSpacing = UIScreen.main.bounds.size.width * 0.05
 
-	var deck: Deck {
+	var deck: Deck! {
 		didSet { getCard(fromDeckID: deck.deckId) }
 	}
 
