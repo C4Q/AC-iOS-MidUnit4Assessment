@@ -8,7 +8,7 @@
 
 import UIKit
 
-//NOTE TO TA: I was having issues with parsing the data so I was unable to load data in the appropriate places. I will be resubmitting during the break. Enjoy the cute schnauzer pup! :)
+//NOTE TO TA: I was having issues with parsing the data(could'nt figure out what was wrong even though i've parsed tougher JSON :/ ) so I was unable to load data in the appropriate places. I will be resubmitting during the break. Enjoy the cute schnauzer pup in the meantime! :)
 
 class BlackJackViewController: UIViewController {
     
