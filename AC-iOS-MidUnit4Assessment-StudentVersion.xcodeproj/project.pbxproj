@@ -18,6 +18,15 @@
 		81ABBA221FED69180077B50E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA211FED69180077B50E /* GameViewController.swift */; };
 		81ABBA241FED6C7A0077B50E /* GameViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA231FED6C7A0077B50E /* GameViewController+Extension.swift */; };
 		81ABBA261FED6C950077B50E /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA251FED6C950077B50E /* GameCollectionViewCell.swift */; };
+		81ABBA281FED707F0077B50E /* PickedCardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA271FED707F0077B50E /* PickedCardAPIClient.swift */; };
+		81ABBA2A1FED78920077B50E /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA291FED78920077B50E /* ImageAPIClient.swift */; };
+		81ABBA2C1FED940F0077B50E /* GameSaved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA2B1FED940F0077B50E /* GameSaved.swift */; };
+		81ABBA2E1FED95360077B50E /* KeyedArchiverClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA2D1FED95360077B50E /* KeyedArchiverClient.swift */; };
+		81ABBA301FED995C0077B50E /* GamesSavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA2F1FED995C0077B50E /* GamesSavedViewController.swift */; };
+		81ABBA321FEDB2FE0077B50E /* GameSavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA311FEDB2FE0077B50E /* GameSavedTableViewCell.swift */; };
+		81ABBA341FEDB3100077B50E /* GameSavedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA331FEDB3100077B50E /* GameSavedCollectionViewCell.swift */; };
+		81ABBA361FEDB5A70077B50E /* GamesSavedViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA351FEDB5A70077B50E /* GamesSavedViewController+Extension.swift */; };
+		81ABBA381FEDC1EF0077B50E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABBA371FEDC1EF0077B50E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +43,15 @@
 		81ABBA211FED69180077B50E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		81ABBA231FED6C7A0077B50E /* GameViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Extension.swift"; sourceTree = "<group>"; };
 		81ABBA251FED6C950077B50E /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		81ABBA271FED707F0077B50E /* PickedCardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedCardAPIClient.swift; sourceTree = "<group>"; };
+		81ABBA291FED78920077B50E /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
+		81ABBA2B1FED940F0077B50E /* GameSaved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSaved.swift; sourceTree = "<group>"; };
+		81ABBA2D1FED95360077B50E /* KeyedArchiverClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedArchiverClient.swift; sourceTree = "<group>"; };
+		81ABBA2F1FED995C0077B50E /* GamesSavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesSavedViewController.swift; sourceTree = "<group>"; };
+		81ABBA311FEDB2FE0077B50E /* GameSavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSavedTableViewCell.swift; sourceTree = "<group>"; };
+		81ABBA331FEDB3100077B50E /* GameSavedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSavedCollectionViewCell.swift; sourceTree = "<group>"; };
+		81ABBA351FEDB5A70077B50E /* GamesSavedViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamesSavedViewController+Extension.swift"; sourceTree = "<group>"; };
+		81ABBA371FEDC1EF0077B50E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +109,11 @@
 				81ABBA211FED69180077B50E /* GameViewController.swift */,
 				81ABBA231FED6C7A0077B50E /* GameViewController+Extension.swift */,
 				81ABBA251FED6C950077B50E /* GameCollectionViewCell.swift */,
+				81ABBA2F1FED995C0077B50E /* GamesSavedViewController.swift */,
+				81ABBA351FEDB5A70077B50E /* GamesSavedViewController+Extension.swift */,
+				81ABBA311FEDB2FE0077B50E /* GameSavedTableViewCell.swift */,
+				81ABBA331FEDB3100077B50E /* GameSavedCollectionViewCell.swift */,
+				81ABBA371FEDC1EF0077B50E /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -102,6 +125,10 @@
 				81ABBA1B1FED66560077B50E /* NetworkHelper.swift */,
 				81ABBA1D1FED66730077B50E /* Card.swift */,
 				81ABBA1F1FED67D70077B50E /* RndCardAPIClient.swift */,
+				81ABBA271FED707F0077B50E /* PickedCardAPIClient.swift */,
+				81ABBA291FED78920077B50E /* ImageAPIClient.swift */,
+				81ABBA2B1FED940F0077B50E /* GameSaved.swift */,
+				81ABBA2D1FED95360077B50E /* KeyedArchiverClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,14 +205,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81ABBA301FED995C0077B50E /* GamesSavedViewController.swift in Sources */,
 				81ABBA261FED6C950077B50E /* GameCollectionViewCell.swift in Sources */,
+				81ABBA2E1FED95360077B50E /* KeyedArchiverClient.swift in Sources */,
 				81ABBA1A1FED66090077B50E /* AppError.swift in Sources */,
 				81ABBA1C1FED66560077B50E /* NetworkHelper.swift in Sources */,
+				81ABBA321FEDB2FE0077B50E /* GameSavedTableViewCell.swift in Sources */,
+				81ABBA2A1FED78920077B50E /* ImageAPIClient.swift in Sources */,
+				81ABBA2C1FED940F0077B50E /* GameSaved.swift in Sources */,
 				81ABBA241FED6C7A0077B50E /* GameViewController+Extension.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
+				81ABBA361FEDB5A70077B50E /* GamesSavedViewController+Extension.swift in Sources */,
+				81ABBA341FEDB3100077B50E /* GameSavedCollectionViewCell.swift in Sources */,
+				81ABBA381FEDC1EF0077B50E /* SettingsViewController.swift in Sources */,
 				81ABBA201FED67D70077B50E /* RndCardAPIClient.swift in Sources */,
 				81ABBA221FED69180077B50E /* GameViewController.swift in Sources */,
 				81ABBA1E1FED66730077B50E /* Card.swift in Sources */,
+				81ABBA281FED707F0077B50E /* PickedCardAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

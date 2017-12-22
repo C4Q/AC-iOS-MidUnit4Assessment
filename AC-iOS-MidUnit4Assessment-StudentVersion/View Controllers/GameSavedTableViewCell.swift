@@ -1,5 +1,5 @@
 //
-//  GameViewController+Extension.swift
+//  GameSavedTableViewCell.swift
 //  AC-iOS-MidUnit4Assessment-StudentVersion
 //
 //  Created by C4Q on 12/22/17.
@@ -8,19 +8,36 @@
 
 import UIKit
 
-extension GameViewController: UICollectionViewDelegate {
+class GameSavedTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var scoreGameLabel: UILabel!
+    @IBOutlet weak var gameCollectionView: UICollectionView!
+    
+    var games = [GameSaved]() {
+        didSet {
+            self.gameCollectionView.reloadData()
+        }
+    }
+    let cellSpacing = UIScreen.main.bounds.size.width * 0.05
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        self.gameCollectionView.delegate = self
+        self.gameCollectionView.dataSource = self
+    }
+
 }
 
-extension GameViewController: UICollectionViewDelegateFlowLayout {
+extension GameSavedTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numCells: CGFloat = 3
         let numSpaces: CGFloat = numCells + 1
+        let screenWidth = collectionView.bounds.width
         
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
+        let screenHeight = collectionView.bounds.width
         
-        return CGSize(width: (screenWidth - (self.cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.25)
+        return CGSize(width: (screenWidth - (self.cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.60)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -36,18 +53,18 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension GameViewController: UICollectionViewDataSource {
+extension GameSavedTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cards.count
+        return self.games.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? GameCollectionViewCell {
-            let card = cards[indexPath.row]
-            cell.cardImageView.image = nil
-            cell.cardValueLabel.text = "\(card.cards[0].cardVal)"
-            ImageAPIClient.manager.getImage(from: card.cards[0].image, completionHandler: {cell.cardImageView.image = $0}, errorHandler: {print($0)})
-            cell.cardImageView.setNeedsLayout()
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? GameSavedCollectionViewCell {
+            let game = games[indexPath.row]
+            cell.scoreLabel.text = "\(game.cardVal)"
+            cell.imageView.image = nil
+            ImageAPIClient.manager.getImage(from: game.cardImage, completionHandler: {cell.imageView.image = $0}, errorHandler: {print($0)})
+            cell.imageView.setNeedsLayout()
             return cell
         }
         return UICollectionViewCell()

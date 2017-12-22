@@ -1,5 +1,5 @@
 //
-//  RndCardAPIClient.swift
+//  PickedCardAPIClient.swift
 //  AC-iOS-MidUnit4Assessment-StudentVersion
 //
 //  Created by C4Q on 12/22/17.
@@ -7,18 +7,17 @@
 //
 
 import Foundation
-struct RndCardAPIClient {
+struct PickedCardAPIClient {
     private init() {}
-    static let manager = RndCardAPIClient()
+    static let manager = PickedCardAPIClient()
     
-    
-    func getRndCard(from str: String,
-                  completionHandler: @escaping (RndCard) -> Void,
-                  errorHandler: @escaping (Error) -> Void) {
+    func getPickedCard(from str: String,
+                    completionHandler: @escaping (PickedCard) -> Void,
+                    errorHandler: @escaping (Error) -> Void) {
         guard let url = URL(string: str) else {return}
         let parseDataIntoCard = {(data: Data) in
             do {
-                let onlineCard = try JSONDecoder().decode(RndCard.self, from: data)
+                let onlineCard = try JSONDecoder().decode(PickedCard.self, from: data)
                 completionHandler(onlineCard)
             }
             catch let error {

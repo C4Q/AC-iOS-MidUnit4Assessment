@@ -16,18 +16,30 @@ struct RndCard: Codable {
     }
 }
 
-struct PieckedCard: Codable {
+struct PickedCard: Codable {
     let cards: [Card]
+    let desckId: String
+    
+    enum CodingKeys: String, CodingKey {
+        case cards
+        case desckId = "deck_id"
+    }
 }
 
 struct Card: Codable {
     let code: String
     let image: String
     let value: String
-    let images: Image
+    var cardVal: Int {
+        if let val = Int(value) {
+            return val
+        } else {
+            let cardStrToIntDic = ["Jack":10,"Queen":10,"King":10,"Ace":11]
+            let value = self.value.capitalized
+            guard let val = cardStrToIntDic[value] else {return 0}
+            return val
+        }
+    }
 }
 
-struct Image: Codable {
-    let svg: String
-    let png: String
-}
+
