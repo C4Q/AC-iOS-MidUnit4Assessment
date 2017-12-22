@@ -8,20 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB31FEC2752007EBECB /* AppDelegate.swift */; };
-		545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB51FEC2752007EBECB /* ViewController.swift */; };
+		545F2AB61FEC2752007EBECB /* BlackjackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F2AB51FEC2752007EBECB /* BlackjackViewController.swift */; };
 		545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2AB71FEC2752007EBECB /* Main.storyboard */; };
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
+		C46E4D6C1FED5C2F00830363 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E4D6B1FED5C2F00830363 /* CardModel.swift */; };
+		C46E4D6E1FED5C7000830363 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E4D6D1FED5C7000830363 /* Network.swift */; };
+		C46E4D701FED5FEE00830363 /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E4D6F1FED5FEE00830363 /* DeckModel.swift */; };
+		C46E4D7A1FED6F9C00830363 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46E4D791FED6F9C00830363 /* CardCollectionViewCell.xib */; };
+		C46E4D7C1FED712C00830363 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E4D7B1FED712C00830363 /* CardCollectionViewCell.swift */; };
+		C46E4D7E1FED7CF800830363 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E4D7D1FED7CF800830363 /* GameModel.swift */; };
+		C46E4D801FED8D9B00830363 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E4D7F1FED8D9B00830363 /* HistoryViewController.swift */; };
+		C46E4D821FED8F0500830363 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E4D811FED8F0500830363 /* CustomTableViewCell.swift */; };
+		C46E4D881FED9C7300830363 /* KeyedArchieverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E4D871FED9C7300830363 /* KeyedArchieverModel.swift */; };
+		C4A27B631FEDA25D008D4680 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A27B621FEDA25D008D4680 /* HistoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		545F2AB01FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC-iOS-MidUnit4Assessment-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545F2AB31FEC2752007EBECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		545F2AB51FEC2752007EBECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		545F2AB51FEC2752007EBECB /* BlackjackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackViewController.swift; sourceTree = "<group>"; };
 		545F2AB81FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		545F2ABA1FEC2752007EBECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C46E4D6B1FED5C2F00830363 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		C46E4D6D1FED5C7000830363 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		C46E4D6F1FED5FEE00830363 /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
+		C46E4D791FED6F9C00830363 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		C46E4D7B1FED712C00830363 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		C46E4D7D1FED7CF800830363 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		C46E4D7F1FED8D9B00830363 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		C46E4D811FED8F0500830363 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C46E4D871FED9C7300830363 /* KeyedArchieverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedArchieverModel.swift; sourceTree = "<group>"; };
+		C4A27B621FEDA25D008D4680 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +75,55 @@
 			isa = PBXGroup;
 			children = (
 				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
-				545F2AB51FEC2752007EBECB /* ViewController.swift */,
+				C46E4D841FED959100830363 /* ViewControllers */,
+				C46E4D831FED958A00830363 /* Model */,
+				C46E4D851FED959D00830363 /* Nibs */,
+				C46E4D811FED8F0500830363 /* CustomTableViewCell.swift */,
+				C46E4D6D1FED5C7000830363 /* Network.swift */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
+				C4A27B621FEDA25D008D4680 /* HistoryCollectionViewCell.swift */,
 				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
 				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
+			sourceTree = "<group>";
+		};
+		C46E4D831FED958A00830363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C46E4D871FED9C7300830363 /* KeyedArchieverModel.swift */,
+				C46E4D7D1FED7CF800830363 /* GameModel.swift */,
+				C46E4D6B1FED5C2F00830363 /* CardModel.swift */,
+				C46E4D6F1FED5FEE00830363 /* DeckModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C46E4D841FED959100830363 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				545F2AB51FEC2752007EBECB /* BlackjackViewController.swift */,
+				C46E4D7F1FED8D9B00830363 /* HistoryViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C46E4D851FED959D00830363 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				C46E4D861FED95A500830363 /* CardCollectionViewCell */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		C46E4D861FED95A500830363 /* CardCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C46E4D7B1FED712C00830363 /* CardCollectionViewCell.swift */,
+				C46E4D791FED6F9C00830363 /* CardCollectionViewCell.xib */,
+			);
+			path = CardCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46E4D7A1FED6F9C00830363 /* CardCollectionViewCell.xib in Resources */,
 				545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */,
 				545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */,
 				545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */,
@@ -136,8 +199,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */,
+				C46E4D881FED9C7300830363 /* KeyedArchieverModel.swift in Sources */,
+				C46E4D821FED8F0500830363 /* CustomTableViewCell.swift in Sources */,
+				C46E4D6E1FED5C7000830363 /* Network.swift in Sources */,
+				C4A27B631FEDA25D008D4680 /* HistoryCollectionViewCell.swift in Sources */,
+				545F2AB61FEC2752007EBECB /* BlackjackViewController.swift in Sources */,
+				C46E4D6C1FED5C2F00830363 /* CardModel.swift in Sources */,
+				C46E4D701FED5FEE00830363 /* DeckModel.swift in Sources */,
+				C46E4D7C1FED712C00830363 /* CardCollectionViewCell.swift in Sources */,
+				C46E4D7E1FED7CF800830363 /* GameModel.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
+				C46E4D801FED8D9B00830363 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
