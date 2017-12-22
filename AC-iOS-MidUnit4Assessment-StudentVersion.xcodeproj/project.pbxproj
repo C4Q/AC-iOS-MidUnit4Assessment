@@ -11,16 +11,6 @@
 		545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2AB71FEC2752007EBECB /* Main.storyboard */; };
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
-		819C38E91FED7FED00F4C6DE /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38E71FED7FED00F4C6DE /* Deck.swift */; };
-		819C38EA1FED7FED00F4C6DE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38E81FED7FED00F4C6DE /* Card.swift */; };
-		819C38F21FED801600F4C6DE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38EE1FED801600F4C6DE /* Network.swift */; };
-		819C38F31FED801600F4C6DE /* SavedGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38EF1FED801600F4C6DE /* SavedGames.swift */; };
-		819C38F41FED801600F4C6DE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38F01FED801600F4C6DE /* ImageCache.swift */; };
-		819C38F51FED801600F4C6DE /* CardDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38F11FED801600F4C6DE /* CardDataStore.swift */; };
-		819C38F81FED803000F4C6DE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38F61FED803000F4C6DE /* GameViewController.swift */; };
-		819C38F91FED803000F4C6DE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38F71FED803000F4C6DE /* HistoryViewController.swift */; };
-		819C38FC1FED803B00F4C6DE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C38FA1FED803B00F4C6DE /* CardCell.swift */; };
-		819C38FD1FED803B00F4C6DE /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819C38FB1FED803B00F4C6DE /* CardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,18 +20,16 @@
 		545F2ABA1FEC2752007EBECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		819C38E71FED7FED00F4C6DE /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deck.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/Models/Deck.swift"; sourceTree = "<group>"; };
-		819C38E81FED7FED00F4C6DE /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/Models/Card.swift"; sourceTree = "<group>"; };
+		81673BD71FED80F50066C223 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		81673BD81FED80F70066C223 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		81673BDA1FED810B0066C223 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		81673BDB1FED810D0066C223 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		81673BDD1FED81630066C223 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		81673BDE1FED81660066C223 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		81673BDF1FED816F0066C223 /* SavedGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedGames.swift; sourceTree = "<group>"; };
+		81673BE01FED81740066C223 /* CardDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDataStore.swift; sourceTree = "<group>"; };
 		819C38EC1FED7FF400F4C6DE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		819C38ED1FED7FFC00F4C6DE /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		819C38EE1FED801600F4C6DE /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/Service/Network.swift"; sourceTree = "<group>"; };
-		819C38EF1FED801600F4C6DE /* SavedGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedGames.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/Service/SavedGames.swift"; sourceTree = "<group>"; };
-		819C38F01FED801600F4C6DE /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/Service/ImageCache.swift"; sourceTree = "<group>"; };
-		819C38F11FED801600F4C6DE /* CardDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardDataStore.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/Service/CardDataStore.swift"; sourceTree = "<group>"; };
-		819C38F61FED803000F4C6DE /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/View Controllers/GameViewController.swift"; sourceTree = "<group>"; };
-		819C38F71FED803000F4C6DE /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/View Controllers/HistoryViewController.swift"; sourceTree = "<group>"; };
-		819C38FA1FED803B00F4C6DE /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardCell.swift; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/Views/CardCell.swift"; sourceTree = "<group>"; };
-		819C38FB1FED803B00F4C6DE /* CardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardCell.xib; path = "../../../AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/Views/CardCell.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,24 +62,53 @@
 		545F2AB21FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
-				819C38FA1FED803B00F4C6DE /* CardCell.swift */,
-				819C38FB1FED803B00F4C6DE /* CardCell.xib */,
-				819C38F61FED803000F4C6DE /* GameViewController.swift */,
-				819C38F71FED803000F4C6DE /* HistoryViewController.swift */,
-				819C38F11FED801600F4C6DE /* CardDataStore.swift */,
-				819C38F01FED801600F4C6DE /* ImageCache.swift */,
-				819C38EE1FED801600F4C6DE /* Network.swift */,
-				819C38EF1FED801600F4C6DE /* SavedGames.swift */,
+				81673BE11FED81860066C223 /* SupportingFiles */,
+				81673BDC1FED815D0066C223 /* Service */,
 				819C38EB1FED7FF000F4C6DE /* Model */,
-				819C38E81FED7FED00F4C6DE /* Card.swift */,
-				819C38E71FED7FED00F4C6DE /* Deck.swift */,
-				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
+				81673BD91FED81020066C223 /* Views */,
+				81673BD61FED80ED0066C223 /* View Controllers */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
-				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
-				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
-				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
+			sourceTree = "<group>";
+		};
+		81673BD61FED80ED0066C223 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81673BD81FED80F70066C223 /* HistoryViewController.swift */,
+				81673BD71FED80F50066C223 /* GameViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		81673BD91FED81020066C223 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81673BDA1FED810B0066C223 /* CardCell.swift */,
+				81673BDB1FED810D0066C223 /* CardCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		81673BDC1FED815D0066C223 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				81673BDD1FED81630066C223 /* Network.swift */,
+				81673BDE1FED81660066C223 /* ImageCache.swift */,
+				81673BE01FED81740066C223 /* CardDataStore.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		81673BE11FED81860066C223 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
+				545F2ABF1FEC2752007EBECB /* Info.plist */,
+				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
+				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		819C38EB1FED7FF000F4C6DE /* Model */ = {
@@ -99,6 +116,7 @@
 			children = (
 				819C38EC1FED7FF400F4C6DE /* Card.swift */,
 				819C38ED1FED7FFC00F4C6DE /* Deck.swift */,
+				81673BDF1FED816F0066C223 /* SavedGames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,7 +183,6 @@
 				545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */,
 				545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */,
 				545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */,
-				819C38FD1FED803B00F4C6DE /* CardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,16 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819C38F41FED801600F4C6DE /* ImageCache.swift in Sources */,
-				819C38E91FED7FED00F4C6DE /* Deck.swift in Sources */,
-				819C38EA1FED7FED00F4C6DE /* Card.swift in Sources */,
-				819C38F31FED801600F4C6DE /* SavedGames.swift in Sources */,
-				819C38F81FED803000F4C6DE /* GameViewController.swift in Sources */,
-				819C38FC1FED803B00F4C6DE /* CardCell.swift in Sources */,
-				819C38F21FED801600F4C6DE /* Network.swift in Sources */,
-				819C38F91FED803000F4C6DE /* HistoryViewController.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
-				819C38F51FED801600F4C6DE /* CardDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "AC-iOS-MidUnit4Assessment-StudentVersion/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AC-iOS-MidUnit4Assessment-StudentVersion/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.AC-iOS-MidUnit4Assessment-StudentVersion";
@@ -338,7 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "AC-iOS-MidUnit4Assessment-StudentVersion/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AC-iOS-MidUnit4Assessment-StudentVersion/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.AC-iOS-MidUnit4Assessment-StudentVersion";
