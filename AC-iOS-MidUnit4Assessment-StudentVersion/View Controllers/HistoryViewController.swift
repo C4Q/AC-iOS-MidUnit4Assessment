@@ -131,6 +131,8 @@ extension HistoryViewController: UICollectionViewDataSource {
             
             let card = hands[collectionView.tag].cards[indexPath.item]
             
+            cell.cardLabel.text = card.value.description.lowercased().capitalized
+
             cell.cardImageView.image = #imageLiteral(resourceName: "card back black")
             
             let cardImgUrl = card.image
@@ -140,8 +142,8 @@ extension HistoryViewController: UICollectionViewDataSource {
 //            if let brain = brain, let value = brain.cardValues[card.value] {
 //                cell.cardLabel.text = value.description
 //            }
+
             
-            cell.cardLabel.text = card.value.description
             
             cell.setNeedsLayout()
         }

@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-SD-i34">
-                        <rect key="frame" x="0.0" y="8" width="267" height="264"/>
+                        <rect key="frame" x="0.0" y="8" width="267" height="259"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIG-MT-WaX">
-                        <rect key="frame" x="8" y="280" width="251" height="21"/>
+                        <rect key="frame" x="8" y="275" width="251" height="26"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,6 +38,7 @@
                 <constraint firstAttribute="bottom" secondItem="YIG-MT-WaX" secondAttribute="bottom" constant="8" id="T3C-Gl-6ig"/>
                 <constraint firstAttribute="trailing" secondItem="EPJ-SD-i34" secondAttribute="trailing" id="Yvo-Dr-Tou"/>
                 <constraint firstAttribute="trailing" secondItem="YIG-MT-WaX" secondAttribute="trailing" constant="8" id="dPI-Rb-bTI"/>
+                <constraint firstItem="YIG-MT-WaX" firstAttribute="height" secondItem="EPJ-SD-i34" secondAttribute="height" multiplier="1:10" id="wU2-Fu-oTF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="nTE-pK-xYx"/>
             <size key="customSize" width="267" height="309"/>

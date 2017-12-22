@@ -47,7 +47,7 @@
                                     <action selector="resetHistoryButtonTapped:" destination="hFp-lr-JnU" eventType="touchUpInside" id="jRo-YG-SIR"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5qy-GW-NdM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5qy-GW-NdM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -171,7 +171,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6yV-Gc-KhH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="RSF-72-Dnl"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="maintenance copy" id="RSF-72-Dnl"/>
                     <connections>
                         <outlet property="textField" destination="nG6-6F-EsQ" id="U9r-Ml-L6l"/>
                     </connections>
@@ -260,7 +260,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cgE-g5-Pht"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Blackjack" id="Ydd-se-Ftq"/>
+                    <tabBarItem key="tabBarItem" title="Blackjack" image="icons8-king-of-clubs-40" id="Ydd-se-Ftq"/>
                     <connections>
                         <outlet property="collectionView" destination="K5L-DQ-S9z" id="bd7-kt-eqE"/>
                         <outlet property="currentHandValueLabel" destination="ssO-vQ-n3f" id="Itj-2k-QoJ"/>
@@ -272,4 +272,8 @@
             <point key="canvasLocation" x="992.79999999999995" y="-156.07196401799101"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-king-of-clubs-40" width="40" height="40"/>
+        <image name="maintenance copy" width="30" height="30"/>
+    </resources>
 </document>
