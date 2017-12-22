@@ -12,6 +12,18 @@
 		545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2AB71FEC2752007EBECB /* Main.storyboard */; };
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
+		8149634C1FED5D3E0037985D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8149634B1FED5D3E0037985D /* NetworkHelper.swift */; };
+		8149634E1FED5D490037985D /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8149634D1FED5D490037985D /* ImageAPIClient.swift */; };
+		814963501FED5DB30037985D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8149634F1FED5DB30037985D /* GameViewController.swift */; };
+		814963521FED5DC90037985D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814963511FED5DC90037985D /* HistoryViewController.swift */; };
+		8149635A1FED6C370037985D /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814963591FED6C370037985D /* PlayingCard.swift */; };
+		8149635C1FED6DFB0037985D /* PlayingCardsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8149635B1FED6DFB0037985D /* PlayingCardsAPIClient.swift */; };
+		8149635E1FED77350037985D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8149635D1FED77350037985D /* HistoryTableViewCell.swift */; };
+		814963651FED7F260037985D /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814963631FED7F260037985D /* CardCollectionViewCell.swift */; };
+		814963661FED7F260037985D /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814963641FED7F260037985D /* CardCollectionViewCell.xib */; };
+		814963681FED88240037985D /* DataStorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814963671FED88240037985D /* DataStorageModel.swift */; };
+		8149636A1FED8A680037985D /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814963691FED8A680037985D /* ImageCache.swift */; };
+		8149636C1FEDC32B0037985D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8149636B1FEDC32B0037985D /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +34,18 @@
 		545F2ABA1FEC2752007EBECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8149634B1FED5D3E0037985D /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		8149634D1FED5D490037985D /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
+		8149634F1FED5DB30037985D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		814963511FED5DC90037985D /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		814963591FED6C370037985D /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		8149635B1FED6DFB0037985D /* PlayingCardsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardsAPIClient.swift; sourceTree = "<group>"; };
+		8149635D1FED77350037985D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		814963631FED7F260037985D /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		814963641FED7F260037985D /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		814963671FED88240037985D /* DataStorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageModel.swift; sourceTree = "<group>"; };
+		814963691FED8A680037985D /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		8149636B1FEDC32B0037985D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +62,8 @@
 		545F2AA71FEC2752007EBECB = {
 			isa = PBXGroup;
 			children = (
+				8149634A1FED5D070037985D /* Models */,
+				814963471FED5C520037985D /* CustomControllers */,
 				545F2AB21FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion */,
 				545F2AB11FEC2752007EBECB /* Products */,
 			);
@@ -62,6 +88,32 @@
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
+			sourceTree = "<group>";
+		};
+		814963471FED5C520037985D /* CustomControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8149634F1FED5DB30037985D /* GameViewController.swift */,
+				814963511FED5DC90037985D /* HistoryViewController.swift */,
+				8149635D1FED77350037985D /* HistoryTableViewCell.swift */,
+				814963631FED7F260037985D /* CardCollectionViewCell.swift */,
+				814963641FED7F260037985D /* CardCollectionViewCell.xib */,
+				8149636B1FEDC32B0037985D /* SettingsViewController.swift */,
+			);
+			path = CustomControllers;
+			sourceTree = "<group>";
+		};
+		8149634A1FED5D070037985D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8149634B1FED5D3E0037985D /* NetworkHelper.swift */,
+				8149634D1FED5D490037985D /* ImageAPIClient.swift */,
+				814963591FED6C370037985D /* PlayingCard.swift */,
+				8149635B1FED6DFB0037985D /* PlayingCardsAPIClient.swift */,
+				814963671FED88240037985D /* DataStorageModel.swift */,
+				814963691FED8A680037985D /* ImageCache.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814963661FED7F260037985D /* CardCollectionViewCell.xib in Resources */,
 				545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */,
 				545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */,
 				545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */,
@@ -136,8 +189,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8149635E1FED77350037985D /* HistoryTableViewCell.swift in Sources */,
+				814963501FED5DB30037985D /* GameViewController.swift in Sources */,
+				8149635C1FED6DFB0037985D /* PlayingCardsAPIClient.swift in Sources */,
+				8149635A1FED6C370037985D /* PlayingCard.swift in Sources */,
 				545F2AB61FEC2752007EBECB /* ViewController.swift in Sources */,
+				814963681FED88240037985D /* DataStorageModel.swift in Sources */,
+				8149636A1FED8A680037985D /* ImageCache.swift in Sources */,
+				8149634C1FED5D3E0037985D /* NetworkHelper.swift in Sources */,
+				814963521FED5DC90037985D /* HistoryViewController.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
+				8149636C1FEDC32B0037985D /* SettingsViewController.swift in Sources */,
+				814963651FED7F260037985D /* CardCollectionViewCell.swift in Sources */,
+				8149634E1FED5D490037985D /* ImageAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
