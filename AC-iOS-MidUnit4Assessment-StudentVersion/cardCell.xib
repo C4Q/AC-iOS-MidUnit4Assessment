@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="miv-if-tl3" customClass="cardCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="154" height="199"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="154" height="199"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MYl-e3-hIe">
+                        <rect key="frame" x="23.5" y="0.0" width="107" height="139.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="MYl-e3-hIe" secondAttribute="height" multiplier="7:9" id="rJY-4z-aHO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFx-S2-dt3">
+                        <rect key="frame" x="38.5" y="158.5" width="77" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="MYl-e3-hIe" firstAttribute="centerY" secondItem="xaG-u9-sjV" secondAttribute="centerY" multiplier="0.7" id="4Vs-U9-6DX"/>
+                <constraint firstItem="WFx-S2-dt3" firstAttribute="width" secondItem="miv-if-tl3" secondAttribute="width" multiplier="0.5" id="Mih-1M-JEb"/>
+                <constraint firstItem="WFx-S2-dt3" firstAttribute="centerX" secondItem="xaG-u9-sjV" secondAttribute="centerX" id="cst-YA-11H"/>
+                <constraint firstItem="WFx-S2-dt3" firstAttribute="centerY" secondItem="xaG-u9-sjV" secondAttribute="centerY" multiplier="1.7" id="gbD-TN-UdO"/>
+                <constraint firstItem="MYl-e3-hIe" firstAttribute="centerX" secondItem="xaG-u9-sjV" secondAttribute="centerX" id="rUY-ZF-3nG"/>
+                <constraint firstItem="MYl-e3-hIe" firstAttribute="height" secondItem="miv-if-tl3" secondAttribute="height" multiplier="0.7" id="zGA-ES-of1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="xaG-u9-sjV"/>
+            <size key="customSize" width="154" height="199"/>
+            <connections>
+                <outlet property="cardImageView" destination="MYl-e3-hIe" id="UZY-GP-jHK"/>
+                <outlet property="cardValueLabel" destination="WFx-S2-dt3" id="cOF-CY-tQL"/>
+            </connections>
+            <point key="canvasLocation" x="-207" y="-73.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
