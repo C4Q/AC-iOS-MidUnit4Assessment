@@ -103,22 +103,23 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cardCell = gameCollectionView.dequeueReusableCell(withReuseIdentifier: "Game Collection View Cell", for: indexPath) as? GameCollectionViewCell else {return UICollectionViewCell()}
         
         //properties
+        
         cardCell.cardValueLabel.text = card.value
+        cardCell.cardImage.image = nil
         
         //MARK: - Getting and setting card images
-//        if let imageUrlStr = card.images?.png {
-//
-//        let completion : (UIImage) -> Void = {(onlineImage: UIImage) in
-//            cardCell.cardImage.image = onlineImage
-//            //image loads as soon as it's ready
-//            cardCell.setNeedsLayout()
-//        }
-//       ImageAPIClient.manager.loadImage(from: imageUrlStr,
-//                                        completionHandler: completion,
-//                                        errorHandler: {print($0)})
-//        } else {
-//             cardCell.cardImage.image = #imageLiteral(resourceName: "launchImage")
-//        }
+        let imageUrlStr = card.images.png
+            
+            let completion : (UIImage) -> Void = {(onlineImage: UIImage) in
+                cardCell.cardImage.image = onlineImage
+                print("IMAGES!")
+                
+                //image loads as soon as it's ready
+                cardCell.setNeedsLayout()
+            }
+            ImageAPIClient.manager.loadImage(from: imageUrlStr,
+                                             completionHandler: completion,
+                                             errorHandler: {print($0)})
         return cardCell
     }
     
