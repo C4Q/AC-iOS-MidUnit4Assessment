@@ -6,29 +6,16 @@
 import UIKit
 
 class CardCell: UICollectionViewCell {
-	@IBOutlet weak var cardImage: UIImageView!
-	@IBOutlet weak var cardLabel: UILabel!
-
-	//MARK: Methods
-
-	
-}
-
-
-
-class PixabayTableViewCell: UITableViewCell {
 	//MARK: Outlets
-	@IBOutlet weak var pixabayImageView: UIImageView!
-	@IBOutlet weak var tagsLabel: UILabel!
-	@IBOutlet weak var likesLabel: UILabel!
+	@IBOutlet weak var cardImage: UIImageView!
+	@IBOutlet weak var valueLabel: UILabel!
 
 	//MARK: Methods
-	func configureCell(with pixabay: Pixabay) {
-		self.tagsLabel.text = pixabay.tags
-		self.likesLabel.text = "\(pixabay.likes) likes"
-		ImageAPIClient.manager.loadImage(from: pixabay.webformatURL, completionHandler: {self.pixabayImageView.image = $0;
-			self.pixabayImageView.setNeedsLayout()},
-																		 errorHandler: {print($0)})
+	func configureCell(with card: Card) {
+		self.valueLabel.text = card.value
+		ImageHelper.manager.getImage(from: card.image, completionHandler: {self.card.Image.image = $0; self.cardImage.setNeedsLayout()},
+		errorHandler: {print($0)})
 	}
-
 }
+
+

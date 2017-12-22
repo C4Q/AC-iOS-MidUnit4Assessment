@@ -28,12 +28,13 @@ class ImageCache {
 				if let image = image {
 					self.sharedCached.setObject(image, forKey: imageURL.absoluteString as NSString)
 				}
-
 				completion(nil, image)
-			} catch {
+			}
+			catch {
 				print("image processing error: \(error.localizedDescription)")
 				completion(error, nil)
 			}
 		}
 	}
 }
+

@@ -5,12 +5,26 @@
 
 import UIKit
 
-class GameViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class GameViewController: UIViewController {
 
 	//MARK: Outlets
 	@IBOutlet weak var gameCollectionView: UICollectionView!
-
 	
+	@IBAction func stop(_ sender: UIButton) {
+		//TO DO
+		//add playerCards & score to Storage History
+		showGameOverAlert()
+	}
+	@IBAction func drawCard(_ sender: UIButton) {
+		getCard(fromDeckID: deck.deckId)
+
+		//TO DO
+		if playerScore >= 30 { //end game
+			showGameOverAlert()
+		}
+			//add cardValue to playerScore
+	}
+
 	//MARK: View Overrides
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,46 +35,72 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
 	}
 
 	//MARK: Properties
-//	var image: UIImage!
 	let cellSpacing = UIScreen.main.bounds.size.width * 0.05
-
 	var deck: Deck {
 		didSet {
 			getCard(fromDeckID: deck.deckId)
-			gameCollectionView.reloadData()
 		}
 	}
-	var currentCard: Card!
-	var playerCards: [Card]{
+	var card: Card {
+		didSet {
+			playerCards.append(card) //add card to card array to be displayed by the collection view
+		}
+	}
+	var playerCards = [Card]() {
 		didSet {
 			gameCollectionView.reloadData()
 		}
 	}
+	var playerScore = 0 {
+		didSet {
 
+		}
+	}
 
 	//MARK: Methods
-	func getDeck() {
-		let print
-
-		DeckAPIClient.manager.getDeck(completionHandler: { (onlineDeck) in
-			self.deck = onlineDeck
-		}, errorHandler: {_ in print({$0})})
+	func getDeck(){
+		let setDeck = {(onlineDeck: Deck) in self.deck = onlineDeck}
+		let printErrors = {(error: Error) in print(error)}
+		DeckAPIClient.manager.getDeck(completionHandler: setDeck, errorHandler: printErrors)
 	}
+
 	func getCard(fromDeckID: String){
-		CardAPIClient.manager.getCard(fromDeckID: deck.deckId, completionHandler: { (onlineCard) in
-			self.currentCard = onlineCard
-		}, errorHandler: {_ in print({$0})} )
+		let setCard = {(onlineCard: Card) in self.card = onlineCard}
+		let printErrors = {(error: Error) in print(error)}
+		CardAPIClient.manager.getCard(fromDeckID: deck.deckId, completionHandler: setCard, errorHandler: printErrors)
 	}
 
-
-
+	private func showGameOverAlert(){
+		var message: String = ""
+		if playerScore > 30 {
+			message = "You went over by \(self.playerScore - 30)"
+		} else {
+			message = "You were \(30 - self.playerScore) from 30"
+		}
+		let alertController = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
+		let okAlert = UIAlertAction(title: "Ok", style: .default, handler: nil)
+		alertController.addAction(okAlert)
+		present(alertController, animated: true, completion: nil)
+		resetGame()
 	}
 
-	//MARK: CollectionView - Datasource
+	func resetGame(){
+		//TO DO - save playerCards array to dataStore
+		playerScore = 0
+		playerCards = [Card]()
+		getDeck()
+		gameCollectionView.reloadData()
+	}
+
+}
+
+
+
+//MARK: CollectionView - Datasource
+extension GameViewController: UICollectionViewDataSource {
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1
 	}
-
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return playerCards.count
 	}
@@ -73,40 +113,40 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
 	func configureCard(card: Card, forCell cell: CardCell) {
 		DispatchQueue.global().async {
 			do {
-				let imageData = try Data.init(contentsOf: card.image)
+				let imageData = try Data.init(contentsOf: URL(string: card.image)!)
 				DispatchQueue.main.async {
-					cell.imageView.image = UIImage.init(data: imageData)
+					cell.cardImage.image = UIImage.init(data: imageData)
 				}
 			} catch {print("image processing error: \(error.localizedDescription)")}
 		}
 	}
 
-
-	//MARK: CollectionView - Flow Layour
-	extension MovieSearchController: UICollectionViewDelegateFlowLayout {
-		func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-			let numCells: CGFloat = 3
-			let numSpaces: CGFloat = numCells + 1
-
-			let screenWidth = UIScreen.main.bounds.width
-			let screenHeight = UIScreen.main.bounds.height
-
-			return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.25)
-		}
-
-		func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-			return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: 0, right: cellSpacing)
-		}
-
-		func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-			return cellSpacing
-		}
-
-		func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-			return cellSpacing
-		}
-	}
-
-
-
 }
+
+//MARK: CollectionView - Flow Layour
+extension GameViewController: UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let numCells: CGFloat = 3
+		let numSpaces: CGFloat = numCells + 1
+		let screenWidth = UIScreen.main.bounds.width
+		let screenHeight = UIScreen.main.bounds.height
+		return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.25)
+	}
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: 0, right: cellSpacing)
+	}
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+		return cellSpacing
+	}
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+		return cellSpacing
+	}
+}
+
+
+
+
+
+
+
+

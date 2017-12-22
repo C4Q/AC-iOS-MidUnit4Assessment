@@ -6,22 +6,27 @@
 import Foundation
 import UIKit
 
-struct SavedGames: Codable {
-	let title: String
-	let year: String
-	let imdbId: String
-	let type: String
-	let poster: URL
-	// optional keys
-	let plot: String?
-
-	// computed property to return image from documents
-	var image: UIImage? {
+struct History: Codable {
+	let savedGames: [SavedGame]
+}
+struct SavedGame: Codable {
+	let cards: [SavedCard]
+	let score: Int
+}
+struct SavedCard: Codable {
+	let code: String
+	let image: String
+	let value: String
+	let suit: String
+	var cardImage: UIImage? {
 		set{}
 		get {
-			let imageURL = MovieDataStore.manager.dataFilePath(withPathName: imdbId)
+			let imageURL = DataStorage.manager.dataFilePath(withPathName: image)
 			let docImage = UIImage(contentsOfFile: imageURL.path)
 			return docImage
 		}
 	}
 }
+
+
+
