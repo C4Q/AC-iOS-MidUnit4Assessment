@@ -28,7 +28,6 @@ class UserDefaultsHelper {
         do {
             let data = try PropertyListEncoder().encode(value)
             defaults.set(data, forKey: key)
-            print("Successfully saved \(value.targetAmount) as starting amount.")
         } catch {
             print(error.localizedDescription)
         }

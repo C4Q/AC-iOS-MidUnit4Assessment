@@ -55,8 +55,10 @@ extension SettingsViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return false }
         guard let int = Int(text) else { alertController(title: "Incorrect Format", message: "Please enter using digits only."); return false }
-        guard 2 < int && int < 347 else { alertController(title: "Bad Number", message: "Please enter a number between 2 and 347."); return false }
+        guard 2 <= int && int <= 380 else { alertController(title: "Bad Number", message: "Please enter a number between 2 and 380."); return false }
         numberEntry = int
+        textField.resignFirstResponder()
+        alertController(title: "Success", message: "You saved \(numberEntry.description) as the target value.")
         textField.resignFirstResponder()
         return true
     }

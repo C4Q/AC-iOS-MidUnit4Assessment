@@ -28,15 +28,6 @@ class BlackjackViewController: UIViewController {
     var playerCards = [Card]() {
         didSet {
             collectionView.reloadData()
-            
-            // Check if player tries to use more than a deck of cards
-            if playerCards.count == 52 {
-                guard let brain = brain else { return }
-                alertController(title: "The End", message: "You went through the whole deck!")
-                DataPersistenceHelper.manager.addHand(playedCards: playerCards, target: brain.target, handTotal: brain.cardTotal)
-                gameSetup()
-            }
-            
         }
     }
     
