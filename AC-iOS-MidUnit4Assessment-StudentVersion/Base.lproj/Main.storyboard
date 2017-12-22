@@ -1,24 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CHZ-72-sKi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Item-->
+        <scene sceneID="lRw-0F-5fK">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="Tna-YF-1aB" customClass="GameViewController" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TRb-or-XX5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cMi-F4-jiB">
+                                <rect key="frame" x="0.0" y="48" width="375" height="333.5"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JVE-sm-kU6">
+                                    <size key="itemSize" width="250" height="300"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCardCell" id="8j6-oY-7cB" customClass="CardCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="17" width="250" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Hand Value:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLC-Ue-uf1">
+                                <rect key="frame" x="8" y="28" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMX-SU-J60">
+                                <rect key="frame" x="0.0" y="410" width="375" height="208"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKe-Ij-MrY">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="208"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopButtonPressed:" destination="Tna-YF-1aB" eventType="touchUpInside" id="h8C-lN-sho"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ye-OS-jR1">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="208"/>
+                                        <state key="normal" title="Draw Card"/>
+                                        <connections>
+                                            <action selector="drawCardButtonPressed:" destination="Tna-YF-1aB" eventType="touchUpInside" id="s8r-5x-NZW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6Ye-OS-jR1" firstAttribute="width" secondItem="SKe-Ij-MrY" secondAttribute="width" id="KVg-nY-caC"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get up to 30 without going over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM0-T2-jDu">
+                                <rect key="frame" x="8" y="381.5" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cMi-F4-jiB" firstAttribute="height" secondItem="TRb-or-XX5" secondAttribute="height" multiplier="0.5" id="2Ca-WO-9IR"/>
+                            <constraint firstItem="NZ3-ej-TNU" firstAttribute="trailing" secondItem="mLC-Ue-uf1" secondAttribute="trailing" constant="8" id="2KI-9p-IDo"/>
+                            <constraint firstItem="cMi-F4-jiB" firstAttribute="top" secondItem="mLC-Ue-uf1" secondAttribute="bottom" id="8lC-UX-txh"/>
+                            <constraint firstItem="xM0-T2-jDu" firstAttribute="leading" secondItem="NZ3-ej-TNU" secondAttribute="leading" constant="8" id="KGD-25-ZPP"/>
+                            <constraint firstItem="NZ3-ej-TNU" firstAttribute="bottom" secondItem="aMX-SU-J60" secondAttribute="bottom" id="MW5-Lv-ivA"/>
+                            <constraint firstItem="NZ3-ej-TNU" firstAttribute="trailing" secondItem="aMX-SU-J60" secondAttribute="trailing" id="Qg0-S9-0oB"/>
+                            <constraint firstItem="aMX-SU-J60" firstAttribute="leading" secondItem="NZ3-ej-TNU" secondAttribute="leading" id="SQI-s3-IIw"/>
+                            <constraint firstItem="mLC-Ue-uf1" firstAttribute="top" secondItem="NZ3-ej-TNU" secondAttribute="top" constant="8" id="cdP-a2-YDS"/>
+                            <constraint firstItem="cMi-F4-jiB" firstAttribute="leading" secondItem="NZ3-ej-TNU" secondAttribute="leading" id="ddD-hT-zuB"/>
+                            <constraint firstItem="aMX-SU-J60" firstAttribute="top" secondItem="xM0-T2-jDu" secondAttribute="bottom" constant="8" id="hP2-Bn-DPZ"/>
+                            <constraint firstItem="NZ3-ej-TNU" firstAttribute="trailing" secondItem="cMi-F4-jiB" secondAttribute="trailing" id="mba-b8-QJd"/>
+                            <constraint firstItem="mLC-Ue-uf1" firstAttribute="leading" secondItem="NZ3-ej-TNU" secondAttribute="leading" constant="8" id="ucq-6F-4Es"/>
+                            <constraint firstItem="xM0-T2-jDu" firstAttribute="top" secondItem="cMi-F4-jiB" secondAttribute="bottom" id="x7S-Pa-wMS"/>
+                            <constraint firstItem="NZ3-ej-TNU" firstAttribute="trailing" secondItem="xM0-T2-jDu" secondAttribute="trailing" constant="8" id="xH2-zz-ljt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NZ3-ej-TNU"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="EWl-rx-mT8"/>
+                    <connections>
+                        <outlet property="cardsCollectionView" destination="cMi-F4-jiB" id="6Sf-hh-GXD"/>
+                        <outlet property="messageLabel" destination="mLC-Ue-uf1" id="fqD-ng-HBx"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DCw-YT-K2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="524" y="125.4872563718141"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="loE-lV-gwo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="CHZ-72-sKi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Sy-Kk-OVm">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Tna-YF-1aB" kind="relationship" relationship="viewControllers" id="YGR-sl-ztc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9d-xl-SFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-396" y="125"/>
         </scene>
     </scenes>
 </document>
