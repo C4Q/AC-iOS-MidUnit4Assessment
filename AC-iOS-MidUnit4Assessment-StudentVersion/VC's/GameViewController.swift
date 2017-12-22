@@ -35,8 +35,13 @@ class GameViewController: UIViewController {
     
     @IBAction func stopButton(_ sender: UIButton) {
         //TODO Save Hand
+        SavedHandsArchiverClient.manager.add(hand: self.currentHand)
         
         //TODO Show alert that displays "You are \(PointsToWin - currentsum) away from \(pointstowin)"
+        let alertVC = UIAlertController(title: "You Win!", message: "You are \(GameLogic.pointsToWin - GameLogic.sum) points from \(GameLogic.pointsToWin)", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "New Game", style: .cancel, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
+        
         //Once alert is clicked run resetfunction
         resetGame()
     }
@@ -49,23 +54,36 @@ class GameViewController: UIViewController {
             let cardValue = GameLogic.cardValues[cardFromOnline[0].value]
             GameLogic.sum = GameLogic.sum + (cardValue ?? 0)
             self.currentHandValueLabel.text = "Current Hand Value: \(GameLogic.sum)"
+            
+            //Check if sum of card values is over PointsToWin
+            if GameLogic.gameOver {
+                if GameLogic.sum == GameLogic.pointsToWin {
+                    //TODO Show alert
+                    let alertVC = UIAlertController(title: "You Win!", message: "You Win!!!", preferredStyle: .alert)
+                    alertVC.addAction(UIAlertAction(title: "New Game", style: .cancel, handler: nil))
+                    self.present(alertVC, animated: true, completion: nil)
+                    //TODO Save hand
+                    SavedHandsArchiverClient.manager.add(hand: self.currentHand)
+                    //Reset Game
+                    self.resetGame()
+                } else {
+                    //TODO Show alert
+                    let alertVC = UIAlertController(title: "GameOver", message: "You Lose!", preferredStyle: .alert)
+                    alertVC.addAction(UIAlertAction(title: "New Game", style: .cancel, handler: nil))
+                    self.present(alertVC, animated: true, completion: nil)
+                    //TODO Save hand
+                    SavedHandsArchiverClient.manager.add(hand: self.currentHand)
+                    //Reset Game
+                    self.resetGame()
+                }
+            }
         }
         
         CardsAPIClient.manager.getACard(fromDeckID: GameLogic.deckID, completionHandler: completion, errorHandler: {print($0)})
         
-        //Check if sum of card values is over PointsToWin
-        if GameLogic.gameOver {
-            //TODO Show alert
-            //TODO Save hand
-            SavedHandsArchiverClient.manager.add(hand: currentHand)
-            //Reset Game
-            resetGame()
-        }
-        
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
