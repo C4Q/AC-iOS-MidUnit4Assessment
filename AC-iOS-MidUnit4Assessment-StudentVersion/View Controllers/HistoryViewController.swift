@@ -48,10 +48,15 @@ extension HistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell", for: indexPath)
         
-        // to do
-        //should configure cell by passing in the data source variable
+        guard let historyCell = cell as? CollectionViewTableViewCell else {
+            return cell
+        }
         
-        return cell
+        // to do
+        //should configure cell by passing in the data source variable and cell? to assign as delegate/datasource?
+        historyCell.setUpCollectionView(forCell: historyCell, withCards: [])
+        
+        return historyCell
     }
     
 }

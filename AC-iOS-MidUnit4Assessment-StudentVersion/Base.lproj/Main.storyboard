@@ -109,17 +109,20 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyCell" rowHeight="136" id="eOm-Za-nZX" customClass="CollectionViewTableViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="136"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyCell" rowHeight="315" id="eOm-Za-nZX" customClass="CollectionViewTableViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="315"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOm-Za-nZX" id="7K5-rI-PJE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="314.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jxz-9P-L1h">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="314.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="clX-m1-PKa">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="250" id="Gkf-zF-ECb"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="clX-m1-PKa">
                                                         <size key="itemSize" width="123" height="84"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -138,10 +141,12 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Jxz-9P-L1h" firstAttribute="leading" secondItem="7K5-rI-PJE" secondAttribute="leading" id="FYz-6y-iml"/>
-                                                <constraint firstItem="Jxz-9P-L1h" firstAttribute="top" secondItem="7K5-rI-PJE" secondAttribute="top" id="S9f-Qs-SSq"/>
-                                                <constraint firstAttribute="bottom" secondItem="Jxz-9P-L1h" secondAttribute="bottom" id="W6o-LF-ZqC"/>
-                                                <constraint firstAttribute="trailing" secondItem="Jxz-9P-L1h" secondAttribute="trailing" id="tI0-r9-0Ij"/>
+                                                <constraint firstItem="Jxz-9P-L1h" firstAttribute="leading" secondItem="7K5-rI-PJE" secondAttribute="leading" id="4Vd-N0-PsA"/>
+                                                <constraint firstItem="Jxz-9P-L1h" firstAttribute="top" secondItem="7K5-rI-PJE" secondAttribute="top" id="Bqm-Q3-kYN"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jxz-9P-L1h" secondAttribute="bottom" id="Cdd-Gw-XLg"/>
+                                                <constraint firstItem="Jxz-9P-L1h" firstAttribute="centerX" secondItem="7K5-rI-PJE" secondAttribute="centerX" id="Dtc-KU-bsf"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jxz-9P-L1h" secondAttribute="trailing" id="WWL-DP-uUl"/>
+                                                <constraint firstItem="Jxz-9P-L1h" firstAttribute="centerY" secondItem="7K5-rI-PJE" secondAttribute="centerY" id="oEL-KB-vD0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -176,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWG-p6-yMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="9"/>
+            <point key="canvasLocation" x="637.60000000000002" y="8.5457271364317844"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Vnh-pg-Ree">
