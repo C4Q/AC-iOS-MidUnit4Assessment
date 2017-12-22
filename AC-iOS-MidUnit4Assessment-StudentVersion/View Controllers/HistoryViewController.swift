@@ -15,22 +15,19 @@ class HistoryViewController: UIViewController {
 	//MARK: View Overrrides
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		//TableView
-		tableView.delegate = self
-		tableView.dataSource = self
-
+		//		tableView.delegate = self
+		//		tableView.dataSource = self
 		//CollectionView
-		self.historyCollectionView.delegate = self
-		self.historyCollectionView.dataSource = self
-
+		//		self.historyCollectionView.delegate = self
+		//		self.historyCollectionView.dataSource = self
 		loadHistory()
 	}
 
 
 	//MARK: Actions
 	@IBAction func resetHistory(_ sender: UIButton) {
-		DataModel.manager.deleteHistory()
+		showResetHistoryAlert()
 	}
 
 
@@ -47,6 +44,7 @@ class HistoryViewController: UIViewController {
 		let okAlert = UIAlertAction(title: "Ok", style: .default, handler: nil)
 		alertController.addAction(okAlert)
 		present(alertController, animated: true, completion: nil)
+		DataModel.manager.deleteHistory()
 	}
 
 }
