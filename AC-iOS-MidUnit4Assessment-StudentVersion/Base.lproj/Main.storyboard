@@ -86,7 +86,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Game" id="qiQ-7x-KKj"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="cards" id="qiQ-7x-KKj"/>
                     <toolbarItems/>
                     <connections>
                         <outlet property="gameCollectionView" destination="L0u-cs-1Qn" id="jo3-l1-sug"/>
@@ -175,7 +175,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qUJ-ff-f3W"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" id="bfH-LD-h6S"/>
+                    <tabBarItem key="tabBarItem" title="History" image="time" id="bfH-LD-h6S"/>
                     <connections>
                         <outlet property="historyTableView" destination="3G5-g0-o2E" id="CjY-be-Ubo"/>
                     </connections>
@@ -244,11 +244,11 @@
             </objects>
             <point key="canvasLocation" x="-323.19999999999999" y="133.13343328335833"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="P3n-uP-jlT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gag-C2-CSF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6t8-IO-2YQ"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="6t8-IO-2YQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5MJ-fc-0az">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -264,4 +264,9 @@
             <point key="canvasLocation" x="636.79999999999995" y="846.47676161919048"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cards" width="40" height="40"/>
+        <image name="settings" width="40" height="40"/>
+        <image name="time" width="40" height="40"/>
+    </resources>
 </document>

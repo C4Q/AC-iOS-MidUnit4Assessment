@@ -73,16 +73,11 @@ class CardGame {
         if score < currentTargetScore {
             return .ongoing
         } else {
-            //save the cards
             PersistentData.manager.addCardGame(cards)
             
-            //save the score
             PersistentData.manager.addScore(score)
-                
-            //save the target score
-            PersistentData.manager.addTargetScore(currentTargetScore)
             
-            //this way they both always have the same index number
+            PersistentData.manager.addTargetScore(currentTargetScore)
             
             if score == currentTargetScore {
                 return .victory

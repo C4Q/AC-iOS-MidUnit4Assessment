@@ -14,14 +14,14 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     let cellSpacing = UIScreen.main.bounds.width * 0.05
     
-//    var cards: [Card] = [] //the number of cards
+    var cards: [Card] = [] //the number of cards
     
     func setUpCollectionView(forCell cell: CollectionViewTableViewCell, withCards cards: [Card]) {
         
         historyCollectionView.delegate = cell
         historyCollectionView.dataSource = cell
         
-//        self.cards = cards
+        self.cards = cards
         
         let nib = UINib(nibName: "CardCollectionViewCell", bundle: nil)
         
@@ -55,15 +55,21 @@ extension CollectionViewTableViewCell: UICollectionViewDelegateFlowLayout {
 extension CollectionViewTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10 //to do
+        return cards.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath)
         
-        //to do
+        guard let cardCell = cell as? CardCollectionViewCell else {
+            return cell
+        }
         
-        return cell
+        let currentCard = cards[indexPath.row]
+        
+        cardCell.configureCell(withCard: currentCard)
+    
+        return cardCell
     }
 }

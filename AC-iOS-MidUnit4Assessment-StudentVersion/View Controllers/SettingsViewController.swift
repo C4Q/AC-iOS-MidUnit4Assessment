@@ -17,15 +17,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         targetTextField.delegate = self
     }
-    
-    func presentAlertController(withTitle title: String, andMessage message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(alertAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
+
 }
 
 extension SettingsViewController: UITextFieldDelegate {
@@ -39,7 +31,10 @@ extension SettingsViewController: UITextFieldDelegate {
             return true
         }
         
-        presentAlertController(withTitle: "ERROR", andMessage: "Please enter only numbers.")
+        let alertController = Alert.createAlertController(withTitle: "ERROR", andMessage: "Please enter only numbers.")
+        
+        self.present(alertController, animated: true, completion: nil)
+        
         return false
     }
     
@@ -49,18 +44,26 @@ extension SettingsViewController: UITextFieldDelegate {
         }
         
         guard text.count >= 1 else {
-            presentAlertController(withTitle: "ERROR", andMessage: "Please enter at least 1 number.")
+            let alertController = Alert.createAlertController(withTitle: "ERROR", andMessage: "Please enter at least 1 number.")
             
+            self.present(alertController, animated: true, completion: nil)
+
             return false
         }
         
         guard let intText = Int(text) else {
-            presentAlertController(withTitle: "ERROR", andMessage: "Could not save non-integer target.")
+            let alertController = Alert.createAlertController(withTitle: "ERROR", andMessage: "Could not save non-integer target.")
+            
+            self.present(alertController, animated: true, completion: nil)
+            
             return false
         }
         
         Settings.manager.changeTarget(toNumber: intText)
-        presentAlertController(withTitle: "SUCCESS", andMessage: "Changed target number to \(intText).")
+        
+        let alertController = Alert.createAlertController(withTitle: "SUCCESS", andMessage: "Changed target number to \(intText).")
+        
+        self.present(alertController, animated: true, completion: nil)
         
         textField.text = ""
         

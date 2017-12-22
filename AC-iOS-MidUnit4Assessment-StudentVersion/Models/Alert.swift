@@ -9,6 +9,14 @@
 import UIKit
 
 class Alert {
+    static func createAlertController(withTitle title: String, andMessage message: String) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        
+        return alertController
+    }
+    
     static func createErrorAlert(withError error: Error) -> UIAlertController {
         let message: String
         

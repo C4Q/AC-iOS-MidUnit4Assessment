@@ -21,6 +21,7 @@ class PersistentData {
             saveCardGames()
         }
     }
+    
     private var scores: [Int] = [] {
         didSet {
             saveScores()
