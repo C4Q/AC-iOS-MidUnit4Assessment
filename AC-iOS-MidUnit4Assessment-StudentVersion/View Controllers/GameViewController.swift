@@ -8,14 +8,19 @@
 
 import UIKit
 
+enum UserDefaultsKeys: String {
+    case targetScore
+}
+
 class GameViewController: UIViewController {
     
      let cellSpacing: CGFloat = 5.0
     
+    @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var cardsCollectionView: UICollectionView!
     
-    var gameBrain = GameBrainModel()
+    var gameBrain = GameBrainModel(targetScore: 30)
     
     var cardDeck: CardDeck?
     
@@ -27,6 +32,11 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let targetScore = UserDefaults.standard.value(forKey: UserDefaultsKeys.targetScore.rawValue) as? Int {
+            gameBrain = GameBrainModel(targetScore: targetScore)
+        }
+        targetLabel.text = "Get up to \(gameBrain.getGoal()) without going over"
+        DataPersistenceModel.shared.load()
         let nib = UINib(nibName: "CardCollectionViewCell", bundle: nil)
         self.cardsCollectionView.register(nib, forCellWithReuseIdentifier: "GameCardCell")
         self.cardsCollectionView.delegate = self
@@ -36,6 +46,8 @@ class GameViewController: UIViewController {
     
 
     @IBAction func stopButtonPressed(_ sender: UIButton) {
+        let toSave = PastGame(finalScore: gameBrain.getScore(), gameCards: cardsDrawn)
+        DataPersistenceModel.shared.addPastGame(pastGame: toSave)
         showAlertAndStartNewGame(with: "You are \(gameBrain.pointsAwayFromGoal()) away from \(gameBrain.goal)")
         CardDeckAPIClient.manager.getCardDeck(completionHandler: { self.cardDeck = $0 }, errorHandler: { print($0) })
     }
@@ -48,7 +60,9 @@ class GameViewController: UIViewController {
             self.messageLabel.text = "Current Hand Value: \(self.gameBrain.getScore())"
             if self.gameBrain.didItGoOver() {
                 self.messageLabel.text = "Current Hand Value: \(self.gameBrain.getScore()) BUST"
-                self.showAlertAndStartNewGame(with: "You went over 30")
+                let toSave = PastGame(finalScore: self.gameBrain.getScore(), gameCards: self.cardsDrawn)
+                DataPersistenceModel.shared.addPastGame(pastGame: toSave)
+                self.showAlertAndStartNewGame(with: "You went over \(self.gameBrain.getGoal())")
             }
         }, errorHandler: { print($0) })
     }
@@ -57,10 +71,14 @@ class GameViewController: UIViewController {
         let alertController = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "New Game", style: .default, handler: nil)
         alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
         self.present(alertController, animated: true, completion: {
             self.cardsDrawn = []
-            self.gameBrain.resetGame()
+            if let newTargetScore = UserDefaults.standard.value(forKey: UserDefaultsKeys.targetScore.rawValue) as? Int {
+                self.gameBrain = GameBrainModel(targetScore: newTargetScore)
+                self.targetLabel.text = "Get up to \(self.gameBrain.getGoal()) without going over"
+            } else {
+                self.gameBrain.resetGame()
+            }
             self.messageLabel.text = "Current Hand Value:"
             CardDeckAPIClient.manager.getCardDeck(completionHandler: { self.cardDeck = $0 }, errorHandler: { print($0) })
         })
@@ -79,6 +97,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let card = cardsDrawn[indexPath.row]
         if let cardCell = cardCell as? CardCollectionViewCell {
             cardCell.cardValueLabel.text = card.value
+            cardCell.cardImageView.image = nil
             ImageFetchHelper.manager.getImage(from: card.image, completionHandler: {
                 cardCell.cardImageView.image = $0
                 cardCell.setNeedsLayout()

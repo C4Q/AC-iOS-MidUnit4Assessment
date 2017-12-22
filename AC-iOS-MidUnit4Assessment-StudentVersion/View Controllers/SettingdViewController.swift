@@ -1,5 +1,5 @@
 //
-//  PastGamesViewController.swift
+//  SettingdViewController.swift
 //  AC-iOS-MidUnit4Assessment-StudentVersion
 //
 //  Created by Luis Calle on 12/22/17.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    
 }

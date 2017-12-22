@@ -13,8 +13,16 @@ class GameBrainModel {
     var score = 0
     var goal = 30
     
+    init(targetScore: Int) {
+        goal = targetScore
+    }
+    
     func getScore() -> Int {
         return score
+    }
+    
+    func getGoal() -> Int {
+        return goal
     }
     
     func pointsAwayFromGoal() -> Int {
