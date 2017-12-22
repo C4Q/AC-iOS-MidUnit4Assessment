@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,9 +53,17 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmh-c5-mbw">
                                 <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Stop" id="JqW-sa-axM"/>
+                                    <barButtonItem title="Stop" id="JqW-sa-axM">
+                                        <connections>
+                                            <action selector="stopButtonPressed:" destination="BYZ-38-t0r" id="Dzw-YV-Ohb"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Y9b-Pi-BLO"/>
-                                    <barButtonItem title="Draw A Card" id="Swt-hT-gfF"/>
+                                    <barButtonItem title="Draw A Card" id="Swt-hT-gfF">
+                                        <connections>
+                                            <action selector="drawACardButtonPressed:" destination="BYZ-38-t0r" id="5zW-IQ-yjr"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -78,10 +87,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" id="qiQ-7x-KKj"/>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="gameCollectionView" destination="L0u-cs-1Qn" id="jo3-l1-sug"/>
+                        <outlet property="instructionsLabel" destination="bXT-jV-zxg" id="pt6-Ax-a81"/>
+                        <outlet property="scoreLabel" destination="d9e-D9-nLo" id="YdR-Ik-MxJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637.60000000000002" y="-201.04947526236884"/>
+            <point key="canvasLocation" x="638" y="-815"/>
         </scene>
         <!--History-->
         <scene sceneID="MK2-YO-M98">
@@ -95,7 +109,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyCell" rowHeight="136" id="eOm-Za-nZX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyCell" rowHeight="136" id="eOm-Za-nZX" customClass="CollectionViewTableViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOm-Za-nZX" id="7K5-rI-PJE">
@@ -130,12 +144,18 @@
                                                 <constraint firstAttribute="trailing" secondItem="Jxz-9P-L1h" secondAttribute="trailing" id="tI0-r9-0Ij"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="historyCollectionView" destination="Jxz-9P-L1h" id="6Ri-NG-2l5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4K-Jd-5b9">
                                 <rect key="frame" x="143" y="568" width="89" height="30"/>
                                 <state key="normal" title="Clear History"/>
+                                <connections>
+                                    <action selector="clearHistoryButtonPressed:" destination="vOy-b3-PwQ" eventType="touchUpInside" id="J6h-5p-Quw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,10 +170,53 @@
                         <viewLayoutGuide key="safeArea" id="qUJ-ff-f3W"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="bfH-LD-h6S"/>
+                    <connections>
+                        <outlet property="historyTableView" destination="3G5-g0-o2E" id="CjY-be-Ubo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWG-p6-yMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637.60000000000002" y="680.5097451274363"/>
+            <point key="canvasLocation" x="638" y="9"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Vnh-pg-Ree">
+            <objects>
+                <viewController id="IPS-Ex-7ni" customClass="SettingsViewController" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H2t-cV-Zec">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change target number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-tf-NnI">
+                                <rect key="frame" x="98" y="223" width="178" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W75-n6-yhl">
+                                <rect key="frame" x="112.5" y="285" width="150" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e7j-tf-NnI" firstAttribute="centerX" secondItem="H2t-cV-Zec" secondAttribute="centerX" id="6a3-Fs-P4j"/>
+                            <constraint firstItem="W75-n6-yhl" firstAttribute="centerX" secondItem="H2t-cV-Zec" secondAttribute="centerX" id="PT0-3e-3lP"/>
+                            <constraint firstItem="e7j-tf-NnI" firstAttribute="centerY" secondItem="H2t-cV-Zec" secondAttribute="centerY" multiplier="0.7" id="u7H-nz-Bz2"/>
+                            <constraint firstItem="W75-n6-yhl" firstAttribute="width" secondItem="H2t-cV-Zec" secondAttribute="width" multiplier="0.4" id="xXr-8O-S9U"/>
+                            <constraint firstItem="W75-n6-yhl" firstAttribute="centerY" secondItem="H2t-cV-Zec" secondAttribute="centerY" multiplier="0.9" id="zG5-lX-5oT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MA9-yE-6Xt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="nUA-sa-4SU"/>
+                    <connections>
+                        <outlet property="targetTextField" destination="W75-n6-yhl" id="eGN-LY-OMs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFh-uo-ght" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1458" y="846"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="50K-Tm-g46">
@@ -168,11 +231,31 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wYC-6Z-uT9"/>
                         <segue destination="vOy-b3-PwQ" kind="relationship" relationship="viewControllers" id="ulx-84-1lX"/>
+                        <segue destination="Gag-C2-CSF" kind="relationship" relationship="viewControllers" id="9Kq-jv-5xs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bp9-eG-GbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-323.19999999999999" y="133.13343328335833"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="P3n-uP-jlT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gag-C2-CSF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="6t8-IO-2YQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5MJ-fc-0az">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IPS-Ex-7ni" kind="relationship" relationship="rootViewController" id="02k-MM-cs9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWO-wq-gug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636.79999999999995" y="846.47676161919048"/>
         </scene>
     </scenes>
 </document>

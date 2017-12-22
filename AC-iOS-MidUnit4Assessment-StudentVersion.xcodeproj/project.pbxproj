@@ -13,6 +13,9 @@
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
 		812F0A291FED5EB5003AF18E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F0A281FED5EB5003AF18E /* HistoryViewController.swift */; };
+		81C609221FED61E900AD802A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C609211FED61E900AD802A /* CollectionViewTableViewCell.swift */; };
+		81C609271FED658500AD802A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C609261FED658500AD802A /* SettingsViewController.swift */; };
+		81C609291FED65C400AD802A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C609281FED65C400AD802A /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		812F0A281FED5EB5003AF18E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		81C609211FED61E900AD802A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		81C609261FED658500AD802A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		81C609281FED65C400AD802A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +62,11 @@
 		545F2AB21FEC2752007EBECB /* AC-iOS-MidUnit4Assessment-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
-				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
+				81C609241FED621300AD802A /* Unused Stuff */,
+				81C609251FED622B00AD802A /* Models */,
+				81C609231FED61F300AD802A /* Views */,
 				812F0A2A1FED5EBE003AF18E /* View Controllers */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
-				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
-				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
@@ -71,8 +77,35 @@
 			children = (
 				545F2AB51FEC2752007EBECB /* GameViewController.swift */,
 				812F0A281FED5EB5003AF18E /* HistoryViewController.swift */,
+				81C609261FED658500AD802A /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		81C609231FED61F300AD802A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81C609211FED61E900AD802A /* CollectionViewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		81C609241FED621300AD802A /* Unused Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
+				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
+				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
+			);
+			path = "Unused Stuff";
+			sourceTree = "<group>";
+		};
+		81C609251FED622B00AD802A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81C609281FED65C400AD802A /* Settings.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +180,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C609291FED65C400AD802A /* Settings.swift in Sources */,
 				812F0A291FED5EB5003AF18E /* HistoryViewController.swift in Sources */,
 				545F2AB61FEC2752007EBECB /* GameViewController.swift in Sources */,
+				81C609221FED61E900AD802A /* CollectionViewTableViewCell.swift in Sources */,
+				81C609271FED658500AD802A /* SettingsViewController.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
