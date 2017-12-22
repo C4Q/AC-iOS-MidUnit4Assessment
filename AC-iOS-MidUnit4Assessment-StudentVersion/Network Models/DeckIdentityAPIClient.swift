@@ -9,7 +9,7 @@
 import Foundation
 
 struct CardIdentity: Codable {
-    let deckID: String
+    let deckID: String?
     
     enum CodingKeys: String, CodingKey {
         case deckID = "deck_id"

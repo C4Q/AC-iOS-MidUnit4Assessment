@@ -7,6 +7,9 @@
 //
 
 import UIKit
+
+//DIDN'T USE THIS 
+
 /*
 class CardCollectionViewCell: UICollectionViewCell {
     

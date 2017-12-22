@@ -8,6 +8,8 @@
 
 import UIKit
 
+//NOTE TO TA: I was having issues with parsing the data so I was unable to load data in the appropriate places. I will be resubmitting during the break. Enjoy the cute schnauzer pup! :)
+
 class BlackJackViewController: UIViewController {
     
     @IBOutlet weak var cardCollectionView: UICollectionView!
@@ -15,23 +17,68 @@ class BlackJackViewController: UIViewController {
     @IBOutlet weak var instructionsLabel: UILabel!
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
+        //TODO: disable draw button
+        //TODO: Save final card value info
+        //TODO: Show how far theu were away fro 30
+        //TODO: Send to Recents view controller
     }
     
+    
     @IBAction func drawACardButtonPressed(_ sender: UIButton) {
+        //TODO: Keep track of hand value...add to the value total
+        //TODO: Add conditional statement...if current hand value > 30 then defeat message via alert pop-up
+        //TODO: Add conditional statement...if hand value == 30 then victory message via alert pop-up
     }
     
     let cellSpacing: CGFloat = 10.0
+    
+    var cardId: CardIdentity!
+    var myCards = [CardInfo]()
+    var cardImage: UIImage!
+    
+    var myCardsCode: String = ""
+    var myCardsValue: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cardCollectionView.dataSource = self
         self.cardCollectionView.delegate = self
-        //Setting my nib
-//        let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
-//        self.cardCollectionView.register(nib, forCellReuseIdentifier: "Pixabay Cell")
+        loadDeckIdentityData()
+        loadTheCardData()
+        //set nib here
+    }
+    
+    
+    //MARK: -Loading all Data
+    func loadDeckIdentityData() {
+        let urlStr = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6"
+        let setIdentityToOnlineID: (CardIdentity) -> Void = {(onlineID: CardIdentity) in
+            self.cardId = onlineID
+        }
+        DeckIdentityAPIClient.manager.getCardIdentity(from: urlStr, completionHandler: setIdentityToOnlineID, errorHandler: {print($0)})
+    }
+    
+    func loadTheCardData() {
+        //guard let cardId = cardId else { return }
+        let testID = "7vlk6gflplio"
+        let urlStr = "https://deckofcardsapi.com/api/deck/\(testID)/draw/?count=1"
+        let setCardToOnlineCard: ([CardInfo]) -> Void = {(OnlineCard: [CardInfo]) in
+            self.myCards = OnlineCard
+        }
+        CardAPIClient.manager.getCards(from: urlStr, completionHandler: setCardToOnlineCard, errorHandler: {print($0)})
+    }
+    
+
+    func loadTheCardImage() {
+        let urlStr = "http://deckofcardsapi.com/static/img/\(myCardsCode).png"
+        let setImageToOnlineImage: (UIImage)->Void = {(OnlineImage: UIImage) in
+            self.cardImage = OnlineImage
+        }
+        ImageAPIClient.manager.getImage(from: urlStr, completionHandler: setImageToOnlineImage, errorHandler: {print($0)})
     }
 }
 
+//MARK: -Collection View SetUp
 extension BlackJackViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10//bestSellerBooks.count
@@ -39,13 +86,9 @@ extension BlackJackViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = cardCollectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardsCollectionViewCell else { return UICollectionViewCell() }
+        loadTheCardData()
         cell.imageView.image = #imageLiteral(resourceName: "puppy")
-        cell.cardValueLabel.text = "10"
-        //let chosenBestSellerBook = bestSellerBooks[indexPath.item]
-        //cell.weeksAsBestSellerLabel.text = "\(chosenBestSellerBook.weeksOnBestSellerList) weeks on best seller list"
-        //cell.shortDescriptionLabel.text = chosenBestSellerBook.bookDetails.description
-        //SET IMAGE
-        //TODO: Get the thumbnail url ...let imageStr = googleBook.volum...
+        cell.cardValueLabel.text = "10"//myCardsValue
         //TODO: Call the imageAPIClient & set completion like this...completion handler {cell.bookiangeView.image = $0}
         return cell
     }
@@ -73,23 +116,4 @@ extension BlackJackViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-
-
-
-
-
-
-
-//example code for a call
-//func loadImage(named str: String) {
-//    PixabayAPIClient.manager.getFirstImage(named: str, completionHandler: {self.pixabay = $0}, errorHandler: {print($0)})
-//}
-
-//func loadCategories() {
-//    let loadData: ([Categories]) -> Void = {(onlineCategory: [Categories]) in
-//        self.categories = onlineCategory
-//    }
-//    let url = BookCategoriesAPIClient.urlStr
-//    BookCategoriesAPIClient.manager.getCategories(with: url,completionHandler: loadData, errorHandler: {print($0)})
-//}
 

@@ -23,6 +23,8 @@
 		817A390D1FED7A970001BB61 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A390C1FED7A970001BB61 /* CardsCollectionViewCell.swift */; };
 		81C6ACA11FED896D009FD496 /* RecentGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6ACA01FED896D009FD496 /* RecentGamesTableViewCell.swift */; };
 		81C6ACA31FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6ACA21FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift */; };
+		81C6ACA61FEDBB86009FD496 /* PersistentStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6ACA51FEDBB86009FD496 /* PersistentStoreManager.swift */; };
+		81C6ACA81FEDBC99009FD496 /* Recents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6ACA71FEDBC99009FD496 /* Recents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		817A390C1FED7A970001BB61 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		81C6ACA01FED896D009FD496 /* RecentGamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentGamesTableViewCell.swift; sourceTree = "<group>"; };
 		81C6ACA21FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		81C6ACA51FEDBB86009FD496 /* PersistentStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStoreManager.swift; sourceTree = "<group>"; };
+		81C6ACA71FEDBC99009FD496 /* Recents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				817A38F31FED5E0D0001BB61 /* View Controllers */,
 				817A38F51FED5E320001BB61 /* Network Models */,
 				817A38F41FED5E1E0001BB61 /* Views */,
+				81C6ACA41FEDBAD0009FD496 /* Persistence */,
 				817A38F21FED5D520001BB61 /* Supporting Files */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
@@ -127,6 +132,15 @@
 				817A39061FED6CC00001BB61 /* AppError.swift */,
 			);
 			path = "Network Models";
+			sourceTree = "<group>";
+		};
+		81C6ACA41FEDBAD0009FD496 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				81C6ACA51FEDBB86009FD496 /* PersistentStoreManager.swift */,
+				81C6ACA71FEDBC99009FD496 /* Recents.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +220,11 @@
 				817A38F91FED5E6D0001BB61 /* RecentsViewController.swift in Sources */,
 				545F2AB61FEC2752007EBECB /* BlackJackViewController.swift in Sources */,
 				817A39071FED6CC00001BB61 /* AppError.swift in Sources */,
+				81C6ACA61FEDBB86009FD496 /* PersistentStoreManager.swift in Sources */,
 				817A38FF1FED6AFC0001BB61 /* NetworkHelper.swift in Sources */,
 				81C6ACA11FED896D009FD496 /* RecentGamesTableViewCell.swift in Sources */,
 				817A39051FED6B810001BB61 /* DeckIdentityAPIClient.swift in Sources */,
+				81C6ACA81FEDBC99009FD496 /* Recents.swift in Sources */,
 				81C6ACA31FED8ECF009FD496 /* RecentsCardCollectionViewCell.swift in Sources */,
 				817A39031FED6B230001BB61 /* ImageAPIClient.swift in Sources */,
 				545F2AB41FEC2752007EBECB /* AppDelegate.swift in Sources */,

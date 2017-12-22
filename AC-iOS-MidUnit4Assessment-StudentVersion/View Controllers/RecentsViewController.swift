@@ -12,23 +12,15 @@ class RecentsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        //TODO: Clear Table view Cells when pressed...remove from memory
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension RecentsViewController: UITableViewDelegate, UITableViewDataSource {

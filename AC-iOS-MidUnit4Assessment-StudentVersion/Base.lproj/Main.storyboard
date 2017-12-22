@@ -68,7 +68,6 @@
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
-                                                            <color key="backgroundColor" red="0.77957979509999997" green="0.87401248369999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="qkg-Ey-E1u" secondAttribute="trailing" id="8fC-jh-StS"/>
                                                                 <constraint firstItem="qkg-Ey-E1u" firstAttribute="top" secondItem="ybH-NO-Bs7" secondAttribute="bottom" constant="8" id="dAJ-tb-YgQ"/>
@@ -104,6 +103,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSZ-TH-diL">
                                 <rect key="frame" x="0.0" y="588" width="375" height="30"/>
                                 <state key="normal" title="Reset History"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="3t1-Vz-67e" eventType="touchUpInside" id="jbH-LT-ZJn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -173,7 +175,6 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.77957979509999997" green="0.87401248369999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="1i1-gK-Jvc" firstAttribute="centerX" secondItem="wdf-lz-WTy" secondAttribute="centerX" id="P9M-zR-gYP"/>
                                             <constraint firstItem="1i1-gK-Jvc" firstAttribute="centerY" secondItem="wdf-lz-WTy" secondAttribute="centerY" id="cTC-dF-Zia"/>
@@ -189,39 +190,48 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsC-2r-GTk">
-                                <rect key="frame" x="63" y="542" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stopButtonPressed:" destination="vZ6-Py-26m" eventType="touchUpInside" id="6gi-9d-1NL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3e-m8-Eud">
-                                <rect key="frame" x="252" y="542" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Draw a Card"/>
-                                <connections>
-                                    <action selector="drawACardButtonPressed:" destination="vZ6-Py-26m" eventType="touchUpInside" id="qpA-nA-Mrt"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get up to 30 without going over!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z85-eg-Lag">
-                                <rect key="frame" x="21" y="409" width="332" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get up to 30 without going over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z85-eg-Lag">
+                                <rect key="frame" x="0.0" y="388" width="375" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="hpQ-w4-EVo">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsC-2r-GTk">
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="30"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopButtonPressed:" destination="vZ6-Py-26m" eventType="touchUpInside" id="6gi-9d-1NL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3e-m8-Eud">
+                                        <rect key="frame" x="237.5" y="0.0" width="137.5" height="30"/>
+                                        <state key="normal" title="Draw a Card"/>
+                                        <connections>
+                                            <action selector="drawACardButtonPressed:" destination="vZ6-Py-26m" eventType="touchUpInside" id="qpA-nA-Mrt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lru-uB-hav" firstAttribute="bottom" secondItem="hpQ-w4-EVo" secondAttribute="bottom" id="0pu-HJ-RuR"/>
                             <constraint firstItem="wOo-zD-9vc" firstAttribute="leading" secondItem="lru-uB-hav" secondAttribute="leading" id="6Cm-a3-kMD"/>
+                            <constraint firstItem="hpQ-w4-EVo" firstAttribute="bottom" secondItem="lru-uB-hav" secondAttribute="bottom" id="Ts6-sv-o7t"/>
                             <constraint firstItem="nbd-w9-5LQ" firstAttribute="top" secondItem="lru-uB-hav" secondAttribute="top" id="XDU-dd-7r7"/>
+                            <constraint firstItem="hpQ-w4-EVo" firstAttribute="centerX" secondItem="4Ig-xb-1EA" secondAttribute="centerX" id="YSt-CP-p6L"/>
+                            <constraint firstItem="Z85-eg-Lag" firstAttribute="leading" secondItem="lru-uB-hav" secondAttribute="leading" id="jd5-bS-pBy"/>
+                            <constraint firstItem="Z85-eg-Lag" firstAttribute="top" secondItem="wOo-zD-9vc" secondAttribute="bottom" constant="8" id="k15-Ba-QUW"/>
                             <constraint firstItem="wOo-zD-9vc" firstAttribute="height" secondItem="4Ig-xb-1EA" secondAttribute="height" multiplier="0.5" id="o0N-vl-B5W"/>
                             <constraint firstItem="lru-uB-hav" firstAttribute="trailing" secondItem="wOo-zD-9vc" secondAttribute="trailing" id="tas-sD-gR5"/>
                             <constraint firstItem="lru-uB-hav" firstAttribute="trailing" secondItem="nbd-w9-5LQ" secondAttribute="trailing" id="tbB-R7-lcs"/>
                             <constraint firstItem="nbd-w9-5LQ" firstAttribute="leading" secondItem="lru-uB-hav" secondAttribute="leading" id="uDS-zJ-m2t"/>
+                            <constraint firstItem="hpQ-w4-EVo" firstAttribute="width" secondItem="4Ig-xb-1EA" secondAttribute="width" id="uYO-5j-Hnt"/>
                             <constraint firstItem="wOo-zD-9vc" firstAttribute="top" secondItem="nbd-w9-5LQ" secondAttribute="bottom" id="vNM-gE-7A6"/>
+                            <constraint firstItem="lru-uB-hav" firstAttribute="trailing" secondItem="Z85-eg-Lag" secondAttribute="trailing" id="zry-Ou-kq2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lru-uB-hav"/>
                     </view>

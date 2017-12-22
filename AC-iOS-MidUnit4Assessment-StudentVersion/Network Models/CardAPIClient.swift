@@ -13,6 +13,7 @@ struct Cards: Codable {
 }
 
 struct CardInfo: Codable {
+    let code: String
     let image: String
     let value: String
     let suit: String
@@ -23,7 +24,6 @@ struct CardAPIClient {
     static let manager = CardAPIClient()
     let cardsUrl = "https://deckofcardsapi.com/api/deck/7vlk6gflplio/draw/?count=1"
     func getCards(from urlStr: String, completionHandler: @escaping ([CardInfo]) -> Void, errorHandler: @escaping (AppError) -> Void){
-        
         
         guard let url = URL(string: urlStr) else{
             errorHandler(.badURL)
