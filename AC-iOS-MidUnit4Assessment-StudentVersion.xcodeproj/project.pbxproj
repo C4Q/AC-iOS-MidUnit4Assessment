@@ -13,6 +13,7 @@
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
 		8109B8261FED875E00D85A5B /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109B8251FED875E00D85A5B /* PersistentData.swift */; };
+		8109B8281FED95C400D85A5B /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109B8271FED95C400D85A5B /* ImageAPIClient.swift */; };
 		812D0FE21FED7BA600352EAA /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D0FE11FED7BA600352EAA /* NetworkHelper.swift */; };
 		812D0FE51FED7D0C00352EAA /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D0FE41FED7D0C00352EAA /* Deck.swift */; };
 		812D0FE81FED7D4800352EAA /* DeckAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D0FE71FED7D4800352EAA /* DeckAPIClient.swift */; };
@@ -36,6 +37,7 @@
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8109B8251FED875E00D85A5B /* PersistentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
+		8109B8271FED95C400D85A5B /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
 		812D0FE11FED7BA600352EAA /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		812D0FE41FED7D0C00352EAA /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		812D0FE71FED7D4800352EAA /* DeckAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckAPIClient.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				812D0FE11FED7BA600352EAA /* NetworkHelper.swift */,
 				812D0FEB1FED81A400352EAA /* CardGame.swift */,
 				8109B8251FED875E00D85A5B /* PersistentData.swift */,
+				8109B8271FED95C400D85A5B /* ImageAPIClient.swift */,
 				812D0FE61FED7D0F00352EAA /* Deck */,
 				812D0FE31FED7C0200352EAA /* Cards */,
 			);
@@ -227,6 +230,7 @@
 				81C609291FED65C400AD802A /* Settings.swift in Sources */,
 				812D0FE21FED7BA600352EAA /* NetworkHelper.swift in Sources */,
 				812D0FE51FED7D0C00352EAA /* Deck.swift in Sources */,
+				8109B8281FED95C400D85A5B /* ImageAPIClient.swift in Sources */,
 				812F0A291FED5EB5003AF18E /* HistoryViewController.swift in Sources */,
 				812D0FE81FED7D4800352EAA /* DeckAPIClient.swift in Sources */,
 				812D0FEA1FED7F4900352EAA /* CardAPIClient.swift in Sources */,
