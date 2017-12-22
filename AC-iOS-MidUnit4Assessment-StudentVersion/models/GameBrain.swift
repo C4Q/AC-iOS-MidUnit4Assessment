@@ -17,7 +17,7 @@ class GameBrain {
     static let manager = GameBrain()
     var hand = [Card]()
     var currentTotal = 0
-    private let victoryTotal = 30
+    let victoryTotal = 30
     var deck: Deck!
     var currentDraw: Card?
     

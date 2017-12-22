@@ -63,6 +63,4 @@ static let manager = Persistence()
     }
     
     
-    
-    
 }

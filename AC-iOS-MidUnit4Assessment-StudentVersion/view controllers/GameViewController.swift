@@ -57,7 +57,13 @@ class GameViewController: UIViewController {
         
         
     }
-    
+    private func showStopAlert() {
+        let alertController = UIAlertController(title: "Stopped", message: "you were \(GameBrain.manager.victoryTotal - GameBrain.manager.currentTotal) away from 30", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "New Game", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
 
    //TODO button actions 
 
@@ -79,6 +85,16 @@ class GameViewController: UIViewController {
         }
 
     }
+    
+    @IBAction func stopButtonPressed(_ sender: UIButton) {
+        showStopAlert()
+        Persistence.manager.addHand(cards: hand, total: GameBrain.manager.currentTotal)
+        resetGame()
+        
+        
+
+    }
+    
     
     func resetGame() {
         currentHandValueLabel.text = "Current Hand Total: \(GameBrain.manager.currentTotal)"

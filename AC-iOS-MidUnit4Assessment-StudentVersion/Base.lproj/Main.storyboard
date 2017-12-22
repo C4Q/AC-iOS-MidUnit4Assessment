@@ -52,6 +52,9 @@
                                     <constraint firstAttribute="width" secondItem="uIC-F0-c7S" secondAttribute="height" multiplier="16:4" id="kID-vU-tFS"/>
                                 </constraints>
                                 <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H2S-vB-Ajc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckJ-7w-t6P">
                                 <rect key="frame" x="192" y="432.5" width="96" height="24"/>
