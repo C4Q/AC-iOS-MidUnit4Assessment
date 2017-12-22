@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,28 +51,43 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" rowHeight="305" id="lDH-RT-PoB" customClass="HistoryTableViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="305"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" rowHeight="500" id="lDH-RT-PoB" customClass="HistoryTableViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lDH-RT-PoB" id="Wyi-W4-Bcj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="304.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="499.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand Total: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqF-He-MD6">
+                                                    <rect key="frame" x="20" y="16" width="335" height="104"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQM-GK-CgW">
+                                                    <rect key="frame" x="20" y="380" width="335" height="104"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fCT-pU-zWY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="304.5"/>
+                                                    <rect key="frame" x="0.0" y="125" width="375" height="250"/>
                                                     <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tM2-ei-ZMh">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="999" constant="250" id="Yot-E3-1OK"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="tM2-ei-ZMh">
+                                                        <size key="itemSize" width="200" height="200"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="Tuh-G0-wsC">
-                                                            <rect key="frame" x="0.0" y="-3.5" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="25" width="200" height="200"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </view>
                                                             <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,14 +96,23 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="fCT-pU-zWY" secondAttribute="trailing" id="4ba-80-9J0"/>
-                                                <constraint firstAttribute="bottom" secondItem="fCT-pU-zWY" secondAttribute="bottom" id="5yC-CW-AMy"/>
-                                                <constraint firstItem="fCT-pU-zWY" firstAttribute="leading" secondItem="Wyi-W4-Bcj" secondAttribute="leading" id="YfF-QM-snP"/>
-                                                <constraint firstItem="fCT-pU-zWY" firstAttribute="top" secondItem="Wyi-W4-Bcj" secondAttribute="top" id="lV2-Kg-vsl"/>
+                                                <constraint firstItem="yqF-He-MD6" firstAttribute="leading" secondItem="Wyi-W4-Bcj" secondAttribute="leadingMargin" constant="5" id="D5O-tW-At5"/>
+                                                <constraint firstItem="yqF-He-MD6" firstAttribute="top" secondItem="Wyi-W4-Bcj" secondAttribute="topMargin" constant="5" id="F2I-AJ-Mhl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gQM-GK-CgW" secondAttribute="trailing" constant="5" id="JAF-so-SEP"/>
+                                                <constraint firstItem="fCT-pU-zWY" firstAttribute="top" secondItem="yqF-He-MD6" secondAttribute="bottom" constant="5" id="Jzx-R2-Z14"/>
+                                                <constraint firstItem="gQM-GK-CgW" firstAttribute="top" secondItem="fCT-pU-zWY" secondAttribute="bottom" constant="5" id="UXN-xy-oy4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gQM-GK-CgW" secondAttribute="bottom" constant="5" id="YlZ-Y1-U6g"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yqF-He-MD6" secondAttribute="trailing" constant="5" id="ZBN-ES-DI6"/>
+                                                <constraint firstItem="fCT-pU-zWY" firstAttribute="width" secondItem="Wyi-W4-Bcj" secondAttribute="width" id="dJE-xm-bGp"/>
+                                                <constraint firstItem="fCT-pU-zWY" firstAttribute="centerX" secondItem="Wyi-W4-Bcj" secondAttribute="centerX" id="oZm-dJ-vWu"/>
+                                                <constraint firstItem="fCT-pU-zWY" firstAttribute="centerY" secondItem="Wyi-W4-Bcj" secondAttribute="centerY" id="rHz-vq-nE0"/>
+                                                <constraint firstItem="gQM-GK-CgW" firstAttribute="leading" secondItem="Wyi-W4-Bcj" secondAttribute="leadingMargin" constant="5" id="wWa-xG-DCP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="fCT-pU-zWY" id="IOr-m8-Kty"/>
+                                            <outlet property="handTotalLabel" destination="yqF-He-MD6" id="4l4-UF-hbo"/>
+                                            <outlet property="targetLabel" destination="gQM-GK-CgW" id="5AC-UQ-ykH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

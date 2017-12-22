@@ -13,6 +13,9 @@ class HistoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var handTotalLabel: UILabel!
+    
+    @IBOutlet weak var targetLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +27,9 @@ class HistoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+        
 
+    
 }
 
 
@@ -37,13 +42,12 @@ class HistoryTableViewCell: UITableViewCell {
 
 extension HistoryTableViewCell {
     
-    func setCollectionViewDataSourceDelegate
-        <D: UICollectionViewDataSource & UICollectionViewDelegate>
-        (dataSourceDelegate: D, forRow row: Int) {
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
         
         collectionView.delegate = dataSourceDelegate
         collectionView.dataSource = dataSourceDelegate
         collectionView.tag = row
+        collectionView.setContentOffset(collectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
         collectionView.reloadData()
     }
     

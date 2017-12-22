@@ -80,17 +80,8 @@
 			children = (
 				545F2AB31FEC2752007EBECB /* AppDelegate.swift */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
-				810A38D81FED624B003A7454 /* BlackjackViewController.swift */,
-				810A38E01FED7B35003A7454 /* UserDefaultsHelper.swift */,
-				810A38E21FED7C59003A7454 /* SettingsViewController.swift */,
-				810A38DA1FED6258003A7454 /* HistoryViewController.swift */,
-				810A38CE1FED5BE9003A7454 /* BlackjackGameBrain.swift */,
-				810A38D61FED5EC4003A7454 /* Card.swift */,
-				810A38D01FED5DD8003A7454 /* NetworkHelper.swift */,
-				810A38D21FED5DE1003A7454 /* ImageHelper.swift */,
-				810A38D41FED5DF4003A7454 /* DeckOfCardsAPIClient.swift */,
-				810A38DC1FED6713003A7454 /* HistoryTableViewCell.swift */,
-				810A38DE1FED74B8003A7454 /* DataPersistenceHelper.swift */,
+				810A38E41FEDA25B003A7454 /* View Controllers */,
+				810A38E51FEDA273003A7454 /* Models */,
 				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
 				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
 				810A38CD1FED5BA4003A7454 /* Nibs */,
@@ -106,6 +97,47 @@
 				810A38CB1FED58D7003A7454 /* CardCollectionViewCell.swift */,
 			);
 			path = Nibs;
+			sourceTree = "<group>";
+		};
+		810A38E41FEDA25B003A7454 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				810A38D81FED624B003A7454 /* BlackjackViewController.swift */,
+				810A38E21FED7C59003A7454 /* SettingsViewController.swift */,
+				810A38DA1FED6258003A7454 /* HistoryViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		810A38E51FEDA273003A7454 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				810A38E61FEDA285003A7454 /* Network and JSON Models */,
+				810A38CE1FED5BE9003A7454 /* BlackjackGameBrain.swift */,
+				810A38DC1FED6713003A7454 /* HistoryTableViewCell.swift */,
+				810A38E71FEDA2AA003A7454 /* Data Models */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		810A38E61FEDA285003A7454 /* Network and JSON Models */ = {
+			isa = PBXGroup;
+			children = (
+				810A38D61FED5EC4003A7454 /* Card.swift */,
+				810A38D01FED5DD8003A7454 /* NetworkHelper.swift */,
+				810A38D21FED5DE1003A7454 /* ImageHelper.swift */,
+				810A38D41FED5DF4003A7454 /* DeckOfCardsAPIClient.swift */,
+			);
+			path = "Network and JSON Models";
+			sourceTree = "<group>";
+		};
+		810A38E71FEDA2AA003A7454 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				810A38E01FED7B35003A7454 /* UserDefaultsHelper.swift */,
+				810A38DE1FED74B8003A7454 /* DataPersistenceHelper.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
