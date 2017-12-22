@@ -21,34 +21,38 @@ class CardGame {
         case defeat
     }
     
-//    private static var deck: Deck?
-    
     private static var cards: [Card] = []
 
     private static var score: Int = 0
     
     weak static var delegate: CardGameDelegate?
     
-//    static func setDeck(_ deck: Deck) {
-//        self.deck = deck
-//    }
-    
-    private var cardValueDictionary: [String : Int] = [:]
+    private static var cardValueDict: [String : Int] = [
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "JACK" : 10,
+        "QUEEN" : 10,
+        "KING" : 10,
+        "ACE" : 11
+        ]
     
     static func addCard(_ card: Card) {
         
-        guard let cardValue = Int(card.value) else {
-            print("Could not get card value")
+        guard let cardValue = cardValueDict[card.value] else {
+            print("could not get card value")
             return
         }
         
         cards.append(card)
         score += cardValue
     }
-    
-//    static func getDeck() -> Deck {
-//        return deck!
-//    }
     
     static func getCards() -> [Card] {
         return cards
@@ -84,7 +88,6 @@ class CardGame {
     }
     
     static func resetGame() {
-//        deck = nil
         cards = []
         score = 0
     }
