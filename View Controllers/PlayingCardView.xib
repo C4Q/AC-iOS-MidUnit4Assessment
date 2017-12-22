@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayingCard" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="zC9-0d-6AH"/>
+                <outlet property="imageView" destination="Clv-jz-QSM" id="Mc2-Tn-C1y"/>
+                <outlet property="valueLabel" destination="IQR-mz-mEG" id="hJP-bN-w2R"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Clv-jz-QSM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="631"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQR-mz-mEG">
+                    <rect key="frame" x="0.0" y="631" width="375" height="36"/>
+                    <color key="backgroundColor" red="0.039415429573337067" green="0.72273556472081224" blue="0.06077199475894899" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IQR-mz-mEG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="32X-2f-1RT"/>
+                <constraint firstItem="Clv-jz-QSM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BxQ-o1-Uev"/>
+                <constraint firstItem="IQR-mz-mEG" firstAttribute="top" secondItem="Clv-jz-QSM" secondAttribute="bottom" id="ITO-Dh-JyA"/>
+                <constraint firstItem="IQR-mz-mEG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="LRZ-PP-ZBc"/>
+                <constraint firstItem="IQR-mz-mEG" firstAttribute="top" secondItem="Clv-jz-QSM" secondAttribute="bottom" id="Q1D-yE-hdp"/>
+                <constraint firstItem="Clv-jz-QSM" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Wh6-EH-K87"/>
+                <constraint firstItem="Clv-jz-QSM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YbT-jh-PNm"/>
+                <constraint firstItem="IQR-mz-mEG" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="lkt-7K-ehO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
