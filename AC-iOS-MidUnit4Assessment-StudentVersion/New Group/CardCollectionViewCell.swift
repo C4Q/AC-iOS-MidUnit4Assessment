@@ -1,5 +1,5 @@
 //
-//  CustomCardCollectionViewCell.swift
+//  CardCollectionViewCell.swift
 //  AC-iOS-MidUnit4Assessment-StudentVersion
 //
 //  Created by C4Q on 12/22/17.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class CustomCardCollectionViewCell: UICollectionViewCell {
+class CardCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var cardNib: CardNib!
+    
+    var thisCard: Card?
     
 }

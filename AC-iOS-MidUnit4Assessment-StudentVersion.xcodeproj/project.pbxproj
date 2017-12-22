@@ -21,7 +21,8 @@
 		8155580B1FED6C7400224440 /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8155580A1FED6C7400224440 /* ImageAPIClient.swift */; };
 		8155580E1FED6CEC00224440 /* CardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8155580D1FED6CEB00224440 /* CardAPIClient.swift */; };
 		815558101FED6EFD00224440 /* DeckAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8155580F1FED6EFD00224440 /* DeckAPIClient.swift */; };
-		815558141FED738000224440 /* CustomCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815558131FED738000224440 /* CustomCardCollectionViewCell.swift */; };
+		815558171FED9FA800224440 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815558161FED9FA800224440 /* CardCollectionViewCell.swift */; };
+		8155581A1FEDB32400224440 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815558191FEDB32400224440 /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +42,8 @@
 		8155580A1FED6C7400224440 /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
 		8155580D1FED6CEB00224440 /* CardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPIClient.swift; sourceTree = "<group>"; };
 		8155580F1FED6EFD00224440 /* DeckAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckAPIClient.swift; sourceTree = "<group>"; };
-		815558131FED738000224440 /* CustomCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		815558161FED9FA800224440 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		815558191FEDB32400224440 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,7 @@
 				815557FA1FED592A00224440 /* Supporting Files */,
 				815557FB1FED593B00224440 /* View Controllers */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
-				815558151FED738300224440 /* Custom Cells */,
+				815558181FEDB2E300224440 /* Custom Cells */,
 				815558071FED6C3500224440 /* Views */,
 			);
 			path = "AC-iOS-MidUnit4Assessment-StudentVersion";
@@ -134,12 +136,14 @@
 			path = Clients;
 			sourceTree = "<group>";
 		};
-		815558151FED738300224440 /* Custom Cells */ = {
+		815558181FEDB2E300224440 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				815558131FED738000224440 /* CustomCardCollectionViewCell.swift */,
+				815558161FED9FA800224440 /* CardCollectionViewCell.swift */,
+				815558191FEDB32400224440 /* HistoryTableViewCell.swift */,
 			);
-			path = "Custom Cells";
+			name = "Custom Cells";
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,9 +222,10 @@
 				815558091FED6C4400224440 /* NetworkHelper.swift in Sources */,
 				815558001FED5EE600224440 /* Deck.swift in Sources */,
 				815558101FED6EFD00224440 /* DeckAPIClient.swift in Sources */,
+				815558171FED9FA800224440 /* CardCollectionViewCell.swift in Sources */,
 				8155580E1FED6CEC00224440 /* CardAPIClient.swift in Sources */,
-				815558141FED738000224440 /* CustomCardCollectionViewCell.swift in Sources */,
 				545F2AB61FEC2752007EBECB /* GameViewController.swift in Sources */,
+				8155581A1FEDB32400224440 /* HistoryTableViewCell.swift in Sources */,
 				8155580B1FED6C7400224440 /* ImageAPIClient.swift in Sources */,
 				815557FD1FED5D0E00224440 /* Card.swift in Sources */,
 				815558021FED5FBE00224440 /* HistoryViewController.swift in Sources */,

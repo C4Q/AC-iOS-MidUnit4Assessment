@@ -13,7 +13,7 @@ import Foundation
 
 
 struct PlayDeck: Codable {
-    let cards: [Card] /// using this endpoint with count = 1, cards is only really ONE card in the array
+    let cards: [Card]? /// using this endpoint with count = 1, cards is only really ONE card in the array
     let deckID: String  /// use this in 2nd endpoint
     let remaining: Int /// number of cards left in the deck; decrements at each call
     
@@ -27,6 +27,6 @@ struct PlayDeck: Codable {
 
 struct Card: Codable {
     let code: String
-    let image: String
+    let image: String?
     let value: String
 }
