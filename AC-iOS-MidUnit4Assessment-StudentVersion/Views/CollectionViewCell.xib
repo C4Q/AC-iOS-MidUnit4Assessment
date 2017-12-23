@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CardCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMc-QP-QIz">
+                    <rect key="frame" x="0.0" y="646" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBL-qb-7Yk">
+                    <rect key="frame" x="21" y="57" width="332" height="552"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="uMc-QP-QIz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="25a-as-bTL"/>
+                <constraint firstItem="wBL-qb-7Yk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IEy-Ni-mO8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uMc-QP-QIz" secondAttribute="bottom" id="K71-Aw-w2E"/>
+                <constraint firstItem="uMc-QP-QIz" firstAttribute="top" secondItem="wBL-qb-7Yk" secondAttribute="bottom" constant="37" id="PRZ-fR-tKV"/>
+                <constraint firstItem="wBL-qb-7Yk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XBc-yZ-wH0"/>
+                <constraint firstItem="wBL-qb-7Yk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="21" id="hyW-S0-d4Y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uMc-QP-QIz" secondAttribute="trailing" id="nMo-YD-xoi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
