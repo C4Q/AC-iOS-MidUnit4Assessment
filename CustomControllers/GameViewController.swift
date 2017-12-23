@@ -57,8 +57,8 @@ class GameViewController: UIViewController {
         return screenWidth * 0.05
     }
     
-    let bustAlert = UIAlertController(title: "Bust!", message: "You've gone over 30.", preferredStyle: UIAlertControllerStyle.alert)
-    let winAlert = UIAlertController(title: "You Won!", message: "You've hit 30.", preferredStyle: UIAlertControllerStyle.alert)
+    let bustAlert = UIAlertController(title: "Bust!", message: "You've gone over \(target).", preferredStyle: UIAlertControllerStyle.alert)
+    let winAlert = UIAlertController(title: "You Won!", message: "You've hit \(target).", preferredStyle: UIAlertControllerStyle.alert)
     let gaveUpAlert = UIAlertController(title: "Giving Up?", message: "placeHolder", preferredStyle: UIAlertControllerStyle.alert)
     func setupAlerts() {
         bustAlert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.default, handler: { _ in
@@ -67,7 +67,7 @@ class GameViewController: UIViewController {
         winAlert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.default, handler: { _ in
             self.resetGame()
         }))
-        gaveUpAlert.message = "You're still \(target - totalVal) points from hitting 30."
+        gaveUpAlert.message = "You're still \(target - totalVal) points from hitting \(target)."
         gaveUpAlert.addAction(UIAlertAction(title: "KEEP TRYING", style: UIAlertActionStyle.default, handler: nil))
         gaveUpAlert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.default, handler: { _ in
             self.resetGame()
@@ -104,7 +104,7 @@ class GameViewController: UIViewController {
         PersistenceStoreManager.manager.load()
         self.cards = []
         self.totalVal = 0
-        bustAlert.message = "You've gone over 30."
+        bustAlert.message = "You've gone over \(target)."
         PlayingCardsAPIClient.manager.resetDeck(errorHandler: {print($0)})
     }
     
