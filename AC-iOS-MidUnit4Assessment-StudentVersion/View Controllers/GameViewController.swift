@@ -86,7 +86,6 @@ extension GameViewController {
 		let okAction = UIAlertAction(title: "Restart Game", style: .default) { (action:UIAlertAction!) in
 			self.SaveGame()
 			self.resetGame()
-			self.handValueLabel.text = "Current Hand Value: 00"
 		}
 		alertController.addAction(okAction)
 		present(alertController, animated: true, completion: nil)
@@ -95,12 +94,11 @@ extension GameViewController {
 	private func SaveGame(){
 		let game: SavedGame = SavedGame.init(cards: playerCards, score: playerScore)
 		DataModel.manager.addGameToHistory(game: game)
-		DataModel.manager.saveHistory()
 	}
 
 	private func resetGame(){
 		playerScore = 0
-		playerCards = [Card]()
+		playerCards.removeAll()
 		getDeck()
 		gameOver = false
 		handValueLabel.text = "Current Hand Value: 00"

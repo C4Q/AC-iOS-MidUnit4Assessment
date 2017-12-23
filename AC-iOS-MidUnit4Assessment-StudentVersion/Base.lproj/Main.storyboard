@@ -31,36 +31,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="279.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R7d-hW-4vN">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R7d-hW-4vN">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
                                                     <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5zh-Vk-4po">
-                                                        <size key="itemSize" width="174" height="221"/>
+                                                        <size key="itemSize" width="148" height="221"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SaveCardCell" id="yhz-N2-CTF" customClass="SaveCardCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="19" width="174" height="221"/>
+                                                            <rect key="frame" x="0.0" y="19" width="148" height="221"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="174" height="221"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="221"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="xu3-SA-2K9">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="174" height="170"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="xu3-SA-2K9">
+                                                                        <rect key="frame" x="22" y="0.0" width="104" height="177"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-ys-7sy">
-                                                                        <rect key="frame" x="66" y="180" width="42" height="21"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-ys-7sy">
+                                                                        <rect key="frame" x="37" y="177" width="74" height="44"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </view>
+                                                            <constraints>
+                                                                <constraint firstItem="kD9-ys-7sy" firstAttribute="height" secondItem="yhz-N2-CTF" secondAttribute="height" multiplier="0.2" id="9hV-Fe-mqu"/>
+                                                                <constraint firstItem="xu3-SA-2K9" firstAttribute="centerX" secondItem="yhz-N2-CTF" secondAttribute="centerX" id="EkU-vP-kDb"/>
+                                                                <constraint firstItem="kD9-ys-7sy" firstAttribute="bottom" secondItem="yhz-N2-CTF" secondAttribute="bottom" id="FBj-dE-ESO"/>
+                                                                <constraint firstItem="kD9-ys-7sy" firstAttribute="centerX" secondItem="yhz-N2-CTF" secondAttribute="centerX" id="bIi-zQ-okQ"/>
+                                                                <constraint firstItem="xu3-SA-2K9" firstAttribute="top" secondItem="yhz-N2-CTF" secondAttribute="top" id="c4D-rJ-Wq5"/>
+                                                                <constraint firstItem="xu3-SA-2K9" firstAttribute="width" secondItem="yhz-N2-CTF" secondAttribute="width" multiplier="0.7" id="iqW-VI-C0W"/>
+                                                                <constraint firstItem="xu3-SA-2K9" firstAttribute="height" secondItem="yhz-N2-CTF" secondAttribute="height" multiplier="0.8" id="isx-0b-9vn"/>
+                                                                <constraint firstItem="kD9-ys-7sy" firstAttribute="width" secondItem="yhz-N2-CTF" secondAttribute="width" multiplier="0.5" id="nEv-Ok-oWm"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="cardImage" destination="xu3-SA-2K9" id="KRo-jI-szD"/>
                                                                 <outlet property="valueLabel" destination="kD9-ys-7sy" id="bYb-YV-aFI"/>
@@ -76,7 +84,7 @@
                                             <constraints>
                                                 <constraint firstItem="R7d-hW-4vN" firstAttribute="leading" secondItem="LWU-JU-kv6" secondAttribute="leading" id="CdC-f1-zE6"/>
                                                 <constraint firstItem="R7d-hW-4vN" firstAttribute="top" secondItem="LWU-JU-kv6" secondAttribute="top" id="Ja8-Oh-5U8"/>
-                                                <constraint firstAttribute="bottom" secondItem="R7d-hW-4vN" secondAttribute="bottom" id="UpQ-oX-UnS"/>
+                                                <constraint firstAttribute="bottom" secondItem="R7d-hW-4vN" secondAttribute="bottom" constant="20.5" id="UpQ-oX-UnS"/>
                                                 <constraint firstAttribute="trailing" secondItem="R7d-hW-4vN" secondAttribute="trailing" id="qim-UV-Iph"/>
                                             </constraints>
                                         </tableViewCellContentView>

@@ -63,11 +63,13 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let cell = tableView.dequeueReusableCell(withIdentifier: "TableRowCell") as? TableViewRow {
+			cell.tableIndexPath = indexPath
 			return cell
 		}
 		return UITableViewCell()
 	}
+
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 220
+		return 210
 	}
 }
