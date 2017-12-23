@@ -8,7 +8,7 @@ import UIKit
 class TableViewRow: UITableViewCell  {
 	@IBOutlet weak var collectionView: UICollectionView!
 	var history: [SavedGame] = DataModel.manager.getHistory()
-	let cellSpacing = UIScreen.main.bounds.size.width * 0.05
+	let cellSpacing = UIScreen.main.bounds.size.width * 0.04
 	var tableIndexPath: IndexPath?
 
 }
@@ -33,15 +33,15 @@ extension TableViewRow : UICollectionViewDataSource {
 
 extension TableViewRow : UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let numCells: CGFloat = 2.0
+		let numCells: CGFloat = 2.8
 		let numSpaces: CGFloat = numCells + 1
 		let screenWidth = UIScreen.main.bounds.width
 		return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height:
-			collectionView.bounds.height - (cellSpacing * 2))
+			collectionView.bounds.height - (cellSpacing * 1.8))
 	}
 	//// padding around our collection view
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: cellSpacing, right: cellSpacing)
+		return UIEdgeInsets(top: cellSpacing, left: 0, bottom: cellSpacing, right: 0)
 	}
 	//// padding between cells / items
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

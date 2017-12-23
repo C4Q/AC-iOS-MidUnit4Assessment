@@ -5,14 +5,51 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UITextFieldDelegate {
 
 	//MARK: Outlets
-	@IBOutlet weak var gameCollectionView: UICollectionView!
+	@IBOutlet weak var gameCollectionView: UICollectionView! {
+		didSet {
+			gameCollectionView.delegate = self
+			gameCollectionView.dataSource = self
+		}
+	}
 	@IBOutlet weak var instructionsLabel: UILabel!
 	@IBOutlet weak var stopButton: UIButton!
 	@IBOutlet weak var drawCardButton: UIButton!
 	@IBOutlet weak var handValueLabel: UILabel!
+	@IBOutlet weak var changeWinValue: UITextField! {
+		didSet {
+			changeWinValue.delegate = self
+		}
+	}
+
+	//MARK: View Overrides
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		if let winningScore = UserDefaultsHelper.manager.getWinningNumber() {
+			self.winningScore = winningScore
+		}
+		resetGame()
+	}
+
+	//MARK: Properties
+	let cellSpacing = UIScreen.main.bounds.size.width * 0.05
+	var deck: Deck! {
+		didSet { getCard(fromDeckID: deck.deckId) }
+	}
+	var card: Card!
+	var playerCards = [Card]() {
+		didSet { gameCollectionView.reloadData()}
+	}
+	var playerScore = 0
+	var winningScore = 0 {
+		didSet {
+			instructionsLabel.text = "Get as close to \(winningScore) without going over!"
+		}
+	}
+	var gameOver: Bool = false
+
 
 	//MARK: Actions
 	@IBAction func stop(_ sender: UIButton) {
@@ -31,25 +68,9 @@ class GameViewController: UIViewController {
 		}
 	}
 
-	//MARK: View Overrides
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		gameCollectionView.delegate = self
-		gameCollectionView.dataSource = self
-		resetGame()
-	}
 
-	//MARK: Properties
-	let cellSpacing = UIScreen.main.bounds.size.width * 0.05
-	var deck: Deck! {
-		didSet { getCard(fromDeckID: deck.deckId) }
-	}
-	var card: Card!
-	var playerCards = [Card]() {
-		didSet { gameCollectionView.reloadData()}
-	}
-	var playerScore = 0
-	var gameOver: Bool = false
+
+
 
 }
 
@@ -72,15 +93,15 @@ extension GameViewController {
 	private func showGameOverAlert(){
 		var message: String = ""
 		var title: String = ""
-		if playerScore == 30 {
+		if playerScore == winningScore {
 			title = "You Win!!!"
 			message = "You got a perfect Score: \(self.playerScore)"
-		} else if playerScore > 30 {
+		} else if playerScore > winningScore {
 			title = "Defeat"
-			message = "You went over by \(self.playerScore - 30)"
+			message = "You went over by \(self.playerScore - winningScore)"
 		} else {
 			title = "Game Over"
-			message = "You were \(30 - self.playerScore) from 30"
+			message = "You were \(winningScore - self.playerScore) from \(winningScore)"
 		}
 		let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
 		let okAction = UIAlertAction(title: "Restart Game", style: .default) { (action:UIAlertAction!) in
@@ -109,9 +130,9 @@ extension GameViewController {
 			handValueLabel.text = "Current Hand Value: \(playerScore)"
 		} else {
 			switch playerScore {
-				case 30: handValueLabel.text = "Current Hand Value: \(playerScore). WIN!!"
-				case 31...39: handValueLabel.text = "Current Hand Value: \(playerScore). BUST!"
-				case 27..<30: handValueLabel.text = "Current Hand Value: \(playerScore). CLOSE"
+				case winningScore: handValueLabel.text = "Current Hand Value: \(playerScore). WIN!!"
+				case (winningScore+1)...(winningScore+10): handValueLabel.text = "Current Hand Value: \(playerScore). BUST!"
+				case (winningScore-3)..<winningScore: handValueLabel.text = "Current Hand Value: \(playerScore). CLOSE"
 				default: handValueLabel.text = "Current Hand Value: \(playerScore). Try Again"
 			}
 		}
@@ -159,8 +180,17 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
 	}
 }
 
-
-
-
-
-
+extension GameViewController {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		becomeFirstResponder()
+//		winningScore = Int(changeWinValue.text!)!
+		UserDefaultsHelper.manager.setWinningNumber(value: Int(changeWinValue.text!)!)
+		if let winningScore = UserDefaultsHelper.manager.getWinningNumber() {
+			self.winningScore = winningScore
+		}
+		instructionsLabel.text = "Get as close to \(winningScore) without going over!"
+		textField.text = ""
+		resignFirstResponder()
+		return true
+	}
+}

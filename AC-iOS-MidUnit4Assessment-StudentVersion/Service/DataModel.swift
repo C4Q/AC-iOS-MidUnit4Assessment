@@ -50,6 +50,8 @@ class DataModel {
 			try data.write(to: dataFilePath(pathName: DataModel.kPathName), options: .atomic)
 		}
 		catch {print("encoder error: \(error.localizedDescription)")}
+		print(documentDirectory())
+
 	}
 
 	//Read (get)
@@ -68,10 +70,7 @@ class DataModel {
 	}
 
 	func deleteHistory() {
-		history = [SavedGame]()
-		for index in 0..<history.count {
-			history.remove(at: index)
-		}
+		history.removeAll()
 	}
 }
 

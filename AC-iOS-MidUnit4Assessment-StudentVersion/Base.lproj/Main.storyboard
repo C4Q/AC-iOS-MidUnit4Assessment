@@ -49,10 +49,10 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="xu3-SA-2K9">
-                                                                        <rect key="frame" x="22" y="0.0" width="104" height="177"/>
+                                                                        <rect key="frame" x="26" y="0.0" width="96" height="188"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-ys-7sy">
-                                                                        <rect key="frame" x="37" y="177" width="74" height="44"/>
+                                                                        <rect key="frame" x="37" y="188" width="74" height="33"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -60,13 +60,13 @@
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
-                                                                <constraint firstItem="kD9-ys-7sy" firstAttribute="height" secondItem="yhz-N2-CTF" secondAttribute="height" multiplier="0.2" id="9hV-Fe-mqu"/>
+                                                                <constraint firstItem="kD9-ys-7sy" firstAttribute="height" secondItem="yhz-N2-CTF" secondAttribute="height" multiplier="0.15" id="9hV-Fe-mqu"/>
                                                                 <constraint firstItem="xu3-SA-2K9" firstAttribute="centerX" secondItem="yhz-N2-CTF" secondAttribute="centerX" id="EkU-vP-kDb"/>
                                                                 <constraint firstItem="kD9-ys-7sy" firstAttribute="bottom" secondItem="yhz-N2-CTF" secondAttribute="bottom" id="FBj-dE-ESO"/>
                                                                 <constraint firstItem="kD9-ys-7sy" firstAttribute="centerX" secondItem="yhz-N2-CTF" secondAttribute="centerX" id="bIi-zQ-okQ"/>
                                                                 <constraint firstItem="xu3-SA-2K9" firstAttribute="top" secondItem="yhz-N2-CTF" secondAttribute="top" id="c4D-rJ-Wq5"/>
-                                                                <constraint firstItem="xu3-SA-2K9" firstAttribute="width" secondItem="yhz-N2-CTF" secondAttribute="width" multiplier="0.7" id="iqW-VI-C0W"/>
-                                                                <constraint firstItem="xu3-SA-2K9" firstAttribute="height" secondItem="yhz-N2-CTF" secondAttribute="height" multiplier="0.8" id="isx-0b-9vn"/>
+                                                                <constraint firstItem="xu3-SA-2K9" firstAttribute="width" secondItem="yhz-N2-CTF" secondAttribute="width" multiplier="0.65" id="iqW-VI-C0W"/>
+                                                                <constraint firstItem="xu3-SA-2K9" firstAttribute="height" secondItem="yhz-N2-CTF" secondAttribute="height" multiplier="0.85" id="isx-0b-9vn"/>
                                                                 <constraint firstItem="kD9-ys-7sy" firstAttribute="width" secondItem="yhz-N2-CTF" secondAttribute="width" multiplier="0.5" id="nEv-Ok-oWm"/>
                                                             </constraints>
                                                             <connections>
@@ -219,10 +219,36 @@
                                     <action selector="drawCard:" destination="Lis-Hl-O5K" eventType="touchUpInside" id="fhy-mS-H8w"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhT-97-v4X">
+                                <rect key="frame" x="35" y="470.5" width="305.5" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Winning Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8x-mV-sXi">
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-0w-7Dq">
+                                        <rect key="frame" x="197" y="0.0" width="108.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="s8x-mV-sXi" firstAttribute="leading" secondItem="LhT-97-v4X" secondAttribute="leading" id="Cw7-3p-zeG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hpe-0w-7Dq" secondAttribute="bottom" id="LTS-zg-GW1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hpe-0w-7Dq" secondAttribute="trailing" id="fsn-xX-SVe"/>
+                                    <constraint firstItem="s8x-mV-sXi" firstAttribute="top" secondItem="LhT-97-v4X" secondAttribute="top" id="i1m-Si-2so"/>
+                                    <constraint firstAttribute="bottom" secondItem="s8x-mV-sXi" secondAttribute="bottom" id="ov8-aq-kJe"/>
+                                    <constraint firstItem="Hpe-0w-7Dq" firstAttribute="top" secondItem="LhT-97-v4X" secondAttribute="top" id="sY1-2d-g9D"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sE1-T0-tLQ" firstAttribute="centerX" secondItem="2Os-PX-42T" secondAttribute="centerX" multiplier="1.1" constant="60" id="50A-72-BoU"/>
+                            <constraint firstItem="LhT-97-v4X" firstAttribute="top" secondItem="Edx-NW-rg1" secondAttribute="bottom" constant="25" id="6mq-aj-4Hb"/>
                             <constraint firstItem="UL7-we-nmV" firstAttribute="leading" secondItem="Tlp-VC-GdO" secondAttribute="leading" id="6oB-dQ-dhc"/>
                             <constraint firstItem="wTY-VW-APK" firstAttribute="trailing" secondItem="Tlp-VC-GdO" secondAttribute="trailing" id="AG7-ed-N6d"/>
                             <constraint firstItem="sE1-T0-tLQ" firstAttribute="width" secondItem="Tlp-VC-GdO" secondAttribute="width" multiplier="0.3" id="Ac1-Cq-iDb"/>
@@ -232,6 +258,7 @@
                             <constraint firstItem="Edx-NW-rg1" firstAttribute="top" secondItem="mC2-cI-lWJ" secondAttribute="bottom" constant="15" id="Mew-t0-s1c"/>
                             <constraint firstItem="wTY-VW-APK" firstAttribute="top" secondItem="UL7-we-nmV" secondAttribute="bottom" constant="15" id="S4d-7u-BIc"/>
                             <constraint firstItem="sE1-T0-tLQ" firstAttribute="top" secondItem="mC2-cI-lWJ" secondAttribute="bottom" constant="15" id="XX1-HU-Vyg"/>
+                            <constraint firstItem="LhT-97-v4X" firstAttribute="centerX" secondItem="2Os-PX-42T" secondAttribute="centerX" id="a2g-bv-L9p"/>
                             <constraint firstItem="sE1-T0-tLQ" firstAttribute="leading" secondItem="Edx-NW-rg1" secondAttribute="trailing" constant="51.5" id="bmI-gd-LML"/>
                             <constraint firstItem="UL7-we-nmV" firstAttribute="top" secondItem="Tlp-VC-GdO" secondAttribute="top" constant="10" id="gxF-Dg-8Cu"/>
                             <constraint firstItem="wTY-VW-APK" firstAttribute="leading" secondItem="Tlp-VC-GdO" secondAttribute="leading" id="hmg-CM-4Ra"/>
@@ -246,6 +273,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="icons8-cards_filled" id="Pz1-Xp-hCF"/>
                     <connections>
+                        <outlet property="changeWinValue" destination="Hpe-0w-7Dq" id="bd2-xj-LkE"/>
                         <outlet property="drawCardButton" destination="sE1-T0-tLQ" id="9vC-Pe-cje"/>
                         <outlet property="gameCollectionView" destination="wTY-VW-APK" id="EZJ-LF-Z8B"/>
                         <outlet property="handValueLabel" destination="UL7-we-nmV" id="qBs-Ji-p0q"/>
