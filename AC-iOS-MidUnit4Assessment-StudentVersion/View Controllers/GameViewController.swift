@@ -55,7 +55,6 @@ class GameViewController: UIViewController {
 
 //MARK: Methods
 extension GameViewController {
-	//MARK: Methods
 	private func getDeck(){
 		let printErrors = {(error: Error) in print(error)}
 		DeckAPIClient.manager.getDeck(completionHandler: { (onlineDeck) in
@@ -96,6 +95,7 @@ extension GameViewController {
 	private func SaveGame(){
 		let game: SavedGame = SavedGame.init(cards: playerCards, score: playerScore)
 		DataModel.manager.addGameToHistory(game: game)
+		DataModel.manager.saveHistory()
 	}
 
 	private func resetGame(){
@@ -105,15 +105,16 @@ extension GameViewController {
 		gameOver = false
 		handValueLabel.text = "Current Hand Value: 00"
 	}
+
 	private func updateDisplayScore() {
 		if !gameOver {
 			handValueLabel.text = "Current Hand Value: \(playerScore)"
 		} else {
 			switch playerScore {
-			case 30: handValueLabel.text = "Current Hand Value: \(playerScore). WIN!!"
-			case 31...39: handValueLabel.text = "Current Hand Value: \(playerScore). BUST!"
-			case 27..<30: handValueLabel.text = "Current Hand Value: \(playerScore). CLOSE"
-			default: handValueLabel.text = "Current Hand Value: \(playerScore). Try Again"
+				case 30: handValueLabel.text = "Current Hand Value: \(playerScore). WIN!!"
+				case 31...39: handValueLabel.text = "Current Hand Value: \(playerScore). BUST!"
+				case 27..<30: handValueLabel.text = "Current Hand Value: \(playerScore). CLOSE"
+				default: handValueLabel.text = "Current Hand Value: \(playerScore). Try Again"
 			}
 		}
 	}
@@ -132,19 +133,18 @@ extension GameViewController: UICollectionViewDataSource {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
 		let currentCard = playerCards[indexPath.row]
 		cell.valueLabel.text = "\(currentCard.cardValueInt)"
+		cell.cardImage.image = nil ?? #imageLiteral(resourceName: "placeholder-image")
 		cell.cardImage.image = currentCard.cardImage
 		return cell
 	}
 }
 
-//MARK: CollectionView - Flow Layout
+//MARK: CollectionView - Delegate Flow Layout
 extension GameViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let numCells: CGFloat = 2.0
 		let numSpaces: CGFloat = numCells + 1
 		let screenWidth = UIScreen.main.bounds.width
-//		let screenHeight = UIScreen.main.bounds.height
-		//return item size
 		return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height:
 			collectionView.bounds.height - (cellSpacing * 2))
 	}
