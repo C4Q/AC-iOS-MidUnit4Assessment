@@ -41,7 +41,7 @@ class GameViewController: UIViewController {
                 // new game
             } else if self.totalVal > target {
                 // show defeat message
-                if triedToQuit {bustAlert.message = "You've gone over 30. \n You should've stopped."}
+                if triedToQuit {bustAlert.message = "You've gone over \(target). \n You should've stopped."}
                 self.present(self.bustAlert, animated: true, completion: nil)
                 // new game
             }
@@ -195,11 +195,9 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
         let shorterOfTwo = (screenHeight > screenWidth ? screenWidth : screenHeight)
         if screenHeight > screenWidth {
             numCells = 1.5
-            //numSpaces = 0
         }
         else {
             numCells = 1.5
-            //numSpaces = 1
         }
         return CGSize(width: (shorterOfTwo - (numSpaces * cellSpacing)) / numCells, height: collectionView.bounds.height)
     }
