@@ -11,6 +11,8 @@
 		545F2AB91FEC2752007EBECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2AB71FEC2752007EBECB /* Main.storyboard */; };
 		545F2ABB1FEC2752007EBECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABA1FEC2752007EBECB /* Assets.xcassets */; };
 		545F2ABE1FEC2752007EBECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */; };
+		8124C3B51FEDDBD800562EFC /* GameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8124C3B41FEDDBD800562EFC /* GameRow.swift */; };
+		8124C3B91FEE1AAD00562EFC /* SaveCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8124C3B81FEE1AAD00562EFC /* SaveCardCell.swift */; };
 		81673BE21FED871C0066C223 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 545F2ABF1FEC2752007EBECB /* Info.plist */; };
 		81673BE41FED87F10066C223 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81673BE31FED87F10066C223 /* NetworkHelper.swift */; };
 		81673BEA1FED887A0066C223 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81673BE91FED887A0066C223 /* Card.swift */; };
@@ -20,7 +22,6 @@
 		81673BF31FED88DD0066C223 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81673BF21FED88DD0066C223 /* GameViewController.swift */; };
 		81673BF51FED88F50066C223 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81673BF41FED88F50066C223 /* HistoryViewController.swift */; };
 		81673BF91FED9B270066C223 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81673BF81FED9B270066C223 /* TableViewCell.swift */; };
-		81673BFE1FEDA9280066C223 /* CardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81673BFD1FEDA9280066C223 /* CardCellView.swift */; };
 		81673C001FEDB2AD0066C223 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81673BFF1FEDB2AD0066C223 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,8 @@
 		545F2ABA1FEC2752007EBECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545F2ABD1FEC2752007EBECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545F2ABF1FEC2752007EBECB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8124C3B41FEDDBD800562EFC /* GameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRow.swift; sourceTree = "<group>"; };
+		8124C3B81FEE1AAD00562EFC /* SaveCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCardCell.swift; sourceTree = "<group>"; };
 		81673BDB1FED810D0066C223 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		81673BE31FED87F10066C223 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		81673BE91FED887A0066C223 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -40,7 +43,6 @@
 		81673BF21FED88DD0066C223 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		81673BF41FED88F50066C223 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		81673BF81FED9B270066C223 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		81673BFD1FEDA9280066C223 /* CardCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellView.swift; sourceTree = "<group>"; };
 		81673BFF1FEDB2AD0066C223 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,8 +101,9 @@
 			children = (
 				81673BDB1FED810D0066C223 /* CardCell.xib */,
 				81673BEF1FED88BA0066C223 /* CardCell.swift */,
-				81673BFD1FEDA9280066C223 /* CardCellView.swift */,
+				8124C3B81FEE1AAD00562EFC /* SaveCardCell.swift */,
 				81673BF81FED9B270066C223 /* TableViewCell.swift */,
+				8124C3B41FEDDBD800562EFC /* GameRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,8 +131,8 @@
 		819C38EB1FED7FF000F4C6DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				81673BE91FED887A0066C223 /* Card.swift */,
 				81673BEB1FED888A0066C223 /* Deck.swift */,
+				81673BE91FED887A0066C223 /* Card.swift */,
 				81673BED1FED88A50066C223 /* SavedGames.swift */,
 			);
 			path = Model;
@@ -210,10 +213,11 @@
 			files = (
 				81673BEC1FED888A0066C223 /* Deck.swift in Sources */,
 				81673BE41FED87F10066C223 /* NetworkHelper.swift in Sources */,
+				8124C3B91FEE1AAD00562EFC /* SaveCardCell.swift in Sources */,
+				8124C3B51FEDDBD800562EFC /* GameRow.swift in Sources */,
 				81673BF51FED88F50066C223 /* HistoryViewController.swift in Sources */,
 				81673BF01FED88BA0066C223 /* CardCell.swift in Sources */,
 				81673C001FEDB2AD0066C223 /* DataModel.swift in Sources */,
-				81673BFE1FEDA9280066C223 /* CardCellView.swift in Sources */,
 				81673BF31FED88DD0066C223 /* GameViewController.swift in Sources */,
 				81673BF91FED9B270066C223 /* TableViewCell.swift in Sources */,
 				81673BEA1FED887A0066C223 /* Card.swift in Sources */,

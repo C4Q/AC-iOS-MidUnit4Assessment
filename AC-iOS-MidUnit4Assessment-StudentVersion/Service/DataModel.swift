@@ -18,7 +18,6 @@ class DataModel {
 	private var history = [SavedGame]() {
 		didSet {
 			saveHistory()
-			print(documentDirectory()) //can paste this printout in spotlight to see directory
 		}
 	}
 
