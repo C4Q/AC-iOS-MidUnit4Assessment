@@ -171,6 +171,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDm-4i-aMM">
                                 <rect key="frame" x="64" y="429.5" width="192" height="30"/>
                                 <state key="normal" title="reset history"/>
+                                <connections>
+                                    <action selector="resetHistoryButtonPressed:" destination="oNN-vq-vjA" eventType="touchUpInside" id="wbr-8H-oJu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -100,7 +100,7 @@ class GameViewController: UIViewController {
     
     
     func resetGame() {
-         DataPersistence.manager.addHand(playedCards: self.hand, handTotal: GameBrain.manager.currentTotal)
+         Persistence.manager.addHand(playedCards: self.hand, handTotal: GameBrain.manager.currentTotal)
     
         currentHandValueLabel.text = "Current Hand Total: \(GameBrain.manager.currentTotal)"
         GameBrain.manager.clearCurrentGame()

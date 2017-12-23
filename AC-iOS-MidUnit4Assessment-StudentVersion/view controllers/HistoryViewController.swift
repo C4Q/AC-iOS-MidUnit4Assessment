@@ -15,7 +15,7 @@ class HistoryViewController: UIViewController {
     
    let cellSpacing = UIScreen.main.bounds.size.width * 0.04
         
-    var pastHands = [DataPersistence.Hand]() {
+    var usedHands = [Persistence.Hand]() {
         didSet {
             historyTableView.reloadData()
         }
@@ -25,8 +25,8 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         self.historyTableView.dataSource = self
         self.historyTableView.delegate = self
-        DataPersistence.manager.loadHands()
-        pastHands = DataPersistence.manager.getHands()
+        Persistence.manager.loadHands()
+        usedHands = Persistence.manager.getHands()
         
 
     }
@@ -34,17 +34,28 @@ class HistoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        DataPersistence.manager.loadHands()
-        pastHands = DataPersistence.manager.getHands()
+        Persistence.manager.loadHands()
+        usedHands = Persistence.manager.getHands()
     }
    
-    //TODO reset history Button Action 
+    //TODO reset history Button Action
+    
+    
+    @IBAction func resetHistoryButtonPressed(_ sender: UIButton) {
+        Persistence.manager.delete()
+        self.usedHands = Persistence.manager.getHands()
+        
+        
+    }
+    
+    
+    
 }
 extension HistoryViewController: UITableViewDelegate,UITableViewDataSource {
 
 
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return pastHands.count
+    return usedHands.count
 }
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +63,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     if let cell = cell as? HistoryTableViewCell {
         
-        cell.finalHandValueLabel.text = "Hand Total: " + pastHands[indexPath.row].handTotal.description
+        cell.finalHandValueLabel.text = "Hand Total: " + usedHands[indexPath.row].handTotal.description
 
         
       
@@ -85,10 +96,14 @@ func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forR
 
 extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pastHands[collectionView.tag].cards.count
+        return usedHands[collectionView.tag].cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -97,7 +112,7 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
 
         if let cell = cell as? cardCell {
             
-            let card = pastHands[collectionView.tag].cards[indexPath.item]
+            let card = usedHands[collectionView.tag].cards[indexPath.item]
             
             cell.configureCell(with: card)
 

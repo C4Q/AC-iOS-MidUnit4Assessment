@@ -6,11 +6,11 @@
 //  Copyright © 2017 C4Q . All rights reserved.
 //
 import  UIKit
-class DataPersistence {
+class Persistence {
     
   
     private init() {}
-    static let manager = DataPersistence()
+    static let manager = Persistence()
     
     let filePath = "HandHistory.plist"
     
@@ -21,7 +21,7 @@ class DataPersistence {
     }
     
    
-    private var playedHands = [Hand]() {
+    private var pastHands = [Hand]() {
         didSet {
             saveHands()
         }
@@ -35,21 +35,21 @@ class DataPersistence {
     
    
     private func dataFilePath(withPathName path: String) -> URL {
-        return DataPersistence.manager.documentsDirectory().appendingPathComponent(path)
+        return Persistence.manager.documentsDirectory().appendingPathComponent(path)
     }
     
 
     func loadHands() {
         var data = Data()
         do {
-            data = try Data.init(contentsOf: DataPersistence.manager.dataFilePath(withPathName: filePath))
+            data = try Data.init(contentsOf: Persistence.manager.dataFilePath(withPathName: filePath))
         } catch {
             print( "\(error.localizedDescription)")
             return
         }
         
         do {
-            playedHands = try PropertyListDecoder().decode([Hand].self, from: data)
+            pastHands = try PropertyListDecoder().decode([Hand].self, from: data)
         } catch {
             print("\(error.localizedDescription)")
         }
@@ -61,14 +61,14 @@ class DataPersistence {
         var data = Data()
         
         do {
-            data = try PropertyListEncoder().encode(playedHands)
+            data = try PropertyListEncoder().encode(pastHands)
         } catch {
             print("\(error.localizedDescription)")
             return
         }
         
         do {
-            try data.write(to: DataPersistence.manager.dataFilePath(withPathName: filePath), options: .atomic)
+            try data.write(to: Persistence.manager.dataFilePath(withPathName: filePath), options: .atomic)
             
         } catch {
             print(" \(error.localizedDescription)")
@@ -76,14 +76,16 @@ class DataPersistence {
         
     }
     func getHands() -> [Hand] {
-        return playedHands
+        return pastHands
     }
   
     func addHand(playedCards: [Card],  handTotal: Int) {
         let hand = Hand(handTotal: handTotal, cards: playedCards)
-        playedHands.append(hand)
+        pastHands.append(hand)
     }
-    
+    func delete() {
+        pastHands.removeAll()
+    }
     
     
 }
