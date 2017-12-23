@@ -5,62 +5,91 @@
 //  Created by C4Q on 12/22/17.
 //  Copyright © 2017 C4Q . All rights reserved.
 //
-
-import UIKit
-
-struct Hand: Codable {
-    let totalValue: Int 
-    let cards: [Card]
-}
-class Persistence {
-static let kPathName = "hands.plist"
-private init() {}
-static let manager = Persistence()
+import  UIKit
+class DataPersistence {
     
-    private var usedHands = [Hand]() {
+    // Singleton
+    private init() {}
+    static let manager = DataPersistence()
+    
+    let filePath = "HandHistory.plist"
+    
+    struct Hand: Codable {
+        //let target: Int
+        let handTotal: Int
+        let cards: [Card]
+    }
+    
+    // Save hands everytime it changes
+    private var playedHands = [Hand]() {
         didSet {
-            saveHand()
+            saveHands()
         }
     }
     
-    // returns documents directory path for app
+    // Gets the doc dir path
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
     
-    func dataFilePath(withPathName path: String) -> URL {
-        return Persistence.manager.documentsDirectory().appendingPathComponent(path)
+    // Gets the file path in doc dir
+    private func dataFilePath(withPathName path: String) -> URL {
+        return DataPersistence.manager.documentsDirectory().appendingPathComponent(path)
     }
-    func saveHand() {
-        let encoder = PropertyListEncoder()
+    
+    // Loads the hands into this object
+    func loadHands() {
+        var data = Data()
         do {
-            let data = try encoder.encode(usedHands)
-            try data.write(to: dataFilePath(withPathName: Persistence.kPathName), options: .atomic)
+            data = try Data.init(contentsOf: DataPersistence.manager.dataFilePath(withPathName: filePath))
+        } catch {
+            print("Error retrieving data. \(error.localizedDescription)")
+            return
         }
-        catch {
-            print("encoding error: \(error.localizedDescription)")
-        }
-    }
-    func addHand(cards: [Card], total: Int) {
         
-        let newHand = Hand.init(totalValue: total, cards: cards)
-        usedHands.append(newHand)
-    }
-    func getHands() -> [Hand] {
-        return self.usedHands
-    }
-    func loadHand(){
-        let path = dataFilePath(withPathName: Persistence.kPathName)
-        let decoder = PropertyListDecoder()
         do {
-            let data = try Data.init(contentsOf: path)
-            usedHands = try decoder.decode([Hand].self, from: data)
-        }
-        catch {
-            print("decoding error: \(error.localizedDescription)")
+            playedHands = try PropertyListDecoder().decode([Hand].self, from: data)
+        } catch {
+            print("Plist decoding error. \(error.localizedDescription)")
         }
     }
     
+    // Returns this object's array of hands
+    func getHands() -> [Hand] {
+        return playedHands
+    }
+    
+    // Saves current array of hands into a plist into the doc dir
+    private func saveHands() {
+        var data = Data()
+        
+        do {
+            data = try PropertyListEncoder().encode(playedHands)
+        } catch {
+            print("Plist encoding error. \(error.localizedDescription)")
+            return
+        }
+        
+        do {
+            try data.write(to: DataPersistence.manager.dataFilePath(withPathName: filePath), options: .atomic)
+            
+        } catch {
+            print("Writing to disk error. \(error.localizedDescription)")
+        }
+        
+    }
+    
+    // Appends an object to hands array
+    // Also saves the image in the doc dir
+    func addHand(playedCards: [Card],  handTotal: Int) {
+        let hand = Hand(handTotal: handTotal, cards: playedCards)
+        playedHands.append(hand)
+    }
+    
+    // Deletes saved hands
+    func deleteHands() {
+        playedHands.removeAll()
+    }
     
 }

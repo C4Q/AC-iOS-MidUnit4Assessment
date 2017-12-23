@@ -46,6 +46,7 @@ class GameViewController: UIViewController {
         let alertController = UIAlertController(title: "Victory!", message: "You got to 30!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "New Game", style: .default, handler: nil)
         alertController.addAction(okAction)
+        
         present(alertController, animated: true, completion: nil)
        
     }
@@ -69,9 +70,11 @@ class GameViewController: UIViewController {
 
     
     @IBAction func drawButtonPressed(_ sender: UIButton) {
-        GameBrain.manager.draw()
+        
         self.hand = GameBrain.manager.hand
+        GameBrain.manager.draw()
         currentHandValueLabel.text = "Current Hand Total: \(GameBrain.manager.currentTotal)"
+         handCollectionView.reloadData()
         switch GameBrain.manager.victoryCheck(currentTotal: GameBrain.manager.currentTotal) {
         case .lose :
             showDefeatAlert()
@@ -88,8 +91,8 @@ class GameViewController: UIViewController {
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
         showStopAlert()
-        Persistence.manager.addHand(cards: hand, total: GameBrain.manager.currentTotal)
-        resetGame()
+        //Persistence.manager.addHand(cards: hand, total: GameBrain.manager.currentTotal)
+       GameBrain.manager.clearCurrentGame()
         
         
 
@@ -97,9 +100,11 @@ class GameViewController: UIViewController {
     
     
     func resetGame() {
+         DataPersistence.manager.addHand(playedCards: self.hand, handTotal: GameBrain.manager.currentTotal)
+    
         currentHandValueLabel.text = "Current Hand Total: \(GameBrain.manager.currentTotal)"
         GameBrain.manager.clearCurrentGame()
-        Persistence.manager.addHand(cards: self.hand, total:GameBrain.manager.currentTotal)
+       
         self.hand = GameBrain.manager.hand
         
         handCollectionView.reloadData()
@@ -148,15 +153,6 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     }
     
     
-    
-    
 }
-
-
-
-
-
-
-
 
 
