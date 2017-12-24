@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+
 
 class PersistentStoreManager {
     static let kPathName = "History.plist"
@@ -55,12 +55,14 @@ class PersistentStoreManager {
     //add
     
     // appends item to array
-    func addToHistory(of cards: [Card], and image: UIImage) {
+    func addToHistory(of cards: [Card]) {
        
 
         
         // 2) save cards object
         let newHistory = cards
+        print("\n~~~~~~~~~~~~~~~~~~~~~")
+        print("just add to history: \(newHistory)")
         historys.append(newHistory)
     }
 

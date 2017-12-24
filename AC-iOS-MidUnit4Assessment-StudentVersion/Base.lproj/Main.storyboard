@@ -113,18 +113,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-MI-vum">
-                                <rect key="frame" x="67" y="127" width="263" height="287"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-MI-vum">
+                                <rect key="frame" x="0.0" y="20" width="375" height="533.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="QgO-NU-67C">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QgO-NU-67C" id="Y5C-5d-HHv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXC-rd-OhH">
-                                <rect key="frame" x="92" y="527" width="127" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXC-rd-OhH">
+                                <rect key="frame" x="94" y="561.5" width="187.5" height="41.5"/>
+                                <state key="normal" title="Reset History"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iXC-rd-OhH" firstAttribute="centerX" secondItem="vvi-8A-arZ" secondAttribute="centerX" id="08P-qE-v3r"/>
+                            <constraint firstItem="2bb-MI-vum" firstAttribute="height" secondItem="i0U-aD-dmN" secondAttribute="height" multiplier="4:5" id="91M-7C-8hB"/>
+                            <constraint firstItem="2bb-MI-vum" firstAttribute="top" secondItem="vvi-8A-arZ" secondAttribute="top" id="NHr-8d-ECt"/>
+                            <constraint firstItem="vvi-8A-arZ" firstAttribute="trailing" secondItem="2bb-MI-vum" secondAttribute="trailing" id="PcP-Py-hgN"/>
+                            <constraint firstItem="2bb-MI-vum" firstAttribute="leading" secondItem="vvi-8A-arZ" secondAttribute="leading" id="g2E-Tf-s4r"/>
+                            <constraint firstItem="iXC-rd-OhH" firstAttribute="top" secondItem="2bb-MI-vum" secondAttribute="bottom" constant="8" id="i6r-zw-27B"/>
+                            <constraint firstItem="iXC-rd-OhH" firstAttribute="width" secondItem="i0U-aD-dmN" secondAttribute="width" multiplier="1:2" id="vPY-EH-PPV"/>
+                            <constraint firstItem="vvi-8A-arZ" firstAttribute="bottom" secondItem="iXC-rd-OhH" secondAttribute="bottom" constant="15" id="xsF-12-S82"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vvi-8A-arZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Fuq-Pj-Ldx"/>

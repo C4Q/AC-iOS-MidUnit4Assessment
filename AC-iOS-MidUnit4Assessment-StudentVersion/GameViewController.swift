@@ -24,9 +24,9 @@ class GameViewController: UIViewController {
             var sum = 0
             for card in currentCards {
                 
-                if ["JACK", "QUEEN", "KING"].contains(card.value) {
+                if ["jack", "queen", "king"].contains(card.value.lowercased()) {
                     sum += 10
-                } else if card.value == "ACE" {
+                } else if card.value.lowercased() == "ace" {
                     sum += 11
                 } else {
                     sum += Int(card.value)!
@@ -54,7 +54,10 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
-        
+        let stopAlert = UIAlertController(title: "Game Over", message: "You are \(30 - currentTotal) away from 30", preferredStyle: .alert)
+        let newGameAction = UIAlertAction(title: "New Game", style: .default, handler: nil)
+        stopAlert.addAction(newGameAction)
+        present(stopAlert, animated: true, completion: {self.resetGame()})
         
     }
     
@@ -79,6 +82,7 @@ class GameViewController: UIViewController {
         }
     }
     func resetGame() {
+        PersistentStoreManager.manager.addToHistory(of: currentCards)
         self.currentTotal = 0
         self.currentCards = [Card]()
         
@@ -107,6 +111,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! CardCollectionViewCell
+        cell.imageView.image = nil
        var value = self.currentCards[indexPath.row].value
         if ["JACK", "QUEEN", "KING"].contains(value) {
             value = "10"
