@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670555.995964"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "currentCards"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.405094"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "548">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController&gt;"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.409386"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "455">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670555.996794"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "currentCards"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670555.997601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "GameViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "variable initialization expression of AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.randomNum : Swift.UInt32"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.420653"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.randomNum.getter : Swift.UInt32"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.425101"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.42957"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "700">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController&gt;"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.434434"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "607">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670555.998314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "drawACardButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670555.999123"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "loadCards(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.loadCards(from: Swift.String) -&gt; ()"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.468082"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;AC_iOS_MidUnit4Assessment_StudentVersion.Card&gt;) -&gt; () in closure #1 (Swift.String) -&gt; () in AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.loadCards(from: Swift.String) -&gt; ()"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.472632"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in closure #1 (Swift.String) -&gt; () in AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.loadCards(from: Swift.String) -&gt; ()"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.475732"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670556.000659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "loadCards(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.loadCards(from: Swift.String) -&gt; ()"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.483015"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.loadCards(from: Swift.String) -&gt; ()"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663451.48529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670556.002782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670556.004627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670556.006222"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+            timestampString = "535670556.007378"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "GameViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.cellSpacing.getter : CoreGraphics.CGFloat"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663985.489711"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "99">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663985.491826"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "470">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;AC_iOS_MidUnit4Assessment_StudentVersion.GameViewController&gt;"
+                  moduleName = "AC-iOS-MidUnit4Assessment-StudentVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c4q/Desktop/IOSProjectsFolder/Unit4AppFolder/AC-iOS-MidUnit4Assessment/AC-iOS-MidUnit4Assessment-StudentVersion/GameViewController.swift"
+                  timestampString = "535663985.494445"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "377">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
