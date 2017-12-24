@@ -82,7 +82,8 @@ class GameViewController: UIViewController {
         }
     }
     func resetGame() {
-        PersistentStoreManager.manager.addToHistory(of: currentCards)
+        PersistentStoreManager.manager.addToHistory(of: currentCards, and: currentTotal)
+        
         self.currentTotal = 0
         self.currentCards = [Card]()
         
@@ -113,7 +114,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! CardCollectionViewCell
         cell.imageView.image = nil
        var value = self.currentCards[indexPath.row].value
-        if ["JACK", "QUEEN", "KING"].contains(value) {
+        if ["jack", "queen", "king"].contains(value.lowercased()) {
             value = "10"
         }
         cell.label.text = "\(value)"

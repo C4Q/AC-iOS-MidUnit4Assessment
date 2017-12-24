@@ -19,6 +19,7 @@
 		81A9A1651FED9F62005D21B9 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9A1631FED9F62005D21B9 /* CardCollectionViewCell.swift */; };
 		81A9A1661FED9F62005D21B9 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A9A1641FED9F62005D21B9 /* CardCollectionViewCell.xib */; };
 		81A9A1681FEDB159005D21B9 /* PersistantStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9A1671FEDB159005D21B9 /* PersistantStoreManager.swift */; };
+		81ABE0C91FF014B100ABA0C9 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABE0C81FF014B100ABA0C9 /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		81A9A1631FED9F62005D21B9 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		81A9A1641FED9F62005D21B9 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		81A9A1671FEDB159005D21B9 /* PersistantStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantStoreManager.swift; sourceTree = "<group>"; };
+		81ABE0C81FF014B100ABA0C9 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +72,12 @@
 			children = (
 				8124A8091FED7AE000118D5D /* Supporting Files */,
 				545F2AB51FEC2752007EBECB /* GameViewController.swift */,
-				81A9A1671FEDB159005D21B9 /* PersistantStoreManager.swift */,
+				8124A80A1FED7D4300118D5D /* HistoryViewController.swift */,
 				81A9A1631FED9F62005D21B9 /* CardCollectionViewCell.swift */,
 				81A9A1641FED9F62005D21B9 /* CardCollectionViewCell.xib */,
-				8124A80A1FED7D4300118D5D /* HistoryViewController.swift */,
+				81ABE0C81FF014B100ABA0C9 /* HistoryTableViewCell.swift */,
+				81ABE0C71FF0145D00ABA0C9 /* Models */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
-				8124A8141FED875A00118D5D /* NetworkHelper.swift */,
-				8124A8181FED88C700118D5D /* ImageAPIClient.swift */,
-				8124A8161FED876D00118D5D /* Card.swift */,
 				545F2ABA1FEC2752007EBECB /* Assets.xcassets */,
 				545F2ABF1FEC2752007EBECB /* Info.plist */,
 			);
@@ -91,6 +91,17 @@
 				545F2ABC1FEC2752007EBECB /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81ABE0C71FF0145D00ABA0C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8124A8141FED875A00118D5D /* NetworkHelper.swift */,
+				81A9A1671FEDB159005D21B9 /* PersistantStoreManager.swift */,
+				8124A8181FED88C700118D5D /* ImageAPIClient.swift */,
+				8124A8161FED876D00118D5D /* Card.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81ABE0C91FF014B100ABA0C9 /* HistoryTableViewCell.swift in Sources */,
 				8124A80B1FED7D4300118D5D /* HistoryViewController.swift in Sources */,
 				8124A8171FED876D00118D5D /* Card.swift in Sources */,
 				545F2AB61FEC2752007EBECB /* GameViewController.swift in Sources */,

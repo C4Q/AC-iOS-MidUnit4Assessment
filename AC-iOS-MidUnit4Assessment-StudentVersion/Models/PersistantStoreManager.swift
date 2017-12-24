@@ -10,9 +10,10 @@ import Foundation
 
 
 class PersistentStoreManager {
-    static let kPathName = "History.plist"
+    static let kPathName = "CardHistory.plist"
     private init() {}
     static let manager = PersistentStoreManager()
+    private var totalRecords = [Int]() // keep track of total value for the history
     private var historys = [[Card]]() {
         didSet {
             saveHistory()
@@ -55,19 +56,26 @@ class PersistentStoreManager {
     //add
     
     // appends item to array
-    func addToHistory(of cards: [Card]) {
+    func addToHistory(of cards: [Card], and newValue: Int) {
        
-
         
         // 2) save cards object
         let newHistory = cards
         print("\n~~~~~~~~~~~~~~~~~~~~~")
         print("just add to history: \(newHistory)")
         historys.append(newHistory)
+        totalRecords.append(newValue)
     }
 
     func getHistory() -> [[Card]] {
         return historys
+    }
+    func getTotalRecord() -> [Int] {
+        return totalRecords
+    }
+    func resetHistory() {
+        self.historys = [[Card]]()
+        self.totalRecords = [Int]()
     }
     
 }
