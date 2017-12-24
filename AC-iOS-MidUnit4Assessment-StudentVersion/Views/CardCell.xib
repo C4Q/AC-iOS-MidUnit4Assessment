@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardCell">
+            <connections>
+                <outlet property="cardImage" destination="UEZ-8J-l1f" id="1m0-8k-nK4"/>
+                <outlet property="valueLabel" destination="WfP-Fe-QYU" id="kMU-JY-bMl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CardCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UEZ-8J-l1f">
+                    <rect key="frame" x="0.0" y="20" width="375" height="533.5"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfP-Fe-QYU">
+                    <rect key="frame" x="0.5" y="537.5" width="375" height="129.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UEZ-8J-l1f" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="30q-rQ-42X"/>
+                <constraint firstItem="UEZ-8J-l1f" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="88K-96-BWr"/>
+                <constraint firstItem="WfP-Fe-QYU" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="LxZ-e2-mqh"/>
+                <constraint firstItem="UEZ-8J-l1f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Rdi-ee-sCZ"/>
+                <constraint firstItem="WfP-Fe-QYU" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.2" id="jkc-Ic-KXl"/>
+                <constraint firstItem="UEZ-8J-l1f" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="sVO-xj-FUV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WfP-Fe-QYU" secondAttribute="bottom" id="vTY-NY-Y33"/>
+                <constraint firstItem="WfP-Fe-QYU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xfQ-0Z-egj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-40" y="-32"/>
+        </view>
+    </objects>
+</document>
