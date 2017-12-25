@@ -113,14 +113,18 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! CardCollectionViewCell
         cell.imageView.image = nil
+        cell.spinner.isHidden = false
+        cell.spinner.startAnimating()
        var value = self.currentCards[indexPath.row].value
         if ["jack", "queen", "king"].contains(value.lowercased()) {
             value = "10"
+        } else if value.lowercased() == "ace" {
+            value = "11"
         }
         cell.label.text = "\(value)"
         let imageURL = currentCards[indexPath.row].image
-        ImageAPIClient.manager.getImages(from: imageURL, completionHandler: {cell.imageView.image = $0}, errorHandler: {print($0)})
-      
+        ImageAPIClient.manager.getImages(from: imageURL, completionHandler: {cell.imageView.image = $0; cell.spinner.stopAnimating()}, errorHandler: {print($0)})
+        cell.spinner.isHidden = true
         return cell
     }
 }

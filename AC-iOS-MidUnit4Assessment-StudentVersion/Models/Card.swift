@@ -39,7 +39,6 @@ struct DeckIDAPIClient {
 }
 
 
-
 struct CardList: Codable {
     let cards: [Card]
 }

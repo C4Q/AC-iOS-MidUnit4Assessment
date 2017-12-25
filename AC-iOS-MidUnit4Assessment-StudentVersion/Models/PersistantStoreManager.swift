@@ -7,13 +7,20 @@
 //
 
 import Foundation
-
+struct Value: Codable {
+    let value: Int
+}
 
 class PersistentStoreManager {
     static let kPathName = "CardHistory.plist"
+    static let vPathName = "ValueHistory.plist"
     private init() {}
     static let manager = PersistentStoreManager()
-    private var totalRecords = [Int]() // keep track of total value for the history
+    private var totalValues = [Value]() {
+        didSet {
+        saveValue()
+        }
+    }// keep track of total value for the history
     private var historys = [[Card]]() {
         didSet {
             saveHistory()
@@ -35,6 +42,20 @@ class PersistentStoreManager {
         do {
             let data = try encoder.encode(historys)
             try data.write(to: dataFilePath(wtih: PersistentStoreManager.kPathName))
+            let valueData = try encoder.encode(totalValues)
+           try valueData.write(to: dataFilePath(wtih: PersistentStoreManager.vPathName))
+        } catch {
+            print("Encoding error: \(error)")
+        }
+        print("\n==================================================")
+        print(documentsDirectory())
+        print("===================================================\n")
+    }
+    func saveValue() {
+        let encoder = PropertyListEncoder()
+        do {
+            let valueData = try encoder.encode(totalValues)
+            try valueData.write(to: dataFilePath(wtih: PersistentStoreManager.vPathName))
         } catch {
             print("Encoding error: \(error)")
         }
@@ -53,6 +74,17 @@ class PersistentStoreManager {
             print("Decoding erorr: \(error.localizedDescription)")
         }
     }
+    func loadValue() {
+         let vPath = dataFilePath(wtih: PersistentStoreManager.vPathName)
+        let decoder = PropertyListDecoder()
+        do {
+            let valueData = try Data(contentsOf: vPath)
+            totalValues = try decoder.decode([Value].self, from: valueData)
+        } catch {
+            print("Decoding erorr: \(error.localizedDescription)")
+        }
+
+    }
     //add
     
     // appends item to array
@@ -64,18 +96,19 @@ class PersistentStoreManager {
         print("\n~~~~~~~~~~~~~~~~~~~~~")
         print("just add to history: \(newHistory)")
         historys.append(newHistory)
-        totalRecords.append(newValue)
+        let value = Value.init(value: newValue)
+        totalValues.append(value)
     }
 
     func getHistory() -> [[Card]] {
         return historys
     }
-    func getTotalRecord() -> [Int] {
-        return totalRecords
+    func getTotalValue() -> [Value] {
+        return totalValues
     }
     func resetHistory() {
         self.historys = [[Card]]()
-        self.totalRecords = [Int]()
+        self.totalValues = [Value]()
     }
     
 }

@@ -28,6 +28,9 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DAO-a7-SzR">
+                        <rect key="frame" x="42" y="38" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <constraints>
@@ -35,17 +38,20 @@
                 <constraint firstAttribute="trailing" secondItem="hjZ-8J-rWe" secondAttribute="trailing" id="7Dw-qj-d9T"/>
                 <constraint firstAttribute="bottom" secondItem="hjZ-8J-rWe" secondAttribute="bottom" id="D57-hm-n5x"/>
                 <constraint firstItem="hjZ-8J-rWe" firstAttribute="top" secondItem="NpK-rB-O0h" secondAttribute="bottom" id="GLZ-eP-x7T"/>
+                <constraint firstItem="DAO-a7-SzR" firstAttribute="centerY" secondItem="NpK-rB-O0h" secondAttribute="centerY" id="NL8-On-gGQ"/>
                 <constraint firstItem="hjZ-8J-rWe" firstAttribute="leading" secondItem="GlE-lz-SrQ" secondAttribute="leading" id="Oo1-3L-0BW"/>
                 <constraint firstItem="NpK-rB-O0h" firstAttribute="height" secondItem="GlE-lz-SrQ" secondAttribute="height" multiplier="0.8" id="Vju-QT-Xo0"/>
                 <constraint firstItem="NpK-rB-O0h" firstAttribute="top" secondItem="GlE-lz-SrQ" secondAttribute="top" id="XWf-Ds-ZgE"/>
                 <constraint firstItem="hjZ-8J-rWe" firstAttribute="top" secondItem="NpK-rB-O0h" secondAttribute="bottom" id="XYR-ZY-4mg"/>
                 <constraint firstAttribute="trailing" secondItem="NpK-rB-O0h" secondAttribute="trailing" id="yzI-JJ-9C3"/>
+                <constraint firstItem="DAO-a7-SzR" firstAttribute="centerX" secondItem="NpK-rB-O0h" secondAttribute="centerX" id="zPc-RJ-UdN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="MLo-CT-3lb"/>
             <size key="customSize" width="104" height="120"/>
             <connections>
                 <outlet property="imageView" destination="NpK-rB-O0h" id="kMv-KM-ugd"/>
                 <outlet property="label" destination="hjZ-8J-rWe" id="jD6-vY-uLS"/>
+                <outlet property="spinner" destination="DAO-a7-SzR" id="NWQ-HA-BQP"/>
             </connections>
             <point key="canvasLocation" x="70" y="59"/>
         </collectionViewCell>

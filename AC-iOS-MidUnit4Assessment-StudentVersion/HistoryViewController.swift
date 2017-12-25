@@ -13,11 +13,14 @@ class HistoryViewController: UIViewController {
         return PersistentStoreManager.manager.getHistory()
     }
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     self.tableView.delegate = self
+       self.tableView.delegate = self
         self.tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        
+       self.tableView.estimatedRowHeight = 400
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,12 +37,12 @@ class HistoryViewController: UIViewController {
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return cardsArr.count
-        return PersistentStoreManager.manager.getTotalRecord().count
+        return PersistentStoreManager.manager.getTotalValue().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "history cell", for: indexPath) as! HistoryTableViewCell
         cell.cards = cardsArr[indexPath.row]
-        let value = PersistentStoreManager.manager.getTotalRecord()[indexPath.row]
+        let value = PersistentStoreManager.manager.getTotalValue()[indexPath.row]
         cell.totalValueLabel.text = "Final Hand Value: \(value)"
         cell.collectionView.reloadData()
         return cell
