@@ -27,6 +27,11 @@ class GameViewController: UIViewController {
     var cardsDrawn = [Card]() {
         didSet {
             cardsCollectionView.reloadData()
+            // https://stackoverflow.com/questions/40786699/how-to-scroll-to-a-particluar-index-in-collection-view-in-swift
+            // reference for sscrolling to last collectionview cell after drawing new card
+            if cardsDrawn.count > 0 {
+                cardsCollectionView.scrollToItem(at:IndexPath(item: self.cardsDrawn.count - 1, section: 0), at: .right, animated: true)
+            }
         }
     }
 
@@ -46,7 +51,7 @@ class GameViewController: UIViewController {
     
 
     @IBAction func stopButtonPressed(_ sender: UIButton) {
-        let toSave = PastGame(finalScore: gameBrain.getScore(), gameCards: cardsDrawn)
+        let toSave = PastGame(finalScore: gameBrain.getScore(),targetScore: gameBrain.getGoal() , gameCards: cardsDrawn)
         DataPersistenceModel.shared.addPastGame(pastGame: toSave)
         showAlertAndStartNewGame(with: "You are \(gameBrain.pointsAwayFromGoal()) away from \(gameBrain.goal)")
         CardDeckAPIClient.manager.getCardDeck(completionHandler: { self.cardDeck = $0 }, errorHandler: { print($0) })
@@ -60,18 +65,18 @@ class GameViewController: UIViewController {
             self.messageLabel.text = "Current Hand Value: \(self.gameBrain.getScore())"
             if self.gameBrain.didItGoOver() {
                 self.messageLabel.text = "Current Hand Value: \(self.gameBrain.getScore()) BUST"
-                let toSave = PastGame(finalScore: self.gameBrain.getScore(), gameCards: self.cardsDrawn)
+                let toSave = PastGame(finalScore: self.gameBrain.getScore(), targetScore: self.gameBrain.getGoal(), gameCards: self.cardsDrawn)
                 DataPersistenceModel.shared.addPastGame(pastGame: toSave)
                 self.showAlertAndStartNewGame(with: "You went over \(self.gameBrain.getGoal())")
             }
         }, errorHandler: { print($0) })
     }
     
+    // https://stackoverflow.com/questions/25511945/swift-alert-view-ios8-with-ok-and-cancel-button-which-button-tapped
+    // reference for using UIAlertController for handling of new game
     func showAlertAndStartNewGame(with message: String) {
         let alertController = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "New Game", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: {
+        let okAction = UIAlertAction(title: "New Game", style: .default, handler: { (action: UIAlertAction!) in
             self.cardsDrawn = []
             if let newTargetScore = UserDefaults.standard.value(forKey: UserDefaultsKeys.targetScore.rawValue) as? Int {
                 self.gameBrain = GameBrainModel(targetScore: newTargetScore)
@@ -82,6 +87,8 @@ class GameViewController: UIViewController {
             self.messageLabel.text = "Current Hand Value:"
             CardDeckAPIClient.manager.getCardDeck(completionHandler: { self.cardDeck = $0 }, errorHandler: { print($0) })
         })
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }
@@ -96,8 +103,15 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCardCell", for: indexPath)
         let card = cardsDrawn[indexPath.row]
         if let cardCell = cardCell as? CardCollectionViewCell {
-            cardCell.cardValueLabel.text = card.value
-            cardCell.cardImageView.image = nil
+            switch card.value {
+            case "JACK", "QUEEN", "KING":
+                cardCell.cardValueLabel.text = "10"
+            case "ACE":
+                cardCell.cardValueLabel.text = "11"
+            default:
+                cardCell.cardValueLabel.text = card.value
+            }
+            cardCell.cardImageView.image = #imageLiteral(resourceName: "backOfCard")
             ImageFetchHelper.manager.getImage(from: card.image, completionHandler: {
                 cardCell.cardImageView.image = $0
                 cardCell.setNeedsLayout()
@@ -111,11 +125,11 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension GameViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numCells: CGFloat = 2
+        let numCells: CGFloat = 3
         let numSpaces: CGFloat = numCells + 1
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
-        return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.4)
+        return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.3)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

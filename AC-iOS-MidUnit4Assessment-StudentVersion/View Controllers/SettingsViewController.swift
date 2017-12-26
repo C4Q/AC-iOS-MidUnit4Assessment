@@ -14,12 +14,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var targetScoreTextField: UITextField!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.targetScoreTextField.delegate = self
         if let targetScore = UserDefaults.standard.value(forKey: UserDefaultsKeys.targetScore.rawValue) as? Int {
             targetScoreTextField.text = targetScore.description
         }
-        
-        super.viewDidLoad()
     }
 
 }

@@ -10,5 +10,6 @@ import Foundation
 
 struct PastGame: Codable {
     let finalScore: Int
+    let targetScore: Int
     let gameCards: [Card]
 }

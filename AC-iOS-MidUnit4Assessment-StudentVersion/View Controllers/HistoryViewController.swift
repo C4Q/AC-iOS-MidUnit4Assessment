@@ -8,9 +8,12 @@
 
 import UIKit
 
+// https://ashfurrow.com/blog/putting-a-uicollectionview-in-a-uitableviewcell-in-swift/
+// reference for implementing collectionview inside a tableviewcell
+
 class HistoryViewController: UIViewController {
     
-    let cellSpacing: CGFloat = 5.0
+    let cellSpacing: CGFloat = 3.0
     var storedOffsets = [Int: CGFloat]()
     
     @IBOutlet weak var pastGamesTableView: UITableView!
@@ -43,7 +46,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         let pastGameCell = tableView.dequeueReusableCell(withIdentifier: "PastCardGameCell", for: indexPath)
         if let pastGameCell = pastGameCell as? PastGameTableViewCell {
             let selectedPastGame = DataPersistenceModel.shared.getPastGames()[indexPath.row]
-            pastGameCell.pastGameScoreLabel.text = "Final Hand Value: \(selectedPastGame.finalScore)"
+            pastGameCell.pastGameScoreLabel.text = "Final Hand Value: \(selectedPastGame.finalScore) - Target: \(selectedPastGame.targetScore)"
         }
         return pastGameCell
     }
@@ -62,22 +65,28 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return DataPersistenceModel.shared.getPastGames()[collectionView.tag].gameCards.count
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PastCardCell", for: indexPath)
         if let cardCell = cardCell as? CardCollectionViewCell {
             let selectedCard = DataPersistenceModel.shared.getPastGames()[collectionView.tag].gameCards[indexPath.item]
-            cardCell.cardValueLabel.text = selectedCard.value
-            cardCell.cardImageView.image = nil
+            switch selectedCard.value {
+            case "JACK", "QUEEN", "KING":
+                cardCell.cardValueLabel.text = "10"
+            case "ACE":
+                cardCell.cardValueLabel.text = "11"
+            default:
+                cardCell.cardValueLabel.text = selectedCard.value
+            }
+            cardCell.cardImageView.image = #imageLiteral(resourceName: "backOfCard")
             ImageFetchHelper.manager.getImage(from: selectedCard.image, completionHandler: {
                 cardCell.cardImageView.image = $0
                 cardCell.setNeedsLayout()
             }, errorHandler: { print($0) })
-            
         }
         return cardCell
     }
@@ -87,11 +96,11 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
 extension HistoryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numCells: CGFloat = 2
+        let numCells: CGFloat = 4
         let numSpaces: CGFloat = numCells + 1
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
-        return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.2)
+        let collectionViewWidth = collectionView.bounds.width
+        let collectionViewHeight = collectionView.bounds.height
+        return CGSize(width: (collectionViewWidth - (cellSpacing * numSpaces)) / numCells, height: collectionViewHeight * 0.8)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
