@@ -26,10 +26,6 @@ extension GamesSavedViewController: UITableViewDataSource {
             cell.games = game.game
             return cell
         }
-        
-        
         return UITableViewCell()
     }
-    
-    
 }

@@ -22,19 +22,23 @@ class GamesSavedViewController: UIViewController {
         super.viewDidLoad()
         self.gamesSavedTableView.delegate = self
         self.gamesSavedTableView.dataSource = self
+        KeyedArchiverClient.manager.load()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.gameSaved = KeyedArchiverClient.manager.getGameSaved()
     }
     
+    
     @IBAction func clearHistoryButton(_ sender: UIButton) {
         KeyedArchiverClient.manager.removeGameHistorial()
+        self.gameSaved = KeyedArchiverClient.manager.getGameSaved()
         let alert = UIAlertController(title: "Historial", message: "Historial has beend cleaned", preferredStyle: UIAlertControllerStyle.alert)
         // add an action (button)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        KeyedArchiverClient.manager.load()
-    }
+    
 }

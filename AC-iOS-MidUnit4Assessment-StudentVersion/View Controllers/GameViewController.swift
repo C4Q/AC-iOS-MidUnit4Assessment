@@ -45,6 +45,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         KeyedArchiverClient.manager.load()
+        let nib = UINib(nibName: "CardCell", bundle: nil)
+        self.gameCollectionView.register(nib, forCellWithReuseIdentifier: "Card Cell")
         self.gameCollectionView.delegate = self
         self.gameCollectionView.dataSource = self
         

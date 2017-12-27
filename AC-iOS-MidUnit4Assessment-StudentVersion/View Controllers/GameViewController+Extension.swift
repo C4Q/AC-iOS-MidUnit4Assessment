@@ -17,10 +17,10 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
         let numCells: CGFloat = 3
         let numSpaces: CGFloat = numCells + 1
         
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
+        let screenWidth = collectionView.bounds.width
+        let screenHeight = collectionView.bounds.height
         
-        return CGSize(width: (screenWidth - (self.cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.25)
+        return CGSize(width: (screenWidth - (self.cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.75)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -42,7 +42,7 @@ extension GameViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? GameCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card Cell", for: indexPath) as? CardCell {
             let card = cards[indexPath.row]
             cell.cardImageView.image = nil
             cell.cardValueLabel.text = "\(card.cards[0].cardVal)"

@@ -23,6 +23,8 @@ class GameSavedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let nib = UINib(nibName: "CardCell", bundle: nil)
+        self.gameCollectionView.register(nib, forCellWithReuseIdentifier: "Card Cell")
         self.gameCollectionView.delegate = self
         self.gameCollectionView.dataSource = self
     }
@@ -33,11 +35,11 @@ extension GameSavedTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numCells: CGFloat = 3
         let numSpaces: CGFloat = numCells + 1
+        
         let screenWidth = collectionView.bounds.width
+        let screenHeight = collectionView.bounds.height
         
-        let screenHeight = collectionView.bounds.width
-        
-        return CGSize(width: (screenWidth - (self.cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.60)
+        return CGSize(width: (screenWidth - (self.cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.75)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -59,12 +61,12 @@ extension GameSavedTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? GameSavedCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card Cell", for: indexPath) as? CardCell {
             let game = games[indexPath.row]
-            cell.scoreLabel.text = "\(game.cardVal)"
-            cell.imageView.image = nil
-            ImageAPIClient.manager.getImage(from: game.cardImage, completionHandler: {cell.imageView.image = $0}, errorHandler: {print($0)})
-            cell.imageView.setNeedsLayout()
+            cell.cardValueLabel.text = "\(game.cardVal)"
+            cell.cardImageView.image = nil
+            ImageAPIClient.manager.getImage(from: game.cardImage, completionHandler: {cell.cardImageView.image = $0}, errorHandler: {print($0)})
+            cell.cardImageView.setNeedsLayout()
             return cell
         }
         return UICollectionViewCell()
