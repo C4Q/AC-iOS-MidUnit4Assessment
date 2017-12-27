@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Mark: - TableView Cell dimensions
 extension GamesSavedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Mark: - CollectionView Cell
 class GameCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var cardValueLabel: UILabel!

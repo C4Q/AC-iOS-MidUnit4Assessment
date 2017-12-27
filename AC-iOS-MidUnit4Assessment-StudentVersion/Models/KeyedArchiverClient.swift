@@ -52,9 +52,6 @@ class KeyedArchiverClient {
         } catch {
             print("encoding error: \(error.localizedDescription)")
         }
-        print("\n==================================================")
-        print(documentsDirectory())
-        print("===================================================\n")
     }
     
     // load from documents directory
@@ -82,6 +79,7 @@ class KeyedArchiverClient {
         games = []
     }
     
+    // get saved games list
     func getGameSaved() -> [Game] {
         return games
     }

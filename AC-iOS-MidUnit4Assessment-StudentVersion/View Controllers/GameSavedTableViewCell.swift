@@ -31,6 +31,7 @@ class GameSavedTableViewCell: UITableViewCell {
 
 }
 
+// Mark: - CollectionView Cell dimensions
 extension GameSavedTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numCells: CGFloat = 3
@@ -55,6 +56,7 @@ extension GameSavedTableViewCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// Mark: - Collection View Datasource
 extension GameSavedTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.games.count
@@ -71,6 +73,4 @@ extension GameSavedTableViewCell: UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
-    
-    
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Mark: - ViewController
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var inputTextField: UITextField!
@@ -30,9 +31,9 @@ class SettingsViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
 }
 
+// Mark: TextField Delegates
 extension SettingsViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let allowedCharacters = CharacterSet.decimalDigits
