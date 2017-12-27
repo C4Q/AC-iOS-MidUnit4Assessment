@@ -140,7 +140,7 @@ class CardGameViewController: UIViewController {
     
     
     func resetGame(){
-        PersistentStoreManager.manager.addToFavorites(cards: cards, finalValue: currentHandValue, id: (currentDeck?.deckID)! )
+        var _ = PersistentStoreManager.manager.addToFavorites(cards: cards, finalValue: currentHandValue, id: (currentDeck?.deckID)! )
         cards.removeAll()
         currentHandLabel.text = "Your current hand: 0"
         currentHandValue = 0

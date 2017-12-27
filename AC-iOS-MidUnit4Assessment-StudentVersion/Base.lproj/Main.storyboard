@@ -46,7 +46,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="7eS-0R-Qpc">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="CardCell" id="7eS-0R-Qpc">
                                         <rect key="frame" x="0.0" y="71" width="164" height="152"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -153,34 +153,20 @@
                                                     <rect key="frame" x="0.0" y="54" width="414" height="124"/>
                                                     <color key="backgroundColor" red="0.40000000600000002" green="0.92542860240000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pFi-w3-KSo">
-                                                        <size key="itemSize" width="270" height="112"/>
+                                                        <size key="itemSize" width="116" height="106"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCellTwo" id="Amn-ZQ-b7k" customClass="FavoritesCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="6" width="270" height="112"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="CardCell" id="Amn-ZQ-b7k" customClass="FavoritesCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="9" width="116" height="106"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="112"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="116" height="106"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CeI-MD-1E7">
-                                                                        <rect key="frame" x="0.0" y="-11" width="270" height="123"/>
-                                                                    </imageView>
-                                                                </subviews>
                                                             </view>
                                                             <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstItem="CeI-MD-1E7" firstAttribute="leading" secondItem="Amn-ZQ-b7k" secondAttribute="leading" id="57K-vt-g8g"/>
-                                                                <constraint firstAttribute="bottom" secondItem="CeI-MD-1E7" secondAttribute="bottom" id="HKs-QP-wbP"/>
-                                                                <constraint firstItem="CeI-MD-1E7" firstAttribute="top" secondItem="Amn-ZQ-b7k" secondAttribute="top" constant="-11" id="aZl-w4-onq"/>
-                                                                <constraint firstAttribute="trailing" secondItem="CeI-MD-1E7" secondAttribute="trailing" id="zOR-ec-X7o"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="cardImage" destination="CeI-MD-1E7" id="cJu-gY-Kqt"/>
-                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>

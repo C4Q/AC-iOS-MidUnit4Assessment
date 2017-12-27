@@ -81,7 +81,7 @@ class PersistentStoreManager {
 
 
         let indexExist = favorites.index{ $0.idDeck == id}
-        if indexExist != nil { print("FAVORITE EXIST"); return false }
+//        if indexExist != nil { print("FAVORITE EXIST"); return false }
 
         let newFavorite = Favorite.init(cards: cards, idDeck: id, finalValue: finalValue)
         favorites.append(newFavorite)
@@ -106,14 +106,13 @@ class PersistentStoreManager {
         favorites.removeAll()
     }
 
-    func removeFavorite(fromIndex index: Int, andfavorite favorite: Favorite) -> Bool {
-        favorites.remove(at: index)
-        // remove image
-        let imageURL = PersistentStoreManager.manager.dataFilePath(withPathName: "\(favorite.idDeck)")
+    func removeFavorite(andfavorite favorite: Favorite) -> Bool {
+     
+        let favoriteURL = PersistentStoreManager.manager.dataFilePath(withPathName: "\(favorite.idDeck)")
         do {
-            try FileManager.default.removeItem(at: imageURL)
+            try FileManager.default.removeItem(at: favoriteURL)
             print("\n==============================================================================")
-            print("\(imageURL) removed")
+            print("\(favoriteURL) removed")
             print("==============================================================================\n")
             return true
         } catch {
