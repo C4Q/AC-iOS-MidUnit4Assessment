@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="371"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomTableViewCell" rowHeight="150" id="Fcp-1a-RQN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomTableViewCell" rowHeight="150" id="Fcp-1a-RQN" customClass="HandTableViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fcp-1a-RQN" id="lNJ-m5-F7T">
@@ -44,7 +44,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="handCollectionViewCell" id="iqa-ML-2a7" customClass="HandCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="handCollectionViewCell" id="iqa-ML-2a7" customClass="NetflixStyleCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -73,8 +73,8 @@
                                                                 <constraint firstAttribute="bottom" secondItem="Yhv-5l-s93" secondAttribute="bottom" id="wxu-0A-XLm"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="cardImage" destination="R6L-hP-1Hz" id="dL9-98-YVu"/>
-                                                                <outlet property="cardLabel" destination="Yhv-5l-s93" id="39c-ps-WgF"/>
+                                                                <outlet property="imageView" destination="R6L-hP-1Hz" id="XaQ-eC-czi"/>
+                                                                <outlet property="valueLabel" destination="Yhv-5l-s93" id="tXY-hu-S3A"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -97,6 +97,10 @@
                                                 <constraint firstItem="FXn-qd-fmn" firstAttribute="top" secondItem="lNJ-m5-F7T" secondAttribute="top" id="sVQ-k8-9CA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="Pzw-G0-Noj" id="qll-8j-35W"/>
+                                            <outlet property="headerLabel" destination="FXn-qd-fmn" id="rof-0p-VHe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -126,7 +130,6 @@
                     <tabBarItem key="tabBarItem" systemItem="recents" id="eVt-9a-JGe"/>
                     <connections>
                         <outlet property="noSavedHandsLabel" destination="dAI-fx-kBh" id="WXm-Fc-it6"/>
-                        <outlet property="resetHistoryButton" destination="MHN-Am-Fmt" id="mS2-Mg-wRg"/>
                         <outlet property="tableView" destination="QsA-wE-JKK" id="wHC-dv-l4A"/>
                     </connections>
                 </viewController>
