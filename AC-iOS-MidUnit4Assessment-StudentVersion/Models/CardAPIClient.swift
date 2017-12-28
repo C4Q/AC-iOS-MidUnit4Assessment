@@ -41,7 +41,7 @@ class CardAPIClient {
                                               completionHandler: parseDataIntoCards,
                                               errorHandler: errorHandler)
     }
-    
+
     
     func getNewCardDeck(from completionHandler: @escaping (CardDeckInfo) -> Void,
                      errorHandler: @escaping (Error) -> Void){//set signature
