@@ -44,9 +44,6 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func stopGameButtonPressed(_ sender: UIButton) {
-//        //ResetGame: Current Value: 0, no cards in collection view
-//        cards = []
-//        handValueLabel.text = "Current Hand Value: 0"
         stopGameAlert()
     }
     
@@ -72,7 +69,7 @@ class GameViewController: UIViewController {
         }
         CardAPIClient.manager.getOneNewCard(from: setOnlineCardImage,
                                             errorHandler: {print($0)})
-    }
+        setUpAutomaticScrolling()
     
     
     //MARK: - Getting a new deck from online
@@ -85,6 +82,21 @@ class GameViewController: UIViewController {
     //        CardAPIClient.manager.getNewCardDeck(from: setOnlineCardDeck,
     //                                             errorHandler: {print($0)})
     //    }
+    
+    } //loadCard func ends
+    
+    
+    //MARK: - Adding scrolling animation when the user draws another card: https://stackoverflow.com/questions/15985574/uicollectionview-auto-scroll-to-cell-at-indexpath
+    func setUpAutomaticScrolling(){
+        //set last index to be the last card in the array
+        let lastIndex = self.cards.count - 1
+        //make sure that the last Index is not negative or else you will crash
+        guard lastIndex >= 0 else {return}
+        //creates an indexpath based on the lastIndex and whatever section you are referencing
+        let indexPathOfCard = IndexPath(item: lastIndex, section: 0)
+        //set scrolling animation
+        gameCollectionView.scrollToItem(at: indexPathOfCard, at: .right, animated: true)
+    }
     
     //MARK: - creating functions for the alerts
     func winGameAlert(){
@@ -126,11 +138,12 @@ class GameViewController: UIViewController {
         //present alert controller
         self.present(alertController, animated: true, completion: nil)
     }
+    
     func stopGameAlert(){
         // stop game alert
         let alertController = UIAlertController(title: "So Soon?",
                                                 message:"You were \(GameModel.pointsToWin - GameModel.currentPoints) points away from 30",
-                                                preferredStyle: UIAlertControllerStyle.alert)
+            preferredStyle: UIAlertControllerStyle.alert)
         //create alert action
         let newGameAction = UIAlertAction(title: "New Game", style: UIAlertActionStyle.default) {
             UIAlertAction in
@@ -149,7 +162,7 @@ class GameViewController: UIViewController {
 
 
 
-//MARK: - CollectionView of books by Category
+//MARK: - CollectionView set up
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
@@ -195,8 +208,8 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     
     //returns how large the cells should be
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numCells: CGFloat = 2//number of cells visible in row
-        let numSpace: CGFloat = numCells + 7
+        let numCells: CGFloat = 4//number of cells visible in row
+        let numSpace: CGFloat = numCells + 9
         let screenWidth = UIScreen.main.bounds.width  // screen width fo the device
         //print("cells are large enough!")
         //cgsize expects a tuple: (width, height)
