@@ -21,6 +21,7 @@
 		810245F01FED69D80040B957 /* CardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810245EF1FED69D80040B957 /* CardAPIClient.swift */; };
 		810245F21FED7D510040B957 /* CardDeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810245F11FED7D510040B957 /* CardDeckModel.swift */; };
 		810245F41FED8AC70040B957 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810245F31FED8AC70040B957 /* CardView.xib */; };
+		818FB0601FF591A00075B638 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FB05F1FF591A00075B638 /* GameModel.swift */; };
 		81C111961FED92E600318876 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C111951FED92E600318876 /* GameCollectionViewCell.swift */; };
 		81C1119A1FED9CAD00318876 /* CardView 15-02-55-543.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C111991FED9CAD00318876 /* CardView 15-02-55-543.swift */; };
 		81C1119C1FEDB90200318876 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1119B1FEDB90200318876 /* HistoryCollectionViewCell.swift */; };
@@ -44,6 +45,7 @@
 		810245EF1FED69D80040B957 /* CardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPIClient.swift; sourceTree = "<group>"; };
 		810245F11FED7D510040B957 /* CardDeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckModel.swift; sourceTree = "<group>"; };
 		810245F31FED8AC70040B957 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		818FB05F1FF591A00075B638 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		81C111951FED92E600318876 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		81C111991FED9CAD00318876 /* CardView 15-02-55-543.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardView 15-02-55-543.swift"; sourceTree = "<group>"; };
 		81C1119B1FEDB90200318876 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				810245EF1FED69D80040B957 /* CardAPIClient.swift */,
 				810245E51FED67320040B957 /* NetworkHelper.swift */,
 				810245E71FED675E0040B957 /* ImageAPI.swift */,
+				818FB05F1FF591A00075B638 /* GameModel.swift */,
 				810245E91FED679F0040B957 /* AppErrors.swift */,
 				810245ED1FED67E20040B957 /* UserDefaultsHelper.swift */,
 			);
@@ -213,6 +216,7 @@
 				81C111A01FEDB9A900318876 /* HistoryTableViewCell.swift in Sources */,
 				81C1119A1FED9CAD00318876 /* CardView 15-02-55-543.swift in Sources */,
 				81C1119C1FEDB90200318876 /* HistoryCollectionViewCell.swift in Sources */,
+				818FB0601FF591A00075B638 /* GameModel.swift in Sources */,
 				810245E21FED66F30040B957 /* CardModel.swift in Sources */,
 				810245F01FED69D80040B957 /* CardAPIClient.swift in Sources */,
 				810245EE1FED67E20040B957 /* UserDefaultsHelper.swift in Sources */,

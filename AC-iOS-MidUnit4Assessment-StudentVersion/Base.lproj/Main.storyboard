@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="310"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wh8-hI-OZJ" id="yyr-H0-E2A">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="309.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="309.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KY7-tP-H4d">
@@ -150,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Value Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0x-0x-z01">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Hand Value Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0x-0x-z01">
                                 <rect key="frame" x="0.0" y="20" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.6622808575630188" green="0.13850182294845581" blue="0.10945399850606918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -264,9 +264,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="BlackJack" id="kbF-Xv-STv"/>
                     <connections>
-                        <outlet property="cardValueLabel" destination="K0x-0x-z01" id="7Y7-RC-L7q"/>
                         <outlet property="drawCardBtn" destination="vTs-Lt-VQa" id="Ivc-14-UXY"/>
                         <outlet property="gameCollectionView" destination="KDs-FT-5p4" id="jFx-Rt-p0A"/>
+                        <outlet property="handValueLabel" destination="K0x-0x-z01" id="7Y7-RC-L7q"/>
                         <outlet property="messageLabel" destination="GZW-5a-hKC" id="bon-RP-j5j"/>
                         <outlet property="stopGameBtn" destination="nBD-OB-juh" id="40d-HS-a4D"/>
                     </connections>
