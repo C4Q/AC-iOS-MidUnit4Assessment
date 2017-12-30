@@ -132,6 +132,7 @@ extension GameViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         // TODO Call IMAGE API IN CELL
         let cardImageLink = aCard[0].imageLink
+        cell.cardImage.image = nil
         cell.spinner.isHidden = false
         cell.spinner.startAnimating()
         let setImageToOnlineImage: (UIImage) -> Void = {(onlineImage: UIImage) in

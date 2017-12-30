@@ -11,21 +11,36 @@ import UIKit
 
 class ImageAPIClient {
     private init() {}
+    
     static let manager = ImageAPIClient()
+    
+    let imageCache = NSCache<NSString, UIImage>()
+    
     func getImage(from urlStr: String,
                   completionHandler: @escaping (UIImage) -> Void,
                   errorHandler: @escaping (AppError) -> Void) {
+        
         guard let url = URL(string: urlStr) else {
             errorHandler(.invalidImage)
             return
         }
-        let urlRequest = URLRequest(url: url)
-        let completion: (Data) -> Void = {(data: Data) in
-            guard let onlineImage = UIImage(data: data) else {
-                return
+        
+        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
+            completionHandler(cachedImage)
+            print("Loaded Image from cache")
+            
+        } else {
+            
+            let urlRequest = URLRequest(url: url)
+            let completion: (Data) -> Void = {(data: Data) in
+                guard let onlineImage = UIImage(data: data) else {
+                    return
+                }
+                completionHandler(onlineImage)
+                self.imageCache.setObject(onlineImage, forKey: url.absoluteString as NSString)
+                print("Saved Image to cache")
             }
-            completionHandler(onlineImage)
+            NetworkHelper.manager.performDataTask(with: urlRequest, completionHandler: completion, errorHandler: errorHandler)
         }
-        NetworkHelper.manager.performDataTask(with: urlRequest, completionHandler: completion, errorHandler: errorHandler)
     }
 }
