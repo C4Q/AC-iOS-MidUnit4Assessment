@@ -25,10 +25,8 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         self.historyTableView.dataSource = self
         self.historyTableView.delegate = self
-        Persistence.manager.loadHands()
-        usedHands = Persistence.manager.getHands()
         
-
+       
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +86,7 @@ func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forR
     guard let tableViewCell = cell as? HistoryTableViewCell else { return }
     
     tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+    
 }
 
 
@@ -113,8 +112,9 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
         if let cell = cell as? cardCell {
             
             let card = usedHands[collectionView.tag].cards[indexPath.item]
-            
+            cell.myCard = card
             cell.configureCell(with: card)
+            
 
             
         }

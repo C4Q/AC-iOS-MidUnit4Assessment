@@ -21,6 +21,7 @@ class GameBrain {
     var deck: Deck!
     var currentDraw: Card?
     
+    //get deck from online by using API Client.
     func setUpDeck() {
         let setDeckFromOnline = {(onlineDeck: Deck) in
             self.deck = onlineDeck
@@ -44,6 +45,7 @@ class GameBrain {
         let printErrors = {(error: Error) in
             print(error)
         }
+        //Get the next card using the deck id
 
         CardAPICLient.manager.getCard(with: self.deck.deckID, completionHandler: cardFromOnline, errorHandler: printErrors)
     }

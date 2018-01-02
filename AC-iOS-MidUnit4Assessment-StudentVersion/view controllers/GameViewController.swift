@@ -71,8 +71,9 @@ class GameViewController: UIViewController {
     
     @IBAction func drawButtonPressed(_ sender: UIButton) {
         
-        self.hand = GameBrain.manager.hand
+        
         GameBrain.manager.draw()
+        self.hand = GameBrain.manager.hand
         currentHandValueLabel.text = "Current Hand Total: \(GameBrain.manager.currentTotal)"
          handCollectionView.reloadData()
         switch GameBrain.manager.victoryCheck(currentTotal: GameBrain.manager.currentTotal) {

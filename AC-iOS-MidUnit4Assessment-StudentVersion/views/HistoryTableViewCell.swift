@@ -25,8 +25,14 @@ class HistoryTableViewCell: UITableViewCell {
     }
     
     
-   
-   
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        // Configure the view for the selected state
+    }
 
 }
 //no idea how to do this So i googled and found this function https://ashfurrow.com/blog/putting-a-uicollectionview-in-a-uitableviewcell-in-swift/
