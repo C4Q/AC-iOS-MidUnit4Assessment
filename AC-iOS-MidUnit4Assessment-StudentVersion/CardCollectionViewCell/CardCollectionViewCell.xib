@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="Dv9-v1-48z" customClass="CardCollectionViewCell" customModule="AC_iOS_MidUnit4Assessment_StudentVersion" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="529" height="829"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="529" height="829"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qQp-yF-iG9">
+                        <rect key="frame" x="52.5" y="30" width="423" height="676"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQd-cc-bAD">
+                        <rect key="frame" x="249.5" y="746" width="29" height="53"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="44"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="qQp-yF-iG9" firstAttribute="width" secondItem="Dv9-v1-48z" secondAttribute="width" multiplier="0.8" id="KJh-r3-dey"/>
+                <constraint firstItem="jQd-cc-bAD" firstAttribute="centerX" secondItem="qQp-yF-iG9" secondAttribute="centerX" id="TTX-hj-pnX"/>
+                <constraint firstItem="jQd-cc-bAD" firstAttribute="top" secondItem="qQp-yF-iG9" secondAttribute="bottom" constant="40" id="UBn-kk-E9c"/>
+                <constraint firstAttribute="bottom" secondItem="jQd-cc-bAD" secondAttribute="bottom" constant="30" id="Uji-Ru-o0b"/>
+                <constraint firstItem="qQp-yF-iG9" firstAttribute="centerX" secondItem="t9a-rG-PVk" secondAttribute="centerX" id="ZeU-GD-d5W"/>
+                <constraint firstItem="qQp-yF-iG9" firstAttribute="top" secondItem="Dv9-v1-48z" secondAttribute="top" constant="30" id="zYu-d7-UP8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="t9a-rG-PVk"/>
+            <size key="customSize" width="529" height="829"/>
+            <connections>
+                <outlet property="bottomLabel" destination="jQd-cc-bAD" id="fxE-De-l91"/>
+                <outlet property="cardImage" destination="qQp-yF-iG9" id="uEF-9C-sl1"/>
+            </connections>
+            <point key="canvasLocation" x="-790.5" y="274.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

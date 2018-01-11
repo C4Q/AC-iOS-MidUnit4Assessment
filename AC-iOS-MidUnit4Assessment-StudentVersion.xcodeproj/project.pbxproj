@@ -78,6 +78,7 @@
 				C46E4D841FED959100830363 /* ViewControllers */,
 				C46E4D831FED958A00830363 /* Model */,
 				C46E4D851FED959D00830363 /* Nibs */,
+				C46E4D861FED95A500830363 /* CardCollectionViewCell */,
 				C46E4D811FED8F0500830363 /* CustomTableViewCell.swift */,
 				C46E4D6D1FED5C7000830363 /* Network.swift */,
 				545F2AB71FEC2752007EBECB /* Main.storyboard */,
@@ -112,7 +113,6 @@
 		C46E4D851FED959D00830363 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				C46E4D861FED95A500830363 /* CardCollectionViewCell */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
